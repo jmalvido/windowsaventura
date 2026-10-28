@@ -1,164 +1,137 @@
 {
   "schema": 1,
   "motor_minimo": 1,
-  "version": 1,
+  "version": 2,
   "id": "actividad_005",
   "titulo": {
-    "es": "Tu puesto de mando",
-    "eu": "Zure aginte postua"
+    "es": "El turno de las incubadoras",
+    "eu": "Inkubagailuen txanda"
   },
-  "archivos": {
-    "LEEME.txt": {
-      "es": "Bienvenido al centro IZAR. Lee las instrucciones y usa COMPROBAR al terminar cada paso.\n",
-      "eu": "Ongi etorri IZAR zentrora. Irakurri argibideak eta erabili COMPROBAR urrats bakoitzaren amaieran.\n"
-    }
+  "introduccion": {
+    "es": "Los cuidadores anotan la revisión de los huevos de dinosaurio. Hay que consultar fecha y hora sin alterar el reloj del puesto.",
+    "eu": "Zaintzaileek dinosauroen arrautzen berrikuspena erregistratzen dute. Data eta ordua kontsultatu behar dira postuko erlojua aldatu gabe."
   },
+  "comandos_temario": [
+    "DATE",
+    "TIME",
+    "CLS"
+  ],
+  "archivos": {},
   "carpetas": [],
   "pasos": [
     {
       "texto": {
-        "es": "Consulta HELP TITLE y cambia el título a Comandos. Observa la ventana o pestaña. La comprobación es conceptual; el profesor revisa el título.",
-        "eu": "Kontsultatu HELP TITLE eta aldatu izenburua Comandos izenera. Begiratu leihoari edo fitxari. Irakasleak ikusiko du emaitza; egiaztapena kontzeptuala da."
+        "es": "Comprueba en la ayuda qué opción evita solicitar una fecha nueva. Después escribe COMPROBAR.",
+        "eu": "Egiaztatu laguntzan zer aukerak saihesten duen data berri bat eskatzea. Ondoren idatzi COMPROBAR."
       },
       "pistas": {
         "es": [
-          "Lee la ayuda del comando y revisa la carpeta actual.",
-          "HELP TITLE\nTITLE Comandos\nCOMPROBAR"
+          "Consulta la ayuda y observa qué información necesita el equipo del parque.",
+          "DATE /?"
         ],
         "eu": [
-          "Irakurri komandoaren laguntza eta egiaztatu uneko karpeta.",
-          "HELP TITLE\nTITLE Comandos\nCOMPROBAR"
+          "Kontsultatu laguntza eta begiratu parkeko taldeak zer informazio behar duen.",
+          "DATE /?"
         ]
       },
       "pruebas": [
         {
           "tipo": "respuesta",
           "pregunta": {
-            "es": "Orden usada:",
-            "eu": "Erabilitako agindua:"
+            "es": "Opción de consulta:",
+            "eu": "Kontsulta aukera:"
           },
           "respuestas": {
             "es": [
-              "TITLE Comandos"
+              "/T"
             ],
             "eu": [
-              "TITLE Comandos"
+              "/T"
             ]
           }
         }
       ],
-      "solucion_docente": "HELP TITLE\nTITLE Comandos\nCOMPROBAR"
+      "solucion_docente": "DATE /?\nCOMPROBAR"
     },
     {
       "texto": {
-        "es": "Consulta COLOR /?. Fondo azul y letras rojas: COLOR 14. El primer dígito es fondo; el segundo, texto. Después vuelve a COLOR 0B.",
-        "eu": "Kontsultatu COLOR /?. Atzealde urdina eta letra gorriak: COLOR 14. Lehen digitua atzealdea da, bigarrena testua. Gero itzuli COLOR 0B erabiliz."
+        "es": "La ficha de las incubadoras necesita la fecha real de esta máquina. Obtén la salida completa. Después escribe COMPROBAR.",
+        "eu": "Inkubagailuen fitxak makina honen benetako data behar du. Lortu irteera osoa. Ondoren idatzi COMPROBAR."
       },
       "pistas": {
         "es": [
-          "Lee la ayuda del comando y revisa la carpeta actual.",
-          "COLOR /?\nCOLOR 14\nCOLOR 0B\nCOMPROBAR"
+          "Consulta la ayuda y observa qué información necesita el equipo del parque.",
+          "DATE /T"
         ],
         "eu": [
-          "Irakurri komandoaren laguntza eta egiaztatu uneko karpeta.",
-          "COLOR /?\nCOLOR 14\nCOLOR 0B\nCOMPROBAR"
+          "Kontsultatu laguntza eta begiratu parkeko taldeak zer informazio behar duen.",
+          "DATE /T"
         ]
       },
       "pruebas": [
         {
-          "tipo": "respuesta",
+          "tipo": "respuesta_sistema",
+          "consulta": "fecha",
           "pregunta": {
-            "es": "Código para fondo azul y texto rojo:",
-            "eu": "Atzealde urdin eta testu gorrirako kodea:"
-          },
-          "respuestas": {
-            "es": [
-              "14"
-            ],
-            "eu": [
-              "14"
-            ]
+            "es": "Fecha mostrada:",
+            "eu": "Erakutsitako data:"
           }
         }
       ],
-      "solucion_docente": "COLOR /?\nCOLOR 14\nCOLOR 0B\nCOMPROBAR"
+      "solucion_docente": "DATE /T\nCOMPROBAR"
     },
     {
       "texto": {
-        "es": "Prueba fondo blanco brillante con rojo brillante (COLOR FC) y después con rojo normal (COLOR F4). Consulta COLOR /? y vuelve a COLOR 0B.",
-        "eu": "Probatu atzealde zuri distiratsua gorri distiratsuarekin (COLOR FC) eta gorri arruntarekin (COLOR F4). Kontsultatu COLOR /? eta itzuli COLOR 0B erabiliz."
+        "es": "Comprueba la hora sin iniciar un cambio y recupera la consulta con flecha arriba. Después limpia la pantalla para el siguiente cuidador. Después escribe COMPROBAR.",
+        "eu": "Kontsultatu ordua aldaketarik hasi gabe eta berreskuratu kontsulta gora geziarekin. Gero garbitu pantaila hurrengo zaintzailearentzat. Ondoren idatzi COMPROBAR."
       },
       "pistas": {
         "es": [
-          "Lee la ayuda del comando y revisa la carpeta actual.",
-          "COLOR FC\nCOLOR F4\nCOLOR 0B\nCOMPROBAR"
+          "Consulta la ayuda y observa qué información necesita el equipo del parque.",
+          "TIME /T\nCLS"
         ],
         "eu": [
-          "Irakurri komandoaren laguntza eta egiaztatu uneko karpeta.",
-          "COLOR FC\nCOLOR F4\nCOLOR 0B\nCOMPROBAR"
+          "Kontsultatu laguntza eta begiratu parkeko taldeak zer informazio behar duen.",
+          "TIME /T\nCLS"
         ]
       },
       "pruebas": [
         {
           "tipo": "respuesta",
           "pregunta": {
-            "es": "Código con blanco brillante y rojo brillante:",
-            "eu": "Zuri distiratsu eta gorri distiratsurako kodea:"
+            "es": "Orden de consulta de hora:",
+            "eu": "Ordua kontsultatzeko agindua:"
           },
           "respuestas": {
             "es": [
-              "FC"
+              "TIME /T"
             ],
             "eu": [
-              "FC"
+              "TIME /T"
             ]
           }
         },
         {
           "tipo": "respuesta",
           "pregunta": {
-            "es": "Código con blanco brillante y rojo normal:",
-            "eu": "Zuri distiratsu eta gorri arrunterako kodea:"
+            "es": "Orden de limpieza:",
+            "eu": "Garbitzeko agindua:"
           },
           "respuestas": {
             "es": [
-              "F4"
+              "CLS"
             ],
             "eu": [
-              "F4"
+              "CLS"
             ]
           }
         }
       ],
-      "solucion_docente": "COLOR FC\nCOLOR F4\nCOLOR 0B\nCOMPROBAR"
-    },
-    {
-      "texto": {
-        "es": "Personaliza el prompt con PROMPT [IZAR] $P$G. $P es la ruta y $G representa >. No escribas > literal en esta orden.",
-        "eu": "Pertsonalizatu prompta PROMPT [IZAR] $P$G erabiliz. $P bidea da eta $G ikurrak > adierazten du. Ez idatzi > zuzenean aginduan."
-      },
-      "pistas": {
-        "es": [
-          "Lee la ayuda del comando y revisa la carpeta actual.",
-          "PROMPT [IZAR] $P$G\nCOMPROBAR"
-        ],
-        "eu": [
-          "Irakurri komandoaren laguntza eta egiaztatu uneko karpeta.",
-          "PROMPT [IZAR] $P$G\nCOMPROBAR"
-        ]
-      },
-      "pruebas": [
-        {
-          "tipo": "entorno",
-          "nombre": "PROMPT",
-          "valor": "[IZAR] $P$G"
-        }
-      ],
-      "solucion_docente": "PROMPT [IZAR] $P$G\nCOMPROBAR"
+      "solucion_docente": "TIME /T\nCLS\nCOMPROBAR"
     }
   ],
   "final": {
-    "es": "Actividad completada. MENU para elegir otra o REINICIAR para repetir.",
-    "eu": "Jarduera osatuta. MENU beste bat aukeratzeko edo REINICIAR errepikatzeko."
+    "es": "Misión del parque completada. MENU para elegir otra expedición.",
+    "eu": "Parkeko misioa osatuta. MENU beste espedizio bat aukeratzeko."
   }
 }

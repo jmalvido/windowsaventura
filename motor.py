@@ -136,6 +136,9 @@ def show(aid, fresh=False, notice=None):
     if fresh: ui.clear()
     if notice: print(ui.color(notice, "success"))
     print('\n'+ui.color(loc(a['titulo']), 'title'))
+    if a.get('introduccion'): print(loc(a['introduccion']))
+    if a.get('version',1)<2:
+        print(tr('Hay una edición nueva de dinosaurios. REINICIAR carga esa edición y borra solo el trabajo de esta actividad.', 'Dinosauroen edizio berria dago. REINICIAR komandoak edizio hori kargatu eta jarduera honetako lana bakarrik ezabatzen du.'))
     print(ui.color(tr('Raíz del escenario: ','Eszenatokiaren erroa: ')+str(w), 'muted'))
     if s['paso']>=len(a['pasos']):
         print(ui.highlight(loc(a['final'])))
@@ -224,7 +227,7 @@ Los archivos y los pasos superados se conservan.
 Los comandos se muestran en MAYÚSCULAS, pero CMD no distingue su caja.
 Usa rutas entre comillas si contienen espacios. No necesitas ser administrador.
 Estás en CMD real, con tus permisos; la carpeta del juego no es un aislamiento.
-En un .bat usa CALL COMPROBAR, CALL PISTA, etc. para volver al script.
+Las actividades de esta unidad no requieren crear archivos ni scripts.
 No cambies PATH eliminando su contenido: perderías el acceso a los comandos.
 Los colores y el título son de sesión. Las teclas Tab/flechas no se comprueban.
 """,
@@ -238,7 +241,7 @@ Fitxategiak eta gainditutako urratsak gordetzen dira.
 CMDk ez ditu letra larriak eta xeheak bereizten.
 Jarri komatxoak zuriuneak dituzten bideetan. Ez da administratzailerik behar.
 Benetako CMD da, zure baimenekin; jokoaren karpeta ez da isolamendua.
-.bat batean erabili CALL COMPROBAR, CALL PISTA eta abar.
+Unitate honetako jarduerek ez dute fitxategirik edo scriptik sortzea eskatzen.
 Ez ezabatu PATH aldagaiko edukia: komandoetarako sarbidea galduko zenuke.
 Koloreak eta izenburua saiokoak dira. Tab/gezi teklak ez dira egiaztatzen.
 """)))

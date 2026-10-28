@@ -1,130 +1,128 @@
 {
   "schema": 1,
   "motor_minimo": 1,
-  "version": 1,
+  "version": 2,
   "id": "actividad_006",
   "titulo": {
-    "es": "El inventario del equipo",
-    "eu": "Ekipoaren inbentarioa"
+    "es": "El archivo de huellas",
+    "eu": "Oinatzen artxiboa"
   },
-  "archivos": {
-    "LEEME.txt": {
-      "es": "Bienvenido al centro IZAR. Lee las instrucciones y usa COMPROBAR al terminar cada paso.\n",
-      "eu": "Ongi etorri IZAR zentrora. Irakurri argibideak eta erabili COMPROBAR urrats bakoitzaren amaieran.\n"
-    }
+  "introduccion": {
+    "es": "El equipo de campo vuelve con fotografías de huellas. Antes de usar un soporte, hay que distinguir su etiqueta y número de serie.",
+    "eu": "Landako taldea oinatzen argazkiekin itzuli da. Euskarri bat erabili aurretik, etiketa eta serie zenbakia bereizi behar dira."
   },
+  "comandos_temario": [
+    "VOL",
+    "LABEL"
+  ],
+  "archivos": {},
   "carpetas": [],
   "pasos": [
     {
       "texto": {
-        "es": "Consulta VER y guarda la salida en version.txt usando >. Esta redirección reemplaza el contenido del archivo.",
-        "eu": "Kontsultatu VER eta gorde irteera version.txt fitxategian > erabiliz. Birbideratzeak edukia ordezten du."
+        "es": "Consulta el volumen del sistema con VOL. Observa etiqueta y número de serie; no cambies ninguno. Después escribe COMPROBAR.",
+        "eu": "Kontsultatu sistemaren bolumena VOL erabiliz. Begiratu etiketa eta serie zenbakia; ez aldatu ezer. Ondoren idatzi COMPROBAR."
       },
       "pistas": {
         "es": [
-          "Lee la ayuda del comando y revisa la carpeta actual.",
-          "VER > version.txt\nTYPE version.txt\nCOMPROBAR"
+          "Consulta la ayuda y observa qué información necesita el equipo del parque.",
+          "VOL"
         ],
         "eu": [
-          "Irakurri komandoaren laguntza eta egiaztatu uneko karpeta.",
-          "VER > version.txt\nTYPE version.txt\nCOMPROBAR"
+          "Kontsultatu laguntza eta begiratu parkeko taldeak zer informazio behar duen.",
+          "VOL"
         ]
       },
       "pruebas": [
         {
-          "tipo": "salida",
-          "consulta": "version",
-          "ruta": "version.txt"
-        }
-      ],
-      "solucion_docente": "VER > version.txt\nTYPE version.txt\nCOMPROBAR"
-    },
-    {
-      "texto": {
-        "es": "Consulta DATE /T y TIME /T. COMPROBAR pedirá la fecha completa tal como aparece, incluido el día de la semana si lo muestra.",
-        "eu": "Kontsultatu DATE /T eta TIME /T. COMPROBAR komandoak data osoa eskatuko du, asteko eguna barne agertzen bada."
-      },
-      "pistas": {
-        "es": [
-          "Lee la ayuda del comando y revisa la carpeta actual.",
-          "DATE /T\nTIME /T\nCOMPROBAR"
-        ],
-        "eu": [
-          "Irakurri komandoaren laguntza eta egiaztatu uneko karpeta.",
-          "DATE /T\nTIME /T\nCOMPROBAR"
-        ]
-      },
-      "pruebas": [
-        {
-          "tipo": "respuesta_sistema",
-          "consulta": "fecha",
+          "tipo": "respuesta",
           "pregunta": {
-            "es": "Salida de DATE /T:",
-            "eu": "DATE /T irteera:"
+            "es": "¿Qué comando muestra etiqueta y número de serie?",
+            "eu": "Zer komandok erakusten ditu etiketa eta serie zenbakia?"
+          },
+          "respuestas": {
+            "es": [
+              "VOL"
+            ],
+            "eu": [
+              "VOL"
+            ]
           }
         }
       ],
-      "solucion_docente": "DATE /T\nTIME /T\nCOMPROBAR"
+      "solucion_docente": "VOL\nCOMPROBAR"
     },
     {
       "texto": {
-        "es": "Consulta SYSTEMINFO /? y ejecuta SYSTEMINFO. Puede tardar. Localiza sistema operativo, memoria y nombre del equipo. Para copiar el nombre sin etiquetas puedes consultar ECHO %COMPUTERNAME%.",
-        "eu": "Kontsultatu SYSTEMINFO /? eta exekutatu SYSTEMINFO. Denbora behar dezake. Aurkitu sistema eragilea, memoria eta ekipoaren izena. Izena etiketarik gabe ikusteko erabili ECHO %COMPUTERNAME%."
+        "es": "Consulta LABEL /?. El USB de ejemplo se llama E:, pero no asumas que esa letra corresponde a un USB real. Diseña como texto la orden que le asignaría HUELLAS. Después escribe COMPROBAR.",
+        "eu": "Kontsultatu LABEL /?. Adibideko USBa E: da, baina ez pentsatu letra hori benetako USB bati dagokionik. Diseinatu testu gisa HUELLAS etiketa jartzeko agindua. Ondoren idatzi COMPROBAR."
       },
       "pistas": {
         "es": [
-          "Lee la ayuda del comando y revisa la carpeta actual.",
-          "SYSTEMINFO /?\nSYSTEMINFO\nECHO %COMPUTERNAME%\nCOMPROBAR"
+          "Consulta la ayuda y observa qué información necesita el equipo del parque.",
+          "LABEL /?"
         ],
         "eu": [
-          "Irakurri komandoaren laguntza eta egiaztatu uneko karpeta.",
-          "SYSTEMINFO /?\nSYSTEMINFO\nECHO %COMPUTERNAME%\nCOMPROBAR"
+          "Kontsultatu laguntza eta begiratu parkeko taldeak zer informazio behar duen.",
+          "LABEL /?"
         ]
       },
       "pruebas": [
         {
-          "tipo": "respuesta_sistema",
-          "consulta": "equipo",
+          "tipo": "respuesta",
           "pregunta": {
-            "es": "Nombre del equipo:",
-            "eu": "Ekipoaren izena:"
+            "es": "Orden de ejemplo, sin ejecutarla:",
+            "eu": "Adibideko agindua, exekutatu gabe:"
+          },
+          "respuestas": {
+            "es": [
+              "LABEL E: HUELLAS"
+            ],
+            "eu": [
+              "LABEL E: HUELLAS"
+            ]
           }
         }
       ],
-      "solucion_docente": "SYSTEMINFO /?\nSYSTEMINFO\nECHO %COMPUTERNAME%\nCOMPROBAR"
+      "solucion_docente": "LABEL /?\nCOMPROBAR"
     },
     {
       "texto": {
-        "es": "Prepara un pequeño informe con el nombre del equipo y conserva version.txt.",
-        "eu": "Prestatu txosten txiki bat ekipoaren izenarekin eta gorde version.txt."
+        "es": "El profesor puede proponer la práctica con un USB identificado. Para el juego, indica cómo consultarías E: después del cambio sin modificarla otra vez. Después escribe COMPROBAR.",
+        "eu": "Irakasleak identifikatutako USB batekin praktikatu dezake. Jokoan, adierazi nola kontsultatuko zenukeen E: aldaketaren ondoren berriro aldatu gabe. Ondoren idatzi COMPROBAR."
       },
       "pistas": {
         "es": [
-          "Lee la ayuda del comando y revisa la carpeta actual.",
-          "ECHO %COMPUTERNAME% > equipo.txt\nCOMPROBAR"
+          "Consulta la ayuda y observa qué información necesita el equipo del parque.",
+          "VOL /?"
         ],
         "eu": [
-          "Irakurri komandoaren laguntza eta egiaztatu uneko karpeta.",
-          "ECHO %COMPUTERNAME% > equipo.txt\nCOMPROBAR"
+          "Kontsultatu laguntza eta begiratu parkeko taldeak zer informazio behar duen.",
+          "VOL /?"
         ]
       },
       "pruebas": [
         {
-          "tipo": "salida",
-          "consulta": "equipo",
-          "ruta": "equipo.txt"
-        },
-        {
-          "tipo": "salida",
-          "consulta": "version",
-          "ruta": "version.txt"
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Consulta del volumen E:",
+            "eu": "E: bolumenaren kontsulta:"
+          },
+          "respuestas": {
+            "es": [
+              "VOL E:"
+            ],
+            "eu": [
+              "VOL E:"
+            ]
+          }
         }
       ],
-      "solucion_docente": "ECHO %COMPUTERNAME% > equipo.txt\nCOMPROBAR"
+      "solucion_docente": "VOL /?\nCOMPROBAR"
     }
   ],
   "final": {
-    "es": "Actividad completada. MENU para elegir otra o REINICIAR para repetir.",
-    "eu": "Jarduera osatuta. MENU beste bat aukeratzeko edo REINICIAR errepikatzeko."
+    "es": "Misión del parque completada. MENU para elegir otra expedición.",
+    "eu": "Parkeko misioa osatuta. MENU beste espedizio bat aukeratzeko."
   }
 }

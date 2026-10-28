@@ -1,99 +1,78 @@
 {
   "schema": 1,
   "motor_minimo": 1,
-  "version": 1,
+  "version": 2,
   "id": "actividad_007",
   "titulo": {
-    "es": "La unidad bajo examen",
-    "eu": "Unitatea aztergai"
+    "es": "El disco de las cámaras de los estegosaurios",
+    "eu": "Estegosauroen kameren diskoa"
   },
-  "archivos": {
-    "LEEME.txt": {
-      "es": "Bienvenido al centro IZAR. Lee las instrucciones y usa COMPROBAR al terminar cada paso.\n",
-      "eu": "Ongi etorri IZAR zentrora. Irakurri argibideak eta erabili COMPROBAR urrats bakoitzaren amaieran.\n"
-    }
+  "introduccion": {
+    "es": "La estación de cámaras necesita un diagnóstico de almacenamiento. Tu misión es escoger la consulta adecuada, no reparar el disco.",
+    "eu": "Kameren estazioak biltegiratze diagnostikoa behar du. Zure misioa kontsulta egokia aukeratzea da, ez diskoa konpontzea."
   },
+  "comandos_temario": [
+    "CHKDSK",
+    "HELP"
+  ],
+  "archivos": {},
   "carpetas": [],
   "pasos": [
     {
       "texto": {
-        "es": "VOL consulta etiqueta y número de serie. Ejecuta VOL %SystemDrive% y guarda el resultado en volumen.txt. No cambies la etiqueta.",
-        "eu": "VOL komandoak etiketa eta serie zenbakia kontsultatzen ditu. Exekutatu VOL %SystemDrive% eta gorde emaitza volumen.txt fitxategian. Ez aldatu etiketa."
+        "es": "Consulta la ayuda de CHKDSK. La ejecución real se realiza aparte con el profesor en un CMD elevado; no eleves el juego. Después escribe COMPROBAR.",
+        "eu": "Kontsultatu CHKDSKen laguntza. Benetako proba irakaslearekin egiten da aparte, baimenak dituen CMD batean; ez igo jokoaren baimenak. Ondoren idatzi COMPROBAR."
       },
       "pistas": {
         "es": [
-          "Lee la ayuda del comando y revisa la carpeta actual.",
-          "VOL %SystemDrive% > volumen.txt\nTYPE volumen.txt\nCOMPROBAR"
+          "Consulta la ayuda y observa qué información necesita el equipo del parque.",
+          "CHKDSK /?"
         ],
         "eu": [
-          "Irakurri komandoaren laguntza eta egiaztatu uneko karpeta.",
-          "VOL %SystemDrive% > volumen.txt\nTYPE volumen.txt\nCOMPROBAR"
-        ]
-      },
-      "pruebas": [
-        {
-          "tipo": "salida",
-          "consulta": "volumen",
-          "ruta": "volumen.txt"
-        }
-      ],
-      "solucion_docente": "VOL %SystemDrive% > volumen.txt\nTYPE volumen.txt\nCOMPROBAR"
-    },
-    {
-      "texto": {
-        "es": "Consulta LABEL /?. No lo ejecutes para modificar el disco del sistema. ¿Qué orden asignaría APELLIDO a una unidad USB E: ya identificada? Contesta como texto; E: es solo un ejemplo.",
-        "eu": "Kontsultatu LABEL /?. Ez aldatu sistemako diskoa. Zer aginduk jarriko luke APELLIDO etiketa aurrez identifikatutako E: USB unitatean? Erantzun testu gisa; E: adibidea da."
-      },
-      "pistas": {
-        "es": [
-          "Lee la ayuda del comando y revisa la carpeta actual.",
-          "LABEL /?\nCOMPROBAR"
-        ],
-        "eu": [
-          "Irakurri komandoaren laguntza eta egiaztatu uneko karpeta.",
-          "LABEL /?\nCOMPROBAR"
+          "Kontsultatu laguntza eta begiratu parkeko taldeak zer informazio behar duen.",
+          "CHKDSK /?"
         ]
       },
       "pruebas": [
         {
           "tipo": "respuesta",
           "pregunta": {
-            "es": "Orden de ejemplo, sin ejecutarla:",
-            "eu": "Adibideko agindua, exekutatu gabe:"
+            "es": "Comando que comprueba el sistema de archivos:",
+            "eu": "Fitxategi sistema egiaztatzeko komandoa:"
           },
           "respuestas": {
             "es": [
-              "LABEL E: APELLIDO"
+              "CHKDSK"
             ],
             "eu": [
-              "LABEL E: APELLIDO"
+              "CHKDSK"
             ]
           }
         }
       ],
-      "solucion_docente": "LABEL /?\nCOMPROBAR"
+      "solucion_docente": "CHKDSK /?\nCOMPROBAR"
     },
     {
       "texto": {
-        "es": "Consulta CHKDSK /?. Sin /F ni /R informa sin pedir reparaciones. La ejecución real se hará aparte, en CMD como administrador con el profesor; el juego no necesita elevación.",
-        "eu": "Kontsultatu CHKDSK /?. /F eta /R gabe egoera azaltzen du konponketarik eskatu gabe. Benetako proba aparte egingo da, administratzailearen CMDn irakaslearekin; jokoak ez du baimen igoerarik behar."
+        "es": "Diseña la orden para consultar C: sin solicitar reparación. Responde como texto, sin ejecutarla en el juego. Después escribe COMPROBAR.",
+        "eu": "Diseinatu C: konponketarik eskatu gabe kontsultatzeko agindua. Erantzun testu gisa, jokoan exekutatu gabe. Ondoren idatzi COMPROBAR."
       },
       "pistas": {
         "es": [
-          "Lee la ayuda del comando y revisa la carpeta actual.",
-          "CHKDSK /?\nCOMPROBAR"
+          "Consulta la ayuda y observa qué información necesita el equipo del parque.",
+          "CHKDSK /?"
         ],
         "eu": [
-          "Irakurri komandoaren laguntza eta egiaztatu uneko karpeta.",
-          "CHKDSK /?\nCOMPROBAR"
+          "Kontsultatu laguntza eta begiratu parkeko taldeak zer informazio behar duen.",
+          "CHKDSK /?"
         ]
       },
       "pruebas": [
         {
           "tipo": "respuesta",
           "pregunta": {
-            "es": "Orden para consultar C: sin solicitar reparación:",
-            "eu": "C: konponketarik eskatu gabe kontsultatzeko agindua:"
+            "es": "Orden de consulta:",
+            "eu": "Kontsulta agindua:"
           },
           "respuestas": {
             "es": [
@@ -109,25 +88,25 @@
     },
     {
       "texto": {
-        "es": "Distingue etiqueta, número de serie y comprobación. ¿Qué opción de CHKDSK solicita reparar errores? No la ejecutes.",
-        "eu": "Bereizi etiketa, serie zenbakia eta egiaztapena. CHKDSKen zer aukerak eskatzen du akatsak konpontzea? Ez exekutatu."
+        "es": "Distingue diagnóstico y reparación. Identifica en la ayuda la opción que solicita corregir errores; no la ejecutes. Después escribe COMPROBAR.",
+        "eu": "Bereizi diagnostikoa eta konponketa. Identifikatu laguntzan akatsak konpontzeko aukera; ez exekutatu. Ondoren idatzi COMPROBAR."
       },
       "pistas": {
         "es": [
-          "Lee la ayuda del comando y revisa la carpeta actual.",
-          "HELP CHKDSK\nCOMPROBAR"
+          "Consulta la ayuda y observa qué información necesita el equipo del parque.",
+          "HELP CHKDSK"
         ],
         "eu": [
-          "Irakurri komandoaren laguntza eta egiaztatu uneko karpeta.",
-          "HELP CHKDSK\nCOMPROBAR"
+          "Kontsultatu laguntza eta begiratu parkeko taldeak zer informazio behar duen.",
+          "HELP CHKDSK"
         ]
       },
       "pruebas": [
         {
           "tipo": "respuesta",
           "pregunta": {
-            "es": "Opción de reparación:",
-            "eu": "Konponketa aukera:"
+            "es": "Opción que solicita reparar:",
+            "eu": "Konponketa eskatzeko aukera:"
           },
           "respuestas": {
             "es": [
@@ -143,7 +122,7 @@
     }
   ],
   "final": {
-    "es": "Actividad completada. MENU para elegir otra o REINICIAR para repetir.",
-    "eu": "Jarduera osatuta. MENU beste bat aukeratzeko edo REINICIAR errepikatzeko."
+    "es": "Misión del parque completada. MENU para elegir otra expedición.",
+    "eu": "Parkeko misioa osatuta. MENU beste espedizio bat aukeratzeko."
   }
 }

@@ -1,430 +1,198 @@
-# Guía docente de WindowsAventura 0.1
+# Guía docente de WindowsAventura 0.2
 
-Enunciados, soluciones y comprobaciones. CMD real y archivos .bat. Esta guía está en castellano; ambas versiones del juego comparten objetivos.
+# Paleo Isla
 
-## Cómo usar las soluciones
+12 misiones independientes y un extra de 17 definiciones. Enunciados y soluciones en castellano; el juego incluye también euskera.
 
-Las rutas relativas parten de la raíz del escenario, salvo indicación. En CMD puedes volver con CD /D "%LA_SCENARIO%". En un .bat usa CALL para invocar los comandos del juego. Las líneas con # son indicaciones editoriales: no las copies a CMD. Los comentarios reales de .bat usan REM. Cuando se muestra contenido de un script, escríbelo en el editor.
+## Alcance de la unidad
 
-El corrector no ejecuta los scripts: inspecciona el contenido o su resultado. Las consultas dependen de la VM. La revisión de color, título, teclas y acciones gráficas es conceptual o del profesor.
+Comandos del material: CHKDSK, CLS, CMD, COLOR, DATE, EXIT, HELP, LABEL, PATH, PROMPT, SHUTDOWN, SYSTEMINFO, START, TIME, TITLE, VER y VOL.
+No hay ejercicios de creación de scripts, archivos o carpetas ni redirecciones. Los lanzadores .bat son infraestructura del juego. La narración se muestra en pantalla.
 
-## Mapa
+## Cómo consultar la guía
 
-| Nº | Juego | Etapas |
+Busca juego y etapa. Las soluciones muestran las consultas o acciones propuestas; las respuestas aparecen en Qué comprueba. Las líneas REM son notas de la guía, no tareas nuevas. No ejecutes las respuestas de apagado, etiqueta o reparación: introdúcelas solo cuando COMPROBAR pregunte.
+El corrector compara respuestas con datos reales de la VM cuando corresponde. Título, color, teclas y acciones gráficas necesitan observación del profesor; una respuesta correcta no certifica su ejecución.
+
+## Mapa de misiones
+
+| Nº | Misión | Etapas |
 |---|---|---|
-| 1 | Bienvenido a Windows 1 — Primeros pasos | 4 |
-| 2 | Bienvenido a Windows 2 — Ayuda y consultas | 4 |
-| 3 | Bienvenido a Windows 3 — Organiza archivos | 4 |
-| 4 | Encuentra el virus | 4 |
-| 5 | Tu puesto de mando | 4 |
-| 6 | El inventario del equipo | 4 |
-| 7 | La unidad bajo examen | 4 |
-| 8 | Ventanas y rutas de búsqueda | 4 |
-| 9 | El apagado planificado | 4 |
-| 10 | Tu primer archivo bat | 4 |
-| 11 | El relevo del técnico | 4 |
-| 12 | Operación IZAR — Misión final | 12 |
-| 13 | Extra — Adivina el comando | 30 |
+| 1 | Bienvenido a Paleo Isla — La consola del visitante | 3 |
+| 2 | Bienvenido a Paleo Isla — El reloj de la expedición | 3 |
+| 3 | Bienvenido a Paleo Isla — Tu puesto de guardia | 3 |
+| 4 | La ficha del laboratorio de fósiles | 3 |
+| 5 | El turno de las incubadoras | 3 |
+| 6 | El archivo de huellas | 3 |
+| 7 | El disco de las cámaras de los estegosaurios | 3 |
+| 8 | Las rutas de la estación de rastreo | 3 |
+| 9 | Una segunda torre de observación | 3 |
+| 10 | El cierre del centro de visitantes | 3 |
+| 11 | Los accesos del puesto de los velociraptores | 3 |
+| 12 | La gran reapertura de Paleo Isla | 12 |
+| 13 | Extra — El examen de los guardas del parque | 17 |
 
-## Juego 1 Bienvenido a Windows 1 — Primeros pasos
+## Juego 1 Bienvenido a Paleo Isla — La consola del visitante
 
-Escenario: datos/actividad_001/escenario
+Llegas a Paleo Isla como técnico en prácticas. Antes de entrar en los recintos, aprende a pedir ayuda al terminal. Todo se lee en pantalla; no necesitas abrir archivos.
 
-### Situación inicial
+Comandos: HELP, COLOR, CLS.
 
-Bienvenido a CMD. La clave es KAIXO. El segundo mensaje está en centro/entrada.txt.
-
-### Etapa 1 de 4
+### Etapa 1 de 3
 
 **Enunciado**
 
-Estás en CMD real. CD, sin argumentos, muestra la carpeta actual. Escribe CD y después COMPROBAR. No escribas el símbolo > del prompt.
+El puesto de recepción necesita su catálogo de órdenes. Ejecuta HELP. En las respuestas introduce el comando, no toda la salida. Después escribe COMPROBAR.
 
-**Desarrollo resuelto**
-
-```bat
-CD
-COMPROBAR
-```
-
-**Qué comprueba**
-
-- Respuesta a «Ruta completa:»: `{escenario}`.
-
-**Primera pista:** Lee la ayuda del comando y revisa la carpeta actual.
-
-### Etapa 2 de 4
-
-**Enunciado**
-
-DIR lista archivos y carpetas. Ejecuta DIR y localiza el archivo de bienvenida.
-
-**Desarrollo resuelto**
-
-```bat
-DIR
-COMPROBAR
-```
-
-**Qué comprueba**
-
-- Respuesta a «Nombre del archivo de bienvenida:»: `LEEME.txt`.
-
-**Primera pista:** Lee la ayuda del comando y revisa la carpeta actual.
-
-### Etapa 3 de 4
-
-**Enunciado**
-
-TYPE muestra el contenido. Ejecuta TYPE LEEME.txt y lee la clave.
-
-**Desarrollo resuelto**
-
-```bat
-TYPE LEEME.txt
-COMPROBAR
-```
-
-**Qué comprueba**
-
-- Respuesta a «Clave:»: `KAIXO`.
-
-**Primera pista:** Lee la ayuda del comando y revisa la carpeta actual.
-
-### Etapa 4 de 4
-
-**Enunciado**
-
-Entra con CD centro. Lista y lee entrada.txt. Después vuelve con CD .. antes de COMPROBAR. Las rutas Windows usan la barra invertida.
-
-**Desarrollo resuelto**
-
-```bat
-CD centro
-DIR
-TYPE entrada.txt
-CD ..
-COMPROBAR
-```
-
-**Qué comprueba**
-
-- Respuesta a «Responsable:»: `ALEX`.
-
-**Primera pista:** Lee la ayuda del comando y revisa la carpeta actual.
-
-
-## Juego 2 Bienvenido a Windows 2 — Ayuda y consultas
-
-Escenario: datos/actividad_002/escenario
-
-### Situación inicial
-
-Bienvenido al centro IZAR. Lee las instrucciones y usa COMPROBAR al terminar cada paso.
-
-### Etapa 1 de 4
-
-**Enunciado**
-
-HELP muestra la ayuda de comandos. Ejecuta HELP y después HELP DIR. ¿Qué símbolo acompaña a la barra para pedir ayuda con DIR /?
-
-**Desarrollo resuelto**
+**Desarrollo**
 
 ```bat
 HELP
-HELP DIR
-DIR /?
 COMPROBAR
 ```
 
 **Qué comprueba**
 
-- Respuesta a «Opción completa de ayuda:»: `/?`.
+- Respuesta a «¿Qué comando muestra la ayuda general?»: `HELP`.
 
-**Primera pista:** Lee la ayuda del comando y revisa la carpeta actual.
+Primera pista: Consulta la ayuda y observa qué información necesita el equipo del parque.
 
-### Etapa 2 de 4
+### Etapa 2 de 3
 
 **Enunciado**
 
-CLS limpia la pantalla. Ejecuta CLS y luego VER para consultar la versión de Windows. COMPROBAR pedirá la línea de versión completa.
+La cuidadora quiere consultar los colores disponibles. Ejecuta COLOR /?. La ayuda también puede pedirse con HELP COLOR. Después escribe COMPROBAR.
 
-**Desarrollo resuelto**
+**Desarrollo**
+
+```bat
+COLOR /?
+HELP COLOR
+COMPROBAR
+```
+
+**Qué comprueba**
+
+- Respuesta a «Opción de ayuda que acompaña a COLOR:»: `/?`.
+
+Primera pista: Consulta la ayuda y observa qué información necesita el equipo del parque.
+
+### Etapa 3 de 3
+
+**Enunciado**
+
+La pantalla de recepción está llena de consultas. Ejecuta CLS para despejarla y vuelve a escribir COMPROBAR; el objetivo reaparece con AYUDA si lo necesitas. Después escribe COMPROBAR.
+
+**Desarrollo**
 
 ```bat
 CLS
+COMPROBAR
+```
+
+**Qué comprueba**
+
+- Respuesta a «Comando para limpiar la pantalla:»: `CLS`.
+
+Primera pista: Consulta la ayuda y observa qué información necesita el equipo del parque.
+
+
+## Juego 2 Bienvenido a Paleo Isla — El reloj de la expedición
+
+La expedición a la zona de los diplodocus sale hoy. Revisa el equipo y su reloj sin cambiar ninguna configuración.
+
+Comandos: VER, DATE, TIME.
+
+### Etapa 1 de 3
+
+**Enunciado**
+
+VER muestra la versión de Windows del puesto. Ejecuta VER y copia su línea completa cuando se te pregunte. Después escribe COMPROBAR.
+
+**Desarrollo**
+
+```bat
 VER
 COMPROBAR
 ```
 
 **Qué comprueba**
 
-- Compara la respuesta con la consulta real: version. Copia la salida de la VM, no un ejemplo.
+- Respuesta comparada con la consulta real version. Debe corresponder a la máquina del alumno.
 
-**Primera pista:** Lee la ayuda del comando y revisa la carpeta actual.
+Primera pista: Consulta la ayuda y observa qué información necesita el equipo del parque.
 
-### Etapa 3 de 4
+### Etapa 2 de 3
 
 **Enunciado**
 
-DATE /T y TIME /T muestran fecha y hora sin pedir cambios. Pruébalos. Usa flecha arriba para recuperar una orden.
+Ejecuta DATE /T. /T permite consultar sin pedir una fecha nueva. Copia la salida completa, incluido el día de la semana si aparece. Después escribe COMPROBAR.
 
-**Desarrollo resuelto**
+**Desarrollo**
 
 ```bat
 DATE /T
+COMPROBAR
+```
+
+**Qué comprueba**
+
+- Respuesta comparada con la consulta real fecha. Debe corresponder a la máquina del alumno.
+
+Primera pista: Consulta la ayuda y observa qué información necesita el equipo del parque.
+
+### Etapa 3 de 3
+
+**Enunciado**
+
+Ejecuta TIME /T y observa la hora. Usa flecha arriba para recuperar la orden y repetirla. No se evalúa la pulsación de la tecla. Después escribe COMPROBAR.
+
+**Desarrollo**
+
+```bat
 TIME /T
 COMPROBAR
 ```
 
 **Qué comprueba**
 
-- Respuesta a «Opción para consultar sin modificar:»: `/T`.
+- Respuesta a «Orden para consultar la hora sin modificarla:»: `TIME /T`.
 
-**Primera pista:** Lee la ayuda del comando y revisa la carpeta actual.
+Primera pista: Consulta la ayuda y observa qué información necesita el equipo del parque.
 
-### Etapa 4 de 4
+
+## Juego 3 Bienvenido a Paleo Isla — Tu puesto de guardia
+
+Te asignan la torre de vigilancia de los triceratops. Personaliza la consola para reconocer el puesto.
+
+Comandos: TITLE, COLOR, PROMPT.
+
+### Etapa 1 de 3
 
 **Enunciado**
 
-Tab completa nombres de archivos y carpetas. Prueba TYPE L y pulsa Tab para completar LEEME.txt; después pulsa Intro. La comprobación no registra la tecla, solo la respuesta.
+TITLE cambia el título de la ventana. Ejecuta TITLE Torre Triceratops y observa el resultado. La revisión del título es visual. Después escribe COMPROBAR.
 
-**Desarrollo resuelto**
+**Desarrollo**
 
 ```bat
-TYPE LEEME.txt
+TITLE Torre Triceratops
 COMPROBAR
 ```
 
 **Qué comprueba**
 
-- Respuesta a «Comando para leer un archivo:»: `TYPE`.
+- Respuesta a «Orden utilizada:»: `TITLE Torre Triceratops`.
 
-**Primera pista:** Lee la ayuda del comando y revisa la carpeta actual.
+Primera pista: Consulta la ayuda y observa qué información necesita el equipo del parque.
 
-
-## Juego 3 Bienvenido a Windows 3 — Organiza archivos
-
-Escenario: datos/actividad_003/escenario
-
-### Situación inicial
-
-Bienvenido al centro IZAR. Lee las instrucciones y usa COMPROBAR al terminar cada paso.
-
-### Etapa 1 de 4
+### Etapa 2 de 3
 
 **Enunciado**
 
-Desde la raíz del escenario crea refugio y refugio\copias con MD. MD y MKDIR son equivalentes.
+Consulta COLOR /?. Pon fondo azul y letras rojas con COLOR 14. El primer dígito indica el fondo y el segundo el texto. Después restaura COLOR 0B. Después escribe COMPROBAR.
 
-**Desarrollo resuelto**
-
-```bat
-MD refugio
-MD refugio\copias
-COMPROBAR
-```
-
-**Qué comprueba**
-
-- Debe existir la carpeta `refugio/copias`.
-
-**Primera pista:** Lee la ayuda del comando y revisa la carpeta actual.
-
-### Etapa 2 de 4
-
-**Enunciado**
-
-COPY copia y conserva el original. Copia documentos\mapa.txt a refugio\copias.
-
-**Desarrollo resuelto**
-
-```bat
-COPY documentos\mapa.txt refugio\copias\
-COMPROBAR
-```
-
-**Qué comprueba**
-
-- `refugio/copias/mapa.txt` debe conservar el contenido inicial de `documentos/mapa.txt`.
-- `documentos/mapa.txt` debe conservar el contenido inicial de `documentos/mapa.txt`.
-
-**Primera pista:** Lee la ayuda del comando y revisa la carpeta actual.
-
-### Etapa 3 de 4
-
-**Enunciado**
-
-REN cambia el nombre. Renombra la copia a plano.txt; el segundo argumento de REN es el nombre nuevo, no otra carpeta.
-
-**Desarrollo resuelto**
-
-```bat
-REN refugio\copias\mapa.txt plano.txt
-COMPROBAR
-```
-
-**Qué comprueba**
-
-- `refugio/copias/plano.txt` debe conservar el contenido inicial de `documentos/mapa.txt`.
-- No debe existir `refugio/copias/mapa.txt`.
-
-**Primera pista:** Lee la ayuda del comando y revisa la carpeta actual.
-
-### Etapa 4 de 4
-
-**Enunciado**
-
-MOVE cambia la ubicación. Mueve plano.txt a refugio. Crea una señal vacía con TYPE NUL > refugio\listo.txt. > sobrescribe el destino; úsalo solo con esta señal.
-
-**Desarrollo resuelto**
-
-```bat
-MOVE refugio\copias\plano.txt refugio\plano.txt
-TYPE NUL > refugio\listo.txt
-COMPROBAR
-```
-
-**Qué comprueba**
-
-- `refugio/plano.txt` debe conservar el contenido inicial de `documentos/mapa.txt`.
-- No debe existir `refugio/copias/plano.txt`.
-- Debe ser un archivo de cero bytes `refugio/listo.txt`.
-
-**Primera pista:** Lee la ayuda del comando y revisa la carpeta actual.
-
-
-## Juego 4 Encuentra el virus
-
-Escenario: datos/actividad_004/escenario
-
-### Situación inicial
-
-Alerta IZAR. Empieza por informes\aviso.txt. Todos los archivos son texto inofensivo.
-
-### Etapa 1 de 4
-
-**Enunciado**
-
-Lee el aviso y averigua el código de incidencia.
-
-**Desarrollo resuelto**
-
-```bat
-TYPE LEEME.txt
-TYPE informes\aviso.txt
-COMPROBAR
-```
-
-**Qué comprueba**
-
-- Respuesta a «Código:»: `IZAR-17`.
-
-**Primera pista:** Lee la ayuda del comando y revisa la carpeta actual.
-
-### Etapa 2 de 4
-
-**Enunciado**
-
-Investiga almacen y lee los archivos. Identifica el sospechoso por su contenido.
-
-**Desarrollo resuelto**
-
-```bat
-DIR almacen
-TYPE almacen\actualizacion.txt
-TYPE almacen\antivirus.txt
-COMPROBAR
-```
-
-**Qué comprueba**
-
-- Respuesta a «Archivo sospechoso:»: `actualizacion.txt`.
-
-**Primera pista:** Lee la ayuda del comando y revisa la carpeta actual.
-
-### Etapa 3 de 4
-
-**Enunciado**
-
-Crea evidencias y copia el aviso. Crea cuarentena y mueve el sospechoso con el nombre sospechoso.txt. Conserva el otro paquete.
-
-**Desarrollo resuelto**
-
-```bat
-MD evidencias
-COPY informes\aviso.txt evidencias\
-MD cuarentena
-MOVE almacen\actualizacion.txt cuarentena\sospechoso.txt
-COMPROBAR
-```
-
-**Qué comprueba**
-
-- `evidencias/aviso.txt` debe conservar el contenido inicial de `informes/aviso.txt`.
-- `cuarentena/sospechoso.txt` debe conservar el contenido inicial de `almacen/actualizacion.txt`.
-- No debe existir `almacen/actualizacion.txt`.
-- `almacen/antivirus.txt` debe conservar el contenido inicial de `almacen/antivirus.txt`.
-
-**Primera pista:** Lee la ayuda del comando y revisa la carpeta actual.
-
-### Etapa 4 de 4
-
-**Enunciado**
-
-Cierra la investigación creando evidencias\resuelto.txt vacío. Mover este texto es una simulación, no una desinfección real.
-
-**Desarrollo resuelto**
-
-```bat
-TYPE NUL > evidencias\resuelto.txt
-COMPROBAR
-```
-
-**Qué comprueba**
-
-- Debe ser un archivo de cero bytes `evidencias/resuelto.txt`.
-- `cuarentena/sospechoso.txt` debe conservar el contenido inicial de `almacen/actualizacion.txt`.
-- `informes/aviso.txt` debe conservar el contenido inicial de `informes/aviso.txt`.
-
-**Primera pista:** Lee la ayuda del comando y revisa la carpeta actual.
-
-
-## Juego 5 Tu puesto de mando
-
-Escenario: datos/actividad_005/escenario
-
-### Situación inicial
-
-Bienvenido al centro IZAR. Lee las instrucciones y usa COMPROBAR al terminar cada paso.
-
-### Etapa 1 de 4
-
-**Enunciado**
-
-Consulta HELP TITLE y cambia el título a Comandos. Observa la ventana o pestaña. La comprobación es conceptual; el profesor revisa el título.
-
-**Desarrollo resuelto**
-
-```bat
-HELP TITLE
-TITLE Comandos
-COMPROBAR
-```
-
-**Qué comprueba**
-
-- Respuesta a «Orden usada:»: `TITLE Comandos`.
-
-**Primera pista:** Lee la ayuda del comando y revisa la carpeta actual.
-
-### Etapa 2 de 4
-
-**Enunciado**
-
-Consulta COLOR /?. Fondo azul y letras rojas: COLOR 14. El primer dígito es fondo; el segundo, texto. Después vuelve a COLOR 0B.
-
-**Desarrollo resuelto**
+**Desarrollo**
 
 ```bat
 COLOR /?
@@ -435,177 +203,192 @@ COMPROBAR
 
 **Qué comprueba**
 
-- Respuesta a «Código para fondo azul y texto rojo:»: `14`.
+- Respuesta a «Código para fondo azul y letras rojas:»: `14`.
 
-**Primera pista:** Lee la ayuda del comando y revisa la carpeta actual.
+Primera pista: Consulta la ayuda y observa qué información necesita el equipo del parque.
 
-### Etapa 3 de 4
+### Etapa 3 de 3
 
 **Enunciado**
 
-Prueba fondo blanco brillante con rojo brillante (COLOR FC) y después con rojo normal (COLOR F4). Consulta COLOR /? y vuelve a COLOR 0B.
+PROMPT cambia el indicador donde escribes. Ejecuta PROMPT [TRICERATOPS] $P$G. $P representa la ruta y $G el signo de cierre. Después escribe COMPROBAR.
 
-**Desarrollo resuelto**
+**Desarrollo**
 
 ```bat
-COLOR FC
-COLOR F4
-COLOR 0B
+PROMPT [TRICERATOPS] $P$G
 COMPROBAR
 ```
 
 **Qué comprueba**
 
-- Respuesta a «Código con blanco brillante y rojo brillante:»: `FC`.
-- Respuesta a «Código con blanco brillante y rojo normal:»: `F4`.
+- PROMPT debe ser `[TRICERATOPS] $P$G` en el entorno real.
 
-**Primera pista:** Lee la ayuda del comando y revisa la carpeta actual.
-
-### Etapa 4 de 4
-
-**Enunciado**
-
-Personaliza el prompt con PROMPT [IZAR] $P$G. $P es la ruta y $G representa >. No escribas > literal en esta orden.
-
-**Desarrollo resuelto**
-
-```bat
-PROMPT [IZAR] $P$G
-COMPROBAR
-```
-
-**Qué comprueba**
-
-- El entorno CMD debe tener PROMPT igual a `[IZAR] $P$G`.
-
-**Primera pista:** Lee la ayuda del comando y revisa la carpeta actual.
+Primera pista: Consulta la ayuda y observa qué información necesita el equipo del parque.
 
 
-## Juego 6 El inventario del equipo
+## Juego 4 La ficha del laboratorio de fósiles
 
-Escenario: datos/actividad_006/escenario
+El laboratorio de fósiles ha recibido una estación de trabajo sin inventariar. Debes identificarla antes de catalogar las muestras.
 
-### Situación inicial
+Comandos: SYSTEMINFO, VER, HELP.
 
-Bienvenido al centro IZAR. Lee las instrucciones y usa COMPROBAR al terminar cada paso.
-
-### Etapa 1 de 4
+### Etapa 1 de 3
 
 **Enunciado**
 
-Consulta VER y guarda la salida en version.txt usando >. Esta redirección reemplaza el contenido del archivo.
+Busca la ayuda del comando que muestra información detallada del sistema. Después escribe COMPROBAR.
 
-**Desarrollo resuelto**
-
-```bat
-VER > version.txt
-TYPE version.txt
-COMPROBAR
-```
-
-**Qué comprueba**
-
-- `version.txt` debe contener la salida de la consulta version.
-
-**Primera pista:** Lee la ayuda del comando y revisa la carpeta actual.
-
-### Etapa 2 de 4
-
-**Enunciado**
-
-Consulta DATE /T y TIME /T. COMPROBAR pedirá la fecha completa tal como aparece, incluido el día de la semana si lo muestra.
-
-**Desarrollo resuelto**
-
-```bat
-DATE /T
-TIME /T
-COMPROBAR
-```
-
-**Qué comprueba**
-
-- Compara la respuesta con la consulta real: fecha. Copia la salida de la VM, no un ejemplo.
-
-**Primera pista:** Lee la ayuda del comando y revisa la carpeta actual.
-
-### Etapa 3 de 4
-
-**Enunciado**
-
-Consulta SYSTEMINFO /? y ejecuta SYSTEMINFO. Puede tardar. Localiza sistema operativo, memoria y nombre del equipo. Para copiar el nombre sin etiquetas puedes consultar ECHO %COMPUTERNAME%.
-
-**Desarrollo resuelto**
+**Desarrollo**
 
 ```bat
 SYSTEMINFO /?
+COMPROBAR
+```
+
+**Qué comprueba**
+
+- Respuesta a «Orden de ayuda:»: `SYSTEMINFO /?` / `HELP SYSTEMINFO`.
+
+Primera pista: Consulta la ayuda y observa qué información necesita el equipo del parque.
+
+### Etapa 2 de 3
+
+**Enunciado**
+
+Ejecuta esa consulta y localiza el nombre del equipo. Puede tardar. Responde solo con el nombre, sin la etiqueta que lo precede. Después escribe COMPROBAR.
+
+**Desarrollo**
+
+```bat
 SYSTEMINFO
-ECHO %COMPUTERNAME%
 COMPROBAR
 ```
 
 **Qué comprueba**
 
-- Compara la respuesta con la consulta real: equipo. Copia la salida de la VM, no un ejemplo.
+- Respuesta comparada con la consulta real equipo. Debe corresponder a la máquina del alumno.
 
-**Primera pista:** Lee la ayuda del comando y revisa la carpeta actual.
+Primera pista: Consulta la ayuda y observa qué información necesita el equipo del parque.
 
-### Etapa 4 de 4
+### Etapa 3 de 3
 
 **Enunciado**
 
-Prepara un pequeño informe con el nombre del equipo y conserva version.txt.
+Localiza sistema operativo y memoria en la salida anterior. El profesor revisará tu interpretación. Consulta también la versión con la orden breve y copia su resultado. Después escribe COMPROBAR.
 
-**Desarrollo resuelto**
+**Desarrollo**
 
 ```bat
-ECHO %COMPUTERNAME% > equipo.txt
+VER
 COMPROBAR
 ```
 
 **Qué comprueba**
 
-- `equipo.txt` debe contener la salida de la consulta equipo.
-- `version.txt` debe contener la salida de la consulta version.
+- Respuesta comparada con la consulta real version. Debe corresponder a la máquina del alumno.
 
-**Primera pista:** Lee la ayuda del comando y revisa la carpeta actual.
+Primera pista: Consulta la ayuda y observa qué información necesita el equipo del parque.
 
 
-## Juego 7 La unidad bajo examen
+## Juego 5 El turno de las incubadoras
 
-Escenario: datos/actividad_007/escenario
+Los cuidadores anotan la revisión de los huevos de dinosaurio. Hay que consultar fecha y hora sin alterar el reloj del puesto.
 
-### Situación inicial
+Comandos: DATE, TIME, CLS.
 
-Bienvenido al centro IZAR. Lee las instrucciones y usa COMPROBAR al terminar cada paso.
-
-### Etapa 1 de 4
+### Etapa 1 de 3
 
 **Enunciado**
 
-VOL consulta etiqueta y número de serie. Ejecuta VOL %SystemDrive% y guarda el resultado en volumen.txt. No cambies la etiqueta.
+Comprueba en la ayuda qué opción evita solicitar una fecha nueva. Después escribe COMPROBAR.
 
-**Desarrollo resuelto**
+**Desarrollo**
 
 ```bat
-VOL %SystemDrive% > volumen.txt
-TYPE volumen.txt
+DATE /?
 COMPROBAR
 ```
 
 **Qué comprueba**
 
-- `volumen.txt` debe contener la salida de la consulta volumen.
+- Respuesta a «Opción de consulta:»: `/T`.
 
-**Primera pista:** Lee la ayuda del comando y revisa la carpeta actual.
+Primera pista: Consulta la ayuda y observa qué información necesita el equipo del parque.
 
-### Etapa 2 de 4
+### Etapa 2 de 3
 
 **Enunciado**
 
-Consulta LABEL /?. No lo ejecutes para modificar el disco del sistema. ¿Qué orden asignaría APELLIDO a una unidad USB E: ya identificada? Contesta como texto; E: es solo un ejemplo.
+La ficha de las incubadoras necesita la fecha real de esta máquina. Obtén la salida completa. Después escribe COMPROBAR.
 
-**Desarrollo resuelto**
+**Desarrollo**
+
+```bat
+DATE /T
+COMPROBAR
+```
+
+**Qué comprueba**
+
+- Respuesta comparada con la consulta real fecha. Debe corresponder a la máquina del alumno.
+
+Primera pista: Consulta la ayuda y observa qué información necesita el equipo del parque.
+
+### Etapa 3 de 3
+
+**Enunciado**
+
+Comprueba la hora sin iniciar un cambio y recupera la consulta con flecha arriba. Después limpia la pantalla para el siguiente cuidador. Después escribe COMPROBAR.
+
+**Desarrollo**
+
+```bat
+TIME /T
+CLS
+COMPROBAR
+```
+
+**Qué comprueba**
+
+- Respuesta a «Orden de consulta de hora:»: `TIME /T`.
+- Respuesta a «Orden de limpieza:»: `CLS`.
+
+Primera pista: Consulta la ayuda y observa qué información necesita el equipo del parque.
+
+
+## Juego 6 El archivo de huellas
+
+El equipo de campo vuelve con fotografías de huellas. Antes de usar un soporte, hay que distinguir su etiqueta y número de serie.
+
+Comandos: VOL, LABEL.
+
+### Etapa 1 de 3
+
+**Enunciado**
+
+Consulta el volumen del sistema con VOL. Observa etiqueta y número de serie; no cambies ninguno. Después escribe COMPROBAR.
+
+**Desarrollo**
+
+```bat
+VOL
+COMPROBAR
+```
+
+**Qué comprueba**
+
+- Respuesta a «¿Qué comando muestra etiqueta y número de serie?»: `VOL`.
+
+Primera pista: Consulta la ayuda y observa qué información necesita el equipo del parque.
+
+### Etapa 2 de 3
+
+**Enunciado**
+
+Consulta LABEL /?. El USB de ejemplo se llama E:, pero no asumas que esa letra corresponde a un USB real. Diseña como texto la orden que le asignaría HUELLAS. Después escribe COMPROBAR.
+
+**Desarrollo**
 
 ```bat
 LABEL /?
@@ -614,17 +397,43 @@ COMPROBAR
 
 **Qué comprueba**
 
-- Respuesta a «Orden de ejemplo, sin ejecutarla:»: `LABEL E: APELLIDO`.
+- Respuesta a «Orden de ejemplo, sin ejecutarla:»: `LABEL E: HUELLAS`.
 
-**Primera pista:** Lee la ayuda del comando y revisa la carpeta actual.
+Primera pista: Consulta la ayuda y observa qué información necesita el equipo del parque.
 
-### Etapa 3 de 4
+### Etapa 3 de 3
 
 **Enunciado**
 
-Consulta CHKDSK /?. Sin /F ni /R informa sin pedir reparaciones. La ejecución real se hará aparte, en CMD como administrador con el profesor; el juego no necesita elevación.
+El profesor puede proponer la práctica con un USB identificado. Para el juego, indica cómo consultarías E: después del cambio sin modificarla otra vez. Después escribe COMPROBAR.
 
-**Desarrollo resuelto**
+**Desarrollo**
+
+```bat
+VOL /?
+COMPROBAR
+```
+
+**Qué comprueba**
+
+- Respuesta a «Consulta del volumen E:»: `VOL E:`.
+
+Primera pista: Consulta la ayuda y observa qué información necesita el equipo del parque.
+
+
+## Juego 7 El disco de las cámaras de los estegosaurios
+
+La estación de cámaras necesita un diagnóstico de almacenamiento. Tu misión es escoger la consulta adecuada, no reparar el disco.
+
+Comandos: CHKDSK, HELP.
+
+### Etapa 1 de 3
+
+**Enunciado**
+
+Consulta la ayuda de CHKDSK. La ejecución real se realiza aparte con el profesor en un CMD elevado; no eleves el juego. Después escribe COMPROBAR.
+
+**Desarrollo**
 
 ```bat
 CHKDSK /?
@@ -633,17 +442,36 @@ COMPROBAR
 
 **Qué comprueba**
 
-- Respuesta a «Orden para consultar C: sin solicitar reparación:»: `CHKDSK C:`.
+- Respuesta a «Comando que comprueba el sistema de archivos:»: `CHKDSK`.
 
-**Primera pista:** Lee la ayuda del comando y revisa la carpeta actual.
+Primera pista: Consulta la ayuda y observa qué información necesita el equipo del parque.
 
-### Etapa 4 de 4
+### Etapa 2 de 3
 
 **Enunciado**
 
-Distingue etiqueta, número de serie y comprobación. ¿Qué opción de CHKDSK solicita reparar errores? No la ejecutes.
+Diseña la orden para consultar C: sin solicitar reparación. Responde como texto, sin ejecutarla en el juego. Después escribe COMPROBAR.
 
-**Desarrollo resuelto**
+**Desarrollo**
+
+```bat
+CHKDSK /?
+COMPROBAR
+```
+
+**Qué comprueba**
+
+- Respuesta a «Orden de consulta:»: `CHKDSK C:`.
+
+Primera pista: Consulta la ayuda y observa qué información necesita el equipo del parque.
+
+### Etapa 3 de 3
+
+**Enunciado**
+
+Distingue diagnóstico y reparación. Identifica en la ayuda la opción que solicita corregir errores; no la ejecutes. Después escribe COMPROBAR.
+
+**Desarrollo**
 
 ```bat
 HELP CHKDSK
@@ -652,26 +480,24 @@ COMPROBAR
 
 **Qué comprueba**
 
-- Respuesta a «Opción de reparación:»: `/F`.
+- Respuesta a «Opción que solicita reparar:»: `/F`.
 
-**Primera pista:** Lee la ayuda del comando y revisa la carpeta actual.
+Primera pista: Consulta la ayuda y observa qué información necesita el equipo del parque.
 
 
-## Juego 8 Ventanas y rutas de búsqueda
+## Juego 8 Las rutas de la estación de rastreo
 
-Escenario: datos/actividad_008/escenario
+Los rastreadores quieren entender cómo localiza programas su consola. Debes consultar sus rutas sin alterar la configuración.
 
-### Situación inicial
+Comandos: PATH, CMD, VER.
 
-Bienvenido al centro IZAR. Lee las instrucciones y usa COMPROBAR al terminar cada paso.
-
-### Etapa 1 de 4
+### Etapa 1 de 3
 
 **Enunciado**
 
-PATH sin argumentos muestra dónde busca ejecutables CMD. Consúltalo sin sustituir su contenido.
+Consulta PATH sin argumentos. Observa que contiene varios directorios. No sustituyas su contenido. Después escribe COMPROBAR.
 
-**Desarrollo resuelto**
+**Desarrollo**
 
 ```bat
 PATH
@@ -680,17 +506,36 @@ COMPROBAR
 
 **Qué comprueba**
 
-- Respuesta a «Separador entre carpetas en PATH:»: `;`.
+- Respuesta a «Separador entre directorios:»: `;`.
 
-**Primera pista:** Lee la ayuda del comando y revisa la carpeta actual.
+Primera pista: Consulta la ayuda y observa qué información necesita el equipo del parque.
 
-### Etapa 2 de 4
+### Etapa 2 de 3
 
 **Enunciado**
 
-CMD /C ejecuta una orden y termina; CMD /K ejecuta y permanece abierto. Ejecuta CMD /C VER.
+Consulta CMD /?. Averigua qué opción ejecuta una orden y cierra ese intérprete. Después escribe COMPROBAR.
 
-**Desarrollo resuelto**
+**Desarrollo**
+
+```bat
+CMD /?
+COMPROBAR
+```
+
+**Qué comprueba**
+
+- Respuesta a «Opción que ejecuta y termina:»: `/C`.
+
+Primera pista: Consulta la ayuda y observa qué información necesita el equipo del parque.
+
+### Etapa 3 de 3
+
+**Enunciado**
+
+Usa un intérprete temporal para consultar la versión: CMD /C VER. Al terminar vuelves a tu consola. Después escribe COMPROBAR.
+
+**Desarrollo**
 
 ```bat
 CMD /C VER
@@ -699,65 +544,89 @@ COMPROBAR
 
 **Qué comprueba**
 
-- Respuesta a «Opción que termina tras la orden:»: `/C`.
+- Respuesta comparada con la consulta real version. Debe corresponder a la máquina del alumno.
 
-**Primera pista:** Lee la ayuda del comando y revisa la carpeta actual.
+Primera pista: Consulta la ayuda y observa qué información necesita el equipo del parque.
 
-### Etapa 3 de 4
+
+## Juego 9 Una segunda torre de observación
+
+Necesitas una segunda consola para observar el sector de los diplodocus sin cerrar el puesto principal.
+
+Comandos: START, CMD, VER, EXIT.
+
+### Etapa 1 de 3
 
 **Enunciado**
 
-Prueba START "Practica" CMD /D /K VER. Se abre otra consola o pestaña. Ciérrala con EXIT y vuelve a la actividad original. El primer texto entre comillas de START es el título.
+Consulta START /?. Recuerda que su primer texto entre comillas se utiliza como título. Después escribe COMPROBAR.
 
-**Desarrollo resuelto**
+**Desarrollo**
 
 ```bat
-START "Practica" CMD /D /K VER
+START /?
 COMPROBAR
 ```
 
 **Qué comprueba**
 
-- Respuesta a «Qué representa Practica: escribe TITULO.»: `TITULO` / `TÍTULO`.
+- Respuesta a «Comando que abre otra ventana para un programa:»: `START`.
 
-**Primera pista:** Lee la ayuda del comando y revisa la carpeta actual.
+Primera pista: Consulta la ayuda y observa qué información necesita el equipo del parque.
 
-### Etapa 4 de 4
+### Etapa 2 de 3
 
 **Enunciado**
 
-Para practicar EXIT en la consola principal, sal de esta actividad y vuelve a entrar desde el menú. Después escribe COMPROBAR.
+Abre otra consola con START "Torre Diplodocus" CMD /K VER. Observa la versión, cierra solo esa consola con EXIT y vuelve aquí. Después escribe COMPROBAR.
 
-**Desarrollo resuelto**
+**Desarrollo**
+
+```bat
+START "Torre Diplodocus" CMD /K VER
+COMPROBAR
+```
+
+**Qué comprueba**
+
+- Respuesta a «Opción de CMD que mantiene la consola abierta:»: `/K`.
+
+Primera pista: Consulta la ayuda y observa qué información necesita el equipo del parque.
+
+### Etapa 3 de 3
+
+**Enunciado**
+
+Entrega el puesto al siguiente observador: sal de ESTA actividad con EXIT, vuelve a seleccionarla y comprueba. No reinicies. Después escribe COMPROBAR.
+
+**Desarrollo**
 
 ```bat
 EXIT
-# Volver a la actividad 8 / Itzuli 8. jarduerara
+REM Selecciona otra vez la actividad 9 / Hautatu berriro 9. jarduera
 COMPROBAR
 ```
 
 **Qué comprueba**
 
-- Debe abrirse otra sesión después del paso anterior. MENU también sirve para la comprobación; EXIT es la práctica solicitada.
+- Debe abrirse otra sesión tras superar el paso anterior. Se pide EXIT; MENU también permite superar esta condición.
 
-**Primera pista:** Lee la ayuda del comando y revisa la carpeta actual.
+Primera pista: Consulta la ayuda y observa qué información necesita el equipo del parque.
 
 
-## Juego 9 El apagado planificado
+## Juego 10 El cierre del centro de visitantes
 
-Escenario: datos/actividad_009/escenario
+El parque cierra, pero los cuidadores siguen trabajando. Prepara el apagado del puesto como una propuesta escrita, sin ejecutarlo.
 
-### Situación inicial
+Comandos: SHUTDOWN.
 
-Bienvenido al centro IZAR. Lee las instrucciones y usa COMPROBAR al terminar cada paso.
-
-### Etapa 1 de 4
+### Etapa 1 de 3
 
 **Enunciado**
 
-Consulta SHUTDOWN /?. En este juego las órdenes de apagado se contestan como texto: no las ejecutes. ¿Qué orden apagaría en 60 segundos con el mensaje El equipo se apagara en un minuto?
+Consulta SHUTDOWN /? y localiza la opción de apagado, diferenciándola de reiniciar. Después escribe COMPROBAR.
 
-**Desarrollo resuelto**
+**Desarrollo**
 
 ```bat
 SHUTDOWN /?
@@ -766,19 +635,39 @@ COMPROBAR
 
 **Qué comprueba**
 
-- Respuesta a «Orden completa, solo como respuesta:»: `shutdown /s /t 60 /c "El equipo se apagara en un minuto"`.
+- Respuesta a «Opción para apagar:»: `/S`.
 
-**Primera pista:** Lee la ayuda del comando y revisa la carpeta actual.
+Primera pista: Consulta la ayuda y observa qué información necesita el equipo del parque.
 
-### Etapa 2 de 4
+### Etapa 2 de 3
 
 **Enunciado**
 
-¿Cómo se cancela un apagado pendiente? Responde sin programar uno.
+Diseña un apagado en 60 segundos con el mensaje El parque cierra en un minuto. Introdúcelo solo como respuesta de COMPROBAR. Después escribe COMPROBAR.
 
-**Desarrollo resuelto**
+**Desarrollo**
 
 ```bat
+SHUTDOWN /?
+COMPROBAR
+```
+
+**Qué comprueba**
+
+- Respuesta a «Orden propuesta, sin ejecutarla:»: `shutdown /s /t 60 /c "El parque cierra en un minuto"`.
+
+Primera pista: Consulta la ayuda y observa qué información necesita el equipo del parque.
+
+### Etapa 3 de 3
+
+**Enunciado**
+
+Una cuidadora necesita seguir trabajando. ¿Qué orden cancelaría un apagado pendiente? No programes ninguno para responder. Después escribe COMPROBAR.
+
+**Desarrollo**
+
+```bat
+SHUTDOWN /?
 COMPROBAR
 ```
 
@@ -786,35 +675,45 @@ COMPROBAR
 
 - Respuesta a «Orden de cancelación:»: `shutdown /a`.
 
-**Primera pista:** Lee la ayuda del comando y revisa la carpeta actual.
+Primera pista: Consulta la ayuda y observa qué información necesita el equipo del parque.
 
-### Etapa 3 de 4
+
+## Juego 11 Los accesos del puesto de los velociraptores
+
+El encargado del recinto necesita accesos directos reconocibles en el escritorio. Se crean desde Windows, no mediante scripts.
+
+Comandos: CMD, EXIT, SHUTDOWN.
+
+### Etapa 1 de 3
 
 **Enunciado**
 
-Práctica gráfica: escritorio > Nuevo > Acceso directo. Destino: cmd.exe. Nombre: Simbolo del sistema. Ábrelo y ciérralo con EXIT. El profesor revisa el acceso; el motor solo pregunta su destino. No uses un .bat para sustituir el acceso directo.
+En el escritorio crea un acceso directo con destino cmd.exe y nombre Puesto Velociraptores. Ábrelo y ciérralo con EXIT. El profesor revisa el acceso; el corrector pregunta el destino. Después escribe COMPROBAR.
 
-**Desarrollo resuelto**
+**Desarrollo**
 
 ```bat
+REM Escritorio: Nuevo, Acceso directo / Mahaigaina: Berria, Lasterbidea
+REM Destino / Helburua: cmd.exe
 COMPROBAR
 ```
 
 **Qué comprueba**
 
-- Respuesta a «Destino del acceso directo:»: `cmd.exe`.
+- Respuesta a «Destino del acceso al terminal:»: `cmd.exe`.
 
-**Primera pista:** Lee la ayuda del comando y revisa la carpeta actual.
+Primera pista: Consulta la ayuda y observa qué información necesita el equipo del parque.
 
-### Etapa 4 de 4
+### Etapa 2 de 3
 
 **Enunciado**
 
-Diseña los destinos de dos accesos llamados Apagar y No apagar. Apagar: 20 segundos y mensaje Apagando...; No apagar: cancelar. No los abras durante el juego. Creación, iconos y anclaje se revisan con la ficha docente, porque dependen del escritorio y las políticas de Windows.
+Prepara con el profesor los accesos Apagar y No apagar. Apagar debe esperar 20 segundos y mostrar Apagando...; No apagar debe cancelar. No los abras para comprobar esta etapa. Después escribe COMPROBAR.
 
-**Desarrollo resuelto**
+**Desarrollo**
 
 ```bat
+SHUTDOWN /?
 COMPROBAR
 ```
 
@@ -823,1040 +722,632 @@ COMPROBAR
 - Respuesta a «Destino de Apagar:»: `shutdown /s /t 20 /c "Apagando..."`.
 - Respuesta a «Destino de No apagar:»: `shutdown /a`.
 
-**Primera pista:** Lee la ayuda del comando y revisa la carpeta actual.
+Primera pista: Consulta la ayuda y observa qué información necesita el equipo del parque.
 
-
-## Juego 10 Tu primer archivo bat
-
-Escenario: datos/actividad_010/escenario
-
-### Situación inicial
-
-Bienvenido al centro IZAR. Lee las instrucciones y usa COMPROBAR al terminar cada paso.
-
-### Etapa 1 de 4
+### Etapa 3 de 3
 
 **Enunciado**
 
-Un .bat contiene órdenes de CMD. Lee plantilla.txt. @echo off oculta las órdenes; ECHO escribe mensajes. Copia la plantilla como informe.bat.
+Revisa con el profesor el icono y las opciones de anclar los accesos al Inicio o la barra. Dependen de la versión y políticas de Windows. No sustituimos estas acciones por un script. Para cerrar, identifica el comando del intérprete. Después escribe COMPROBAR.
 
-**Desarrollo resuelto**
+**Desarrollo**
 
 ```bat
-TYPE plantilla.txt
-COPY plantilla.txt informe.bat
+CMD /?
 COMPROBAR
 ```
 
 **Qué comprueba**
 
-- `informe.bat` debe conservar el contenido inicial de `plantilla.txt`.
+- Respuesta a «Intérprete usado en la unidad:»: `CMD` / `CMD.EXE`.
 
-**Primera pista:** Lee la ayuda del comando y revisa la carpeta actual.
+Primera pista: Consulta la ayuda y observa qué información necesita el equipo del parque.
 
-### Etapa 2 de 4
 
-**Enunciado**
+## Juego 12 La gran reapertura de Paleo Isla
 
-Ejecuta CALL informe.bat. CALL permite regresar al script que lo invoca; en CMD interactivo también puedes escribir informe.bat. Revisa version.txt.
+Mañana llegan los visitantes. Coordina recepción, incubadoras, cámaras y torres para preparar la reapertura. Las órdenes de mantenimiento se diseñan sin ejecutarlas. Cada etapa pertenece a este mismo turno.
 
-**Desarrollo resuelto**
-
-```bat
-CALL informe.bat
-TYPE version.txt
-COMPROBAR
-```
-
-**Qué comprueba**
-
-- `version.txt` debe contener la salida de la consulta version.
-
-**Primera pista:** Lee la ayuda del comando y revisa la carpeta actual.
-
-### Etapa 3 de 4
-
-**Enunciado**
-
-Crea inicio.bat con un editor de texto (NOTEPAD inicio.bat). Debe contener exactamente estas tres líneas: @echo off, call informe.bat, echo LISTO > listo.txt. Guarda como .bat, no .bat.txt. La comprobación inspecciona el archivo, no lo ejecuta.
-
-**Desarrollo resuelto**
-
-```bat
-NOTEPAD inicio.bat
-# Contenido / Edukia:
-@echo off
-call informe.bat
-echo LISTO > listo.txt
-# Guarda y vuelve a CMD / Gorde eta itzuli CMDra
-COMPROBAR
-```
-
-**Qué comprueba**
-
-- `inicio.bat` debe contener estas líneas, en orden: `@echo off`; `call informe.bat`; `echo LISTO > listo.txt`.
-
-**Primera pista:** Lee la ayuda del comando y revisa la carpeta actual.
-
-### Etapa 4 de 4
-
-**Enunciado**
-
-Ejecuta CALL inicio.bat. Debe volver del primer script y escribir LISTO en listo.txt.
-
-**Desarrollo resuelto**
-
-```bat
-CALL inicio.bat
-TYPE listo.txt
-COMPROBAR
-```
-
-**Qué comprueba**
-
-- `listo.txt` debe contener estas líneas, en orden: `LISTO`.
-- `version.txt` debe contener la salida de la consulta version.
-
-**Primera pista:** Lee la ayuda del comando y revisa la carpeta actual.
-
-
-## Juego 11 El relevo del técnico
-
-Escenario: datos/actividad_011/escenario
-
-### Situación inicial
-
-Bienvenido al centro IZAR. Lee las instrucciones y usa COMPROBAR al terminar cada paso.
-
-### Etapa 1 de 4
-
-**Enunciado**
-
-Encuentra y lee la nota dentro de Documentos del turno. Usa comillas o Tab para los espacios del nombre.
-
-**Desarrollo resuelto**
-
-```bat
-TYPE "Documentos del turno\nota.txt"
-COMPROBAR
-```
-
-**Qué comprueba**
-
-- Respuesta a «Clave:»: `RELEVO`.
-
-**Primera pista:** Lee la ayuda del comando y revisa la carpeta actual.
-
-### Etapa 2 de 4
-
-**Enunciado**
-
-Crea entrega. Copia la nota allí como instrucciones.txt conservando el original.
-
-**Desarrollo resuelto**
-
-```bat
-MD entrega
-COPY "Documentos del turno\nota.txt" entrega\instrucciones.txt
-COMPROBAR
-```
-
-**Qué comprueba**
-
-- `entrega/instrucciones.txt` debe conservar el contenido inicial de `Documentos del turno/nota.txt`.
-- `Documentos del turno/nota.txt` debe conservar el contenido inicial de `Documentos del turno/nota.txt`.
-
-**Primera pista:** Lee la ayuda del comando y revisa la carpeta actual.
-
-### Etapa 3 de 4
-
-**Enunciado**
-
-Añade a entrega el informe de versión (version.txt) y el de volumen (volumen.txt).
-
-**Desarrollo resuelto**
-
-```bat
-VER > entrega\version.txt
-VOL %SystemDrive% > entrega\volumen.txt
-COMPROBAR
-```
-
-**Qué comprueba**
-
-- `entrega/version.txt` debe contener la salida de la consulta version.
-- `entrega/volumen.txt` debe contener la salida de la consulta volumen.
-
-**Primera pista:** Lee la ayuda del comando y revisa la carpeta actual.
-
-### Etapa 4 de 4
-
-**Enunciado**
-
-Personaliza el prompt a [TURNO] seguido de ruta y >. Después comprueba la entrega.
-
-**Desarrollo resuelto**
-
-```bat
-PROMPT [TURNO] $P$G
-COMPROBAR
-```
-
-**Qué comprueba**
-
-- El entorno CMD debe tener PROMPT igual a `[TURNO] $P$G`.
-- `entrega/instrucciones.txt` debe conservar el contenido inicial de `Documentos del turno/nota.txt`.
-
-**Primera pista:** Lee la ayuda del comando y revisa la carpeta actual.
-
-
-## Juego 12 Operación IZAR — Misión final
-
-Escenario: datos/actividad_012/escenario
-
-### Situación inicial
-
-Operación IZAR. Recupera el expediente y aísla el paquete NIEBLA-42. La primera clave está en archivo\orden.txt.
+Comandos: HELP, CLS, VER, SYSTEMINFO, DATE, TIME, TITLE, COLOR, PROMPT, PATH, VOL, LABEL, CHKDSK, START, CMD, EXIT, SHUTDOWN.
 
 ### Etapa 1 de 12
 
 **Enunciado**
 
-Investiga el escenario y encuentra la primera clave. No recibes el comando directamente: combina lo aprendido.
+Recepción pide recuperar el catálogo de ayuda y despejar la pantalla antes de iniciar el turno. Elige las dos órdenes. Después escribe COMPROBAR.
 
-**Desarrollo resuelto**
+**Desarrollo**
 
 ```bat
-TYPE LEEME.txt
-TYPE archivo\orden.txt
+HELP
+CLS
 COMPROBAR
 ```
 
 **Qué comprueba**
 
-- Respuesta a «Clave:»: `IZAR-2028`.
+- Respuesta a «Catálogo de ayuda:»: `HELP`.
+- Respuesta a «Limpiar pantalla:»: `CLS`.
 
-**Primera pista:** Lee la ayuda del comando y revisa la carpeta actual.
+Primera pista: Consulta la ayuda y observa qué información necesita el equipo del parque.
 
 ### Etapa 2 de 12
 
 **Enunciado**
 
-Crea expediente y cuarentena. Copia fuentes\aviso.txt a expediente conservando el original.
+Identifica la versión del puesto de recepción con la consulta breve y copia su salida. Después escribe COMPROBAR.
 
-**Desarrollo resuelto**
+**Desarrollo**
 
 ```bat
-MD expediente
-MD cuarentena
-COPY fuentes\aviso.txt expediente\
+VER
 COMPROBAR
 ```
 
 **Qué comprueba**
 
-- Debe existir la carpeta `cuarentena`.
-- `expediente/aviso.txt` debe conservar el contenido inicial de `fuentes/aviso.txt`.
+- Respuesta comparada con la consulta real version. Debe corresponder a la máquina del alumno.
 
-**Primera pista:** Lee la ayuda del comando y revisa la carpeta actual.
+Primera pista: Consulta la ayuda y observa qué información necesita el equipo del parque.
 
 ### Etapa 3 de 12
 
 **Enunciado**
 
-Consulta la ayuda de SYSTEMINFO y ejecuta la consulta. Identifica el nombre de este equipo.
+El laboratorio necesita el nombre del equipo y revisar memoria y sistema operativo. Consulta el informe completo; responde con el nombre. Después escribe COMPROBAR.
 
-**Desarrollo resuelto**
+**Desarrollo**
 
 ```bat
-SYSTEMINFO /?
 SYSTEMINFO
 COMPROBAR
 ```
 
 **Qué comprueba**
 
-- Compara la respuesta con la consulta real: equipo. Copia la salida de la VM, no un ejemplo.
+- Respuesta comparada con la consulta real equipo. Debe corresponder a la máquina del alumno.
 
-**Primera pista:** Lee la ayuda del comando y revisa la carpeta actual.
+Primera pista: Consulta la ayuda y observa qué información necesita el equipo del parque.
 
 ### Etapa 4 de 12
 
 **Enunciado**
 
-Deja la versión de Windows en expediente\version.txt, sin añadir títulos ni etiquetas.
+Consulta fecha y hora de las incubadoras sin cambiarlas. Copia la fecha y explica con qué orden consultaste la hora. Después escribe COMPROBAR.
 
-**Desarrollo resuelto**
+**Desarrollo**
 
 ```bat
-VER > expediente\version.txt
+DATE /T
+TIME /T
 COMPROBAR
 ```
 
 **Qué comprueba**
 
-- `expediente/version.txt` debe contener la salida de la consulta version.
+- Respuesta comparada con la consulta real fecha. Debe corresponder a la máquina del alumno.
+- Respuesta a «Orden de hora:»: `TIME /T`.
 
-**Primera pista:** Lee la ayuda del comando y revisa la carpeta actual.
+Primera pista: Consulta la ayuda y observa qué información necesita el equipo del parque.
 
 ### Etapa 5 de 12
 
 **Enunciado**
 
-Consulta fecha y hora sin cambiarlas. Responde con ambas órdenes, una por pregunta.
+Pon el título Reapertura Paleo Isla. El puesto exige fondo blanco brillante y texto rojo normal: consulta COLOR si lo necesitas. Vuelve a COLOR 0B después de observarlo. Después escribe COMPROBAR.
 
-**Desarrollo resuelto**
+**Desarrollo**
 
 ```bat
-DATE /T
-TIME /T
+TITLE Reapertura Paleo Isla
+COLOR F4
+COLOR 0B
 COMPROBAR
 ```
 
 **Qué comprueba**
 
-- Respuesta a «Orden para la fecha:»: `DATE /T`.
-- Respuesta a «Orden para la hora:»: `TIME /T`.
+- Respuesta a «Orden de título:»: `TITLE Reapertura Paleo Isla`.
+- Respuesta a «Código solicitado:»: `F4`.
 
-**Primera pista:** Lee la ayuda del comando y revisa la carpeta actual.
+Primera pista: Consulta la ayuda y observa qué información necesita el equipo del parque.
 
 ### Etapa 6 de 12
 
 **Enunciado**
 
-Guarda la información del volumen del sistema en expediente\volumen.txt. No cambies su etiqueta.
+Configura el indicador con [PALEO] seguido de la ruta y el signo de cierre. Esta condición se comprueba en el entorno real. Después escribe COMPROBAR.
 
-**Desarrollo resuelto**
+**Desarrollo**
 
 ```bat
-VOL %SystemDrive% > expediente\volumen.txt
+PROMPT [PALEO] $P$G
 COMPROBAR
 ```
 
 **Qué comprueba**
 
-- `expediente/volumen.txt` debe contener la salida de la consulta volumen.
+- PROMPT debe ser `[PALEO] $P$G` en el entorno real.
 
-**Primera pista:** Lee la ayuda del comando y revisa la carpeta actual.
+Primera pista: Consulta la ayuda y observa qué información necesita el equipo del parque.
 
 ### Etapa 7 de 12
 
 **Enunciado**
 
-Personaliza el prompt con [IZAR] seguido de la ruta y >. Cambia el título a Operacion IZAR y consulta PATH sin alterarlo. Solo se valida automáticamente el prompt y la respuesta conceptual.
+Comprueba dónde busca programas la consola sin modificar esa lista. Identifica el separador. Después escribe COMPROBAR.
 
-**Desarrollo resuelto**
+**Desarrollo**
 
 ```bat
-PROMPT [IZAR] $P$G
-TITLE Operacion IZAR
 PATH
 COMPROBAR
 ```
 
 **Qué comprueba**
 
-- El entorno CMD debe tener PROMPT igual a `[IZAR] $P$G`.
-- Respuesta a «Comando que cambia el título:»: `TITLE`.
+- Respuesta a «Comando de consulta:»: `PATH`.
+- Respuesta a «Separador:»: `;`.
 
-**Primera pista:** Lee la ayuda del comando y revisa la carpeta actual.
+Primera pista: Consulta la ayuda y observa qué información necesita el equipo del parque.
 
 ### Etapa 8 de 12
 
 **Enunciado**
 
-Investiga los paquetes. Mueve el que tiene NIEBLA-42 a cuarentena\sospechoso.txt. Conserva normal.txt.
+Consulta la etiqueta y serie del volumen. Diseña, sin ejecutarla, la orden que pondría FOSILES a un USB E: previamente identificado. Después escribe COMPROBAR.
 
-**Desarrollo resuelto**
+**Desarrollo**
 
 ```bat
-TYPE archivo\paquetes\resumen.txt
-TYPE archivo\paquetes\normal.txt
-MOVE archivo\paquetes\resumen.txt cuarentena\sospechoso.txt
+VOL
+LABEL /?
 COMPROBAR
 ```
 
 **Qué comprueba**
 
-- `cuarentena/sospechoso.txt` debe conservar el contenido inicial de `archivo/paquetes/resumen.txt`.
-- No debe existir `archivo/paquetes/resumen.txt`.
-- `archivo/paquetes/normal.txt` debe conservar el contenido inicial de `archivo/paquetes/normal.txt`.
+- Respuesta a «Consulta de etiqueta y serie:»: `VOL`.
+- Respuesta a «Cambio propuesto para el USB:»: `LABEL E: FOSILES`.
 
-**Primera pista:** Lee la ayuda del comando y revisa la carpeta actual.
+Primera pista: Consulta la ayuda y observa qué información necesita el equipo del parque.
 
 ### Etapa 9 de 12
 
 **Enunciado**
 
-Planifica, sin ejecutar: apagado en 60 segundos; cancelación; comprobación de C: sin solicitar reparaciones.
+Las cámaras necesitan diagnóstico de C: sin reparación. Propón la orden como texto e identifica la opción que NO debes añadir si solo consultas. Después escribe COMPROBAR.
 
-**Desarrollo resuelto**
+**Desarrollo**
 
 ```bat
+CHKDSK /?
 COMPROBAR
 ```
 
 **Qué comprueba**
 
-- Respuesta a «Apagado:»: `shutdown /s /t 60`.
-- Respuesta a «Cancelación:»: `shutdown /a`.
-- Respuesta a «Comprobación de disco:»: `chkdsk C:`.
+- Respuesta a «Diagnóstico:»: `CHKDSK C:`.
+- Respuesta a «Opción de reparación que omites:»: `/F`.
 
-**Primera pista:** Lee la ayuda del comando y revisa la carpeta actual.
+Primera pista: Consulta la ayuda y observa qué información necesita el equipo del parque.
 
 ### Etapa 10 de 12
 
 **Enunciado**
 
-Crea cierre.bat con cuatro líneas exactas: desactiva eco, genera versión, genera volumen y escribe LISTO en expediente\listo.txt. Consulta PISTA para ver la plantilla completa. No incluyas apagado ni reparación.
+Abre otra consola para la torre con título Torre Paleo y consulta de versión, dejándola abierta. Ciérrala con EXIT y vuelve a esta actividad. Después escribe COMPROBAR.
 
-**Desarrollo resuelto**
+**Desarrollo**
 
 ```bat
-NOTEPAD cierre.bat
-# Contenido / Edukia:
-@echo off
-ver > expediente\version.txt
-vol %SystemDrive% > expediente\volumen.txt
-echo LISTO > expediente\listo.txt
-# Guarda y vuelve a CMD / Gorde eta itzuli CMDra
+START "Torre Paleo" CMD /K VER
 COMPROBAR
 ```
 
 **Qué comprueba**
 
-- `cierre.bat` debe contener estas líneas, en orden: `@echo off`; `ver > expediente\version.txt`; `vol %SystemDrive% > expediente\volumen.txt`; `echo LISTO > expediente\listo.txt`.
+- Respuesta a «Orden para abrirla:»: `START "Torre Paleo" CMD /K VER`.
 
-**Primera pista:** Lee la ayuda del comando y revisa la carpeta actual.
+Primera pista: Consulta la ayuda y observa qué información necesita el equipo del parque.
 
 ### Etapa 11 de 12
 
 **Enunciado**
 
-Ejecuta cierre.bat desde la raíz del escenario. COMPROBAR revisará todo el expediente, no solo el último archivo.
+Elabora el plan de cierre: apagado en 60 segundos y cancelación si llega una visita tardía. Responde como texto, sin ejecutar el plan. Después escribe COMPROBAR.
 
-**Desarrollo resuelto**
+**Desarrollo**
 
 ```bat
-CALL cierre.bat
+SHUTDOWN /?
 COMPROBAR
 ```
 
 **Qué comprueba**
 
-- `expediente/aviso.txt` debe conservar el contenido inicial de `fuentes/aviso.txt`.
-- `fuentes/aviso.txt` debe conservar el contenido inicial de `fuentes/aviso.txt`.
-- `cuarentena/sospechoso.txt` debe conservar el contenido inicial de `archivo/paquetes/resumen.txt`.
-- No debe existir `archivo/paquetes/resumen.txt`.
-- `archivo/paquetes/normal.txt` debe conservar el contenido inicial de `archivo/paquetes/normal.txt`.
-- `expediente/version.txt` debe contener la salida de la consulta version.
-- `expediente/volumen.txt` debe contener la salida de la consulta volumen.
-- `expediente/listo.txt` debe contener estas líneas, en orden: `LISTO`.
-- `cierre.bat` debe contener estas líneas, en orden: `@echo off`; `ver > expediente\version.txt`; `vol %SystemDrive% > expediente\volumen.txt`; `echo LISTO > expediente\listo.txt`.
+- Respuesta a «Apagado programado:»: `shutdown /s /t 60`.
+- Respuesta a «Cancelación:»: `shutdown /a`.
 
-**Primera pista:** Lee la ayuda del comando y revisa la carpeta actual.
+Primera pista: Consulta la ayuda y observa qué información necesita el equipo del parque.
 
 ### Etapa 12 de 12
 
 **Enunciado**
 
-Sal con EXIT y vuelve a esta actividad. Comprueba que el expediente sigue completo. No uses REINICIAR.
+Entrega el turno: sal con EXIT y vuelve a esta misión desde el menú. Restablece el indicador [PALEO] con ruta y signo de cierre y comprueba el final. Después escribe COMPROBAR.
 
-**Desarrollo resuelto**
+**Desarrollo**
 
 ```bat
 EXIT
-# Volver a la actividad 12 / Itzuli 12. jarduerara
+REM Vuelve a la actividad 12 / Itzuli 12. jarduerara
+PROMPT [PALEO] $P$G
 COMPROBAR
 ```
 
 **Qué comprueba**
 
-- Debe abrirse otra sesión después del paso anterior. MENU también sirve para la comprobación; EXIT es la práctica solicitada.
-- `expediente/aviso.txt` debe conservar el contenido inicial de `fuentes/aviso.txt`.
-- `fuentes/aviso.txt` debe conservar el contenido inicial de `fuentes/aviso.txt`.
-- `cuarentena/sospechoso.txt` debe conservar el contenido inicial de `archivo/paquetes/resumen.txt`.
-- No debe existir `archivo/paquetes/resumen.txt`.
-- `archivo/paquetes/normal.txt` debe conservar el contenido inicial de `archivo/paquetes/normal.txt`.
-- `expediente/version.txt` debe contener la salida de la consulta version.
-- `expediente/volumen.txt` debe contener la salida de la consulta volumen.
-- `expediente/listo.txt` debe contener estas líneas, en orden: `LISTO`.
-- `cierre.bat` debe contener estas líneas, en orden: `@echo off`; `ver > expediente\version.txt`; `vol %SystemDrive% > expediente\volumen.txt`; `echo LISTO > expediente\listo.txt`.
+- Debe abrirse otra sesión tras superar el paso anterior. Se pide EXIT; MENU también permite superar esta condición.
+- PROMPT debe ser `[PALEO] $P$G` en el entorno real.
 
-**Primera pista:** Lee la ayuda del comando y revisa la carpeta actual.
+Primera pista: Consulta la ayuda y observa qué información necesita el equipo del parque.
 
 
-## Juego 13 Extra — Adivina el comando
+## Juego 13 Extra — El examen de los guardas del parque
 
-Escenario: datos/actividad_013/escenario
+Los guardas te describen una herramienta y tú identificas el comando. Contesta dentro de COMPROBAR; no ejecutes la respuesta.
 
-### Situación inicial
+Comandos: CHKDSK, CLS, CMD, COLOR, DATE, EXIT, HELP, LABEL, PATH, PROMPT, SHUTDOWN, SYSTEMINFO, START, TIME, TITLE, VER, VOL.
 
-Bienvenido al centro IZAR. Lee las instrucciones y usa COMPROBAR al terminar cada paso.
-
-### Etapa 1 de 30
+### Etapa 1 de 17
 
 **Enunciado**
 
-Definición 1: Muestra la carpeta actual. Escribe COMPROBAR y responde como texto; no ejecutes la respuesta.
+Comprueba el sistema de archivos de un volumen. Responde solo el nombre del comando. Después escribe COMPROBAR.
 
-**Desarrollo resuelto**
+**Desarrollo**
 
 ```bat
-CD
+REM Respuesta / Erantzuna: CHKDSK
+COMPROBAR
 ```
 
 **Qué comprueba**
 
-- Respuesta a «Respuesta:»: `CD`.
+- Respuesta a «Comando:»: `CHKDSK`.
 
-**Primera pista:** Inicial: C
+Primera pista: Primera letra: C
 
-### Etapa 2 de 30
+### Etapa 2 de 17
 
 **Enunciado**
 
-Definición 2: Lista archivos y carpetas. Escribe COMPROBAR y responde como texto; no ejecutes la respuesta.
+Limpia la pantalla de la consola. Responde solo el nombre del comando. Después escribe COMPROBAR.
 
-**Desarrollo resuelto**
+**Desarrollo**
 
 ```bat
-DIR
+REM Respuesta / Erantzuna: CLS
+COMPROBAR
 ```
 
 **Qué comprueba**
 
-- Respuesta a «Respuesta:»: `DIR`.
+- Respuesta a «Comando:»: `CLS`.
 
-**Primera pista:** Inicial: D
+Primera pista: Primera letra: C
 
-### Etapa 3 de 30
+### Etapa 3 de 17
 
 **Enunciado**
 
-Definición 3: Muestra el contenido de un archivo de texto. Escribe COMPROBAR y responde como texto; no ejecutes la respuesta.
+Inicia el intérprete de comandos de Windows. Responde solo el nombre del comando. Después escribe COMPROBAR.
 
-**Desarrollo resuelto**
+**Desarrollo**
 
 ```bat
-TYPE
+REM Respuesta / Erantzuna: CMD
+COMPROBAR
 ```
 
 **Qué comprueba**
 
-- Respuesta a «Respuesta:»: `TYPE`.
+- Respuesta a «Comando:»: `CMD`.
 
-**Primera pista:** Inicial: T
+Primera pista: Primera letra: C
 
-### Etapa 4 de 30
+### Etapa 4 de 17
 
 **Enunciado**
 
-Definición 4: Crea una carpeta. Escribe COMPROBAR y responde como texto; no ejecutes la respuesta.
+Cambia los colores de texto y fondo de la consola. Responde solo el nombre del comando. Después escribe COMPROBAR.
 
-**Desarrollo resuelto**
+**Desarrollo**
 
 ```bat
-MD
+REM Respuesta / Erantzuna: COLOR
+COMPROBAR
 ```
 
 **Qué comprueba**
 
-- Respuesta a «Respuesta:»: `MD` / `MKDIR`.
+- Respuesta a «Comando:»: `COLOR`.
 
-**Primera pista:** Inicial: M
+Primera pista: Primera letra: C
 
-### Etapa 5 de 30
+### Etapa 5 de 17
 
 **Enunciado**
 
-Definición 5: Copia conservando el original. Escribe COMPROBAR y responde como texto; no ejecutes la respuesta.
+Consulta o establece la fecha del sistema. Responde solo el nombre del comando. Después escribe COMPROBAR.
 
-**Desarrollo resuelto**
+**Desarrollo**
 
 ```bat
-COPY
+REM Respuesta / Erantzuna: DATE
+COMPROBAR
 ```
 
 **Qué comprueba**
 
-- Respuesta a «Respuesta:»: `COPY`.
+- Respuesta a «Comando:»: `DATE`.
 
-**Primera pista:** Inicial: C
+Primera pista: Primera letra: D
 
-### Etapa 6 de 30
+### Etapa 6 de 17
 
 **Enunciado**
 
-Definición 6: Mueve archivos. Escribe COMPROBAR y responde como texto; no ejecutes la respuesta.
+Sale del intérprete actual. Responde solo el nombre del comando. Después escribe COMPROBAR.
 
-**Desarrollo resuelto**
+**Desarrollo**
 
 ```bat
-MOVE
+REM Respuesta / Erantzuna: EXIT
+COMPROBAR
 ```
 
 **Qué comprueba**
 
-- Respuesta a «Respuesta:»: `MOVE`.
+- Respuesta a «Comando:»: `EXIT`.
 
-**Primera pista:** Inicial: M
+Primera pista: Primera letra: E
 
-### Etapa 7 de 30
+### Etapa 7 de 17
 
 **Enunciado**
 
-Definición 7: Cambia el nombre de un archivo. Escribe COMPROBAR y responde como texto; no ejecutes la respuesta.
+Muestra la ayuda de los comandos. Responde solo el nombre del comando. Después escribe COMPROBAR.
 
-**Desarrollo resuelto**
+**Desarrollo**
 
 ```bat
-REN
+REM Respuesta / Erantzuna: HELP
+COMPROBAR
 ```
 
 **Qué comprueba**
 
-- Respuesta a «Respuesta:»: `REN` / `RENAME`.
+- Respuesta a «Comando:»: `HELP`.
 
-**Primera pista:** Inicial: R
+Primera pista: Primera letra: H
 
-### Etapa 8 de 30
+### Etapa 8 de 17
 
 **Enunciado**
 
-Definición 8: Muestra la ayuda general. Escribe COMPROBAR y responde como texto; no ejecutes la respuesta.
+Permite cambiar la etiqueta de un volumen. Responde solo el nombre del comando. Después escribe COMPROBAR.
 
-**Desarrollo resuelto**
+**Desarrollo**
 
 ```bat
-HELP
+REM Respuesta / Erantzuna: LABEL
+COMPROBAR
 ```
 
 **Qué comprueba**
 
-- Respuesta a «Respuesta:»: `HELP`.
+- Respuesta a «Comando:»: `LABEL`.
 
-**Primera pista:** Inicial: H
+Primera pista: Primera letra: L
 
-### Etapa 9 de 30
+### Etapa 9 de 17
 
 **Enunciado**
 
-Definición 9: Opción habitual para pedir ayuda. Escribe COMPROBAR y responde como texto; no ejecutes la respuesta.
+Consulta o establece la lista de rutas de búsqueda de ejecutables. Responde solo el nombre del comando. Después escribe COMPROBAR.
 
-**Desarrollo resuelto**
+**Desarrollo**
 
 ```bat
-/?
+REM Respuesta / Erantzuna: PATH
+COMPROBAR
 ```
 
 **Qué comprueba**
 
-- Respuesta a «Respuesta:»: `/?`.
+- Respuesta a «Comando:»: `PATH`.
 
-**Primera pista:** Inicial: /
+Primera pista: Primera letra: P
 
-### Etapa 10 de 30
+### Etapa 10 de 17
 
 **Enunciado**
 
-Definición 10: Limpia la pantalla. Escribe COMPROBAR y responde como texto; no ejecutes la respuesta.
+Personaliza el indicador donde se escriben órdenes. Responde solo el nombre del comando. Después escribe COMPROBAR.
 
-**Desarrollo resuelto**
+**Desarrollo**
 
 ```bat
-CLS
+REM Respuesta / Erantzuna: PROMPT
+COMPROBAR
 ```
 
 **Qué comprueba**
 
-- Respuesta a «Respuesta:»: `CLS`.
+- Respuesta a «Comando:»: `PROMPT`.
 
-**Primera pista:** Inicial: C
+Primera pista: Primera letra: P
 
-### Etapa 11 de 30
+### Etapa 11 de 17
 
 **Enunciado**
 
-Definición 11: Muestra la versión de Windows. Escribe COMPROBAR y responde como texto; no ejecutes la respuesta.
+Gestiona el apagado del sistema. Responde solo el nombre del comando. Después escribe COMPROBAR.
 
-**Desarrollo resuelto**
+**Desarrollo**
 
 ```bat
-VER
+REM Respuesta / Erantzuna: SHUTDOWN
+COMPROBAR
 ```
 
 **Qué comprueba**
 
-- Respuesta a «Respuesta:»: `VER`.
+- Respuesta a «Comando:»: `SHUTDOWN`.
 
-**Primera pista:** Inicial: V
+Primera pista: Primera letra: S
 
-### Etapa 12 de 30
+### Etapa 12 de 17
 
 **Enunciado**
 
-Definición 12: Consulta fecha sin pedir una nueva. Escribe COMPROBAR y responde como texto; no ejecutes la respuesta.
+Muestra información detallada del equipo y del sistema. Responde solo el nombre del comando. Después escribe COMPROBAR.
 
-**Desarrollo resuelto**
+**Desarrollo**
 
 ```bat
-DATE /T
+REM Respuesta / Erantzuna: SYSTEMINFO
+COMPROBAR
 ```
 
 **Qué comprueba**
 
-- Respuesta a «Respuesta:»: `DATE /T`.
+- Respuesta a «Comando:»: `SYSTEMINFO`.
 
-**Primera pista:** Inicial: D
+Primera pista: Primera letra: S
 
-### Etapa 13 de 30
+### Etapa 13 de 17
 
 **Enunciado**
 
-Definición 13: Consulta hora sin pedir una nueva. Escribe COMPROBAR y responde como texto; no ejecutes la respuesta.
+Abre otra ventana para ejecutar un programa u orden. Responde solo el nombre del comando. Después escribe COMPROBAR.
 
-**Desarrollo resuelto**
+**Desarrollo**
 
 ```bat
-TIME /T
+REM Respuesta / Erantzuna: START
+COMPROBAR
 ```
 
 **Qué comprueba**
 
-- Respuesta a «Respuesta:»: `TIME /T`.
+- Respuesta a «Comando:»: `START`.
 
-**Primera pista:** Inicial: T
+Primera pista: Primera letra: S
 
-### Etapa 14 de 30
+### Etapa 14 de 17
 
 **Enunciado**
 
-Definición 14: Cambia el título de CMD. Escribe COMPROBAR y responde como texto; no ejecutes la respuesta.
+Consulta o establece la hora del sistema. Responde solo el nombre del comando. Después escribe COMPROBAR.
 
-**Desarrollo resuelto**
+**Desarrollo**
 
 ```bat
-TITLE
+REM Respuesta / Erantzuna: TIME
+COMPROBAR
 ```
 
 **Qué comprueba**
 
-- Respuesta a «Respuesta:»: `TITLE`.
+- Respuesta a «Comando:»: `TIME`.
 
-**Primera pista:** Inicial: T
+Primera pista: Primera letra: T
 
-### Etapa 15 de 30
+### Etapa 15 de 17
 
 **Enunciado**
 
-Definición 15: Cambia los colores de CMD. Escribe COMPROBAR y responde como texto; no ejecutes la respuesta.
+Cambia el título de la ventana de comandos. Responde solo el nombre del comando. Después escribe COMPROBAR.
 
-**Desarrollo resuelto**
+**Desarrollo**
 
 ```bat
-COLOR
+REM Respuesta / Erantzuna: TITLE
+COMPROBAR
 ```
 
 **Qué comprueba**
 
-- Respuesta a «Respuesta:»: `COLOR`.
+- Respuesta a «Comando:»: `TITLE`.
 
-**Primera pista:** Inicial: C
+Primera pista: Primera letra: T
 
-### Etapa 16 de 30
+### Etapa 16 de 17
 
 **Enunciado**
 
-Definición 16: Personaliza el indicador de órdenes. Escribe COMPROBAR y responde como texto; no ejecutes la respuesta.
+Muestra la versión de Windows. Responde solo el nombre del comando. Después escribe COMPROBAR.
 
-**Desarrollo resuelto**
+**Desarrollo**
 
 ```bat
-PROMPT
+REM Respuesta / Erantzuna: VER
+COMPROBAR
 ```
 
 **Qué comprueba**
 
-- Respuesta a «Respuesta:»: `PROMPT`.
+- Respuesta a «Comando:»: `VER`.
 
-**Primera pista:** Inicial: P
+Primera pista: Primera letra: V
 
-### Etapa 17 de 30
+### Etapa 17 de 17
 
 **Enunciado**
 
-Definición 17: Muestra las rutas de búsqueda de ejecutables. Escribe COMPROBAR y responde como texto; no ejecutes la respuesta.
+Muestra la etiqueta y el número de serie del volumen. Responde solo el nombre del comando. Después escribe COMPROBAR.
 
-**Desarrollo resuelto**
+**Desarrollo**
 
 ```bat
-PATH
+REM Respuesta / Erantzuna: VOL
+COMPROBAR
 ```
 
 **Qué comprueba**
 
-- Respuesta a «Respuesta:»: `PATH`.
+- Respuesta a «Comando:»: `VOL`.
 
-**Primera pista:** Inicial: P
-
-### Etapa 18 de 30
-
-**Enunciado**
-
-Definición 18: Abre otra ventana para un programa. Escribe COMPROBAR y responde como texto; no ejecutes la respuesta.
-
-**Desarrollo resuelto**
-
-```bat
-START
-```
-
-**Qué comprueba**
-
-- Respuesta a «Respuesta:»: `START`.
-
-**Primera pista:** Inicial: S
-
-### Etapa 19 de 30
-
-**Enunciado**
-
-Definición 19: Inicia el intérprete de comandos. Escribe COMPROBAR y responde como texto; no ejecutes la respuesta.
-
-**Desarrollo resuelto**
-
-```bat
-CMD
-```
-
-**Qué comprueba**
-
-- Respuesta a «Respuesta:»: `CMD` / `CMD.EXE`.
-
-**Primera pista:** Inicial: C
-
-### Etapa 20 de 30
-
-**Enunciado**
-
-Definición 20: Sale del intérprete actual. Escribe COMPROBAR y responde como texto; no ejecutes la respuesta.
-
-**Desarrollo resuelto**
-
-```bat
-EXIT
-```
-
-**Qué comprueba**
-
-- Respuesta a «Respuesta:»: `EXIT`.
-
-**Primera pista:** Inicial: E
-
-### Etapa 21 de 30
-
-**Enunciado**
-
-Definición 21: Muestra información detallada del sistema. Escribe COMPROBAR y responde como texto; no ejecutes la respuesta.
-
-**Desarrollo resuelto**
-
-```bat
-SYSTEMINFO
-```
-
-**Qué comprueba**
-
-- Respuesta a «Respuesta:»: `SYSTEMINFO`.
-
-**Primera pista:** Inicial: S
-
-### Etapa 22 de 30
-
-**Enunciado**
-
-Definición 22: Muestra etiqueta y número de serie del volumen. Escribe COMPROBAR y responde como texto; no ejecutes la respuesta.
-
-**Desarrollo resuelto**
-
-```bat
-VOL
-```
-
-**Qué comprueba**
-
-- Respuesta a «Respuesta:»: `VOL`.
-
-**Primera pista:** Inicial: V
-
-### Etapa 23 de 30
-
-**Enunciado**
-
-Definición 23: Permite cambiar la etiqueta de un volumen. Escribe COMPROBAR y responde como texto; no ejecutes la respuesta.
-
-**Desarrollo resuelto**
-
-```bat
-LABEL
-```
-
-**Qué comprueba**
-
-- Respuesta a «Respuesta:»: `LABEL`.
-
-**Primera pista:** Inicial: L
-
-### Etapa 24 de 30
-
-**Enunciado**
-
-Definición 24: Comprueba el sistema de archivos del disco. Escribe COMPROBAR y responde como texto; no ejecutes la respuesta.
-
-**Desarrollo resuelto**
-
-```bat
-CHKDSK
-```
-
-**Qué comprueba**
-
-- Respuesta a «Respuesta:»: `CHKDSK`.
-
-**Primera pista:** Inicial: C
-
-### Etapa 25 de 30
-
-**Enunciado**
-
-Definición 25: Gestiona el apagado del sistema. Solo responde el nombre. Escribe COMPROBAR y responde como texto; no ejecutes la respuesta.
-
-**Desarrollo resuelto**
-
-```bat
-SHUTDOWN
-```
-
-**Qué comprueba**
-
-- Respuesta a «Respuesta:»: `SHUTDOWN`.
-
-**Primera pista:** Inicial: S
-
-### Etapa 26 de 30
-
-**Enunciado**
-
-Definición 26: Cancela un apagado pendiente. Escribe COMPROBAR y responde como texto; no ejecutes la respuesta.
-
-**Desarrollo resuelto**
-
-```bat
-SHUTDOWN /A
-```
-
-**Qué comprueba**
-
-- Respuesta a «Respuesta:»: `SHUTDOWN /A`.
-
-**Primera pista:** Inicial: S
-
-### Etapa 27 de 30
-
-**Enunciado**
-
-Definición 27: Llama a otro .bat y permite regresar al primero. Escribe COMPROBAR y responde como texto; no ejecutes la respuesta.
-
-**Desarrollo resuelto**
-
-```bat
-CALL
-```
-
-**Qué comprueba**
-
-- Respuesta a «Respuesta:»: `CALL`.
-
-**Primera pista:** Inicial: C
-
-### Etapa 28 de 30
-
-**Enunciado**
-
-Definición 28: Muestra un mensaje en pantalla. Escribe COMPROBAR y responde como texto; no ejecutes la respuesta.
-
-**Desarrollo resuelto**
-
-```bat
-ECHO
-```
-
-**Qué comprueba**
-
-- Respuesta a «Respuesta:»: `ECHO`.
-
-**Primera pista:** Inicial: E
-
-### Etapa 29 de 30
-
-**Enunciado**
-
-Definición 29: Extensión de los scripts de esta unidad, incluido el punto. Escribe COMPROBAR y responde como texto; no ejecutes la respuesta.
-
-**Desarrollo resuelto**
-
-```bat
-.BAT
-```
-
-**Qué comprueba**
-
-- Respuesta a «Respuesta:»: `.BAT`.
-
-**Primera pista:** Inicial: .
-
-### Etapa 30 de 30
-
-**Enunciado**
-
-Definición 30: Símbolo que guarda salida sobrescribiendo un archivo. Escribe COMPROBAR y responde como texto; no ejecutes la respuesta.
-
-**Desarrollo resuelto**
-
-```bat
->
-```
-
-**Qué comprueba**
-
-- Respuesta a «Respuesta:»: `>`.
-
-**Primera pista:** Inicial: >
+Primera pista: Primera letra: V
 
 ## Dudas frecuentes
 
-- No reconoce COMPROBAR: entra desde jugar.bat y no sobrescribas PATH. Volver al menú y entrar restaura las rutas.
-- Un .bat no vuelve al primero: usa CALL.
-- Se guarda como .bat.txt: muestra extensiones y guarda como todos los archivos en el editor.
-- Prompt incorrecto: usa $P y $G; vuelve a establecerlo si has salido de la actividad.
-- Ruta con espacios: utiliza comillas; cambiar de unidad requiere CD /D.
-- Archivo vacío: TYPE NUL > archivo crea cero bytes. ECHO. crea una línea.
-- Fecha incorrecta: consulta DATE /T justo antes de comprobar.
-- Acentos: inicia con jugar.bat, que selecciona UTF-8. Los informes admiten también UTF-16 y OEM.
-- START confunde ruta y título: su primer argumento entre comillas es el título.
-- No permite anclar acceso: depende de Windows y políticas; documenta la limitación.
-- CHKDSK pide permisos: se ejecuta aparte con el profesor, no elevando el juego.
-- No actualiza: publica el repo y configura url_base. ACTUALIZAR no sustituye el motor.
-- Actividad antigua tras actualizar: conserva su definición hasta REINICIAR.
-- Cambiar idioma no traduce archivos existentes: reinicia solo la actividad de prueba para regenerarlos.
+- COMPROBAR no existe fuera del juego: entra en una actividad desde jugar.bat.
+- La ruta de programas ha cambiado: no sustituyas PATH. Sal al menú y vuelve a entrar.
+- La respuesta de fecha falla: consulta DATE /T de nuevo y copia toda la salida.
+- SYSTEMINFO tarda: espera a que termine; copia solo el nombre del equipo cuando se solicite.
+- El título no cambia en la pestaña: revisa la configuración de la aplicación de terminal; el motor no lo valida automáticamente.
+- COLOR deja de verse después de COMPROBAR: la interfaz tiene colores propios; revisa el resultado justo después de COLOR.
+- El PROMPT no coincide: reproduce el patrón con $P y $G. La personalización se pierde al salir; vuelve a establecerla.
+- START interpreta el título como ruta: el primer texto entre comillas es el título de la nueva ventana.
+- CHKDSK requiere permisos: se trabaja aparte con el profesor, no elevando el juego.
+- No se permite anclar un acceso: documenta la limitación de la versión o de las políticas de Windows.
+- Sigue apareciendo la edición anterior: REINICIAR carga el nuevo JSON, previa confirmación y borrado solo de esa actividad.
+- Cambiar idioma no reinicia: traduce interfaz y enunciados, conservando progreso.
 
-## Prácticas externas
+## Actividades supervisadas
 
-Consulta PRACTICAS_SUPERVISADAS.md para accesos directos, apagado, USB y CHKDSK. Las respuestas no certifican esas acciones. Los JSON contienen soluciones accesibles: práctica, no examen protegido.
+La ficha PRACTICAS_SUPERVISADAS.md recoge accesos directos, USB y consulta del disco. No se sustituyen por scripts. Apagado y cancelación reales requieren guardar antes el trabajo de la VM.
 
 ## Fuentes
 
 - 3.2- Intro de Windows en comandos.pdf, aportado por el docente.
 - 3.2.1- Actividades de Windows en comandos.odt, aportado por el docente.
-- Microsoft Learn: https://learn.microsoft.com/windows-server/administration/windows-commands/windows-commands
+- Documentación Microsoft Learn: https://learn.microsoft.com/windows-server/administration/windows-commands/windows-commands
+
+## Validación
+
+19 pruebas de lógica superadas en Linux, con consultas del sistema simuladas. La prueba adicional con CMD real está incluida y pendiente de ejecutar en Windows. No confundir la validación lógica con la prueba completa de la VM.

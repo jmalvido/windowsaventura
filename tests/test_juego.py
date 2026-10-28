@@ -54,8 +54,8 @@ class EngineTests(unittest.TestCase):
         with redirect_stdout(io.StringIO()):m.hint(a['id']);m.hint(a['id']);m.hint(a['id'])
         self.assertEqual(2,m.load(a['id'])[1]['pistas']['0'])
     def test_snapshots_preserved(self):
-        a=m.available()[0];m.start(a);new=copy.deepcopy(a);new['version']=2
-        m.start(new);self.assertEqual(1,m.load(a['id'])[0]['version'])
+        a=m.available()[0];m.start(a);new=copy.deepcopy(a);new['version']=3
+        m.start(new);self.assertEqual(2,m.load(a['id'])[0]['version'])
     def test_restart_isolated(self):
         a,b=m.available()[:2];m.start(a);m.start(b)
         m.safe(m.load(a['id'])[2],'alumno.txt').write_text('a')
@@ -67,7 +67,7 @@ class EngineTests(unittest.TestCase):
         with patch('builtins.input',return_value='NO'),redirect_stdout(io.StringIO()):m.reset(a['id'])
         self.assertEqual('x',p.read_text())
     def test_damaged_copy_rejected(self):
-        a=m.available()[2];a,s,w=m.start(a)
+        a=copy.deepcopy(m.available()[2]);a['archivos']={'documentos/mapa.txt':{'es':'Original','eu':'Jatorrizkoa'}};a,s,w=m.start(a)
         p=w/'copia.txt';p.write_text('falso')
         self.assertFalse(m.check_test({'tipo':'contenido','ruta':'copia.txt','origen':'documentos/mapa.txt'},a,s,w))
     def test_empty_file_rejected_if_nonempty(self):
@@ -90,6 +90,22 @@ class EngineTests(unittest.TestCase):
         for encoding in ('utf-8','utf-16','utf-16-le','cp850'):
             p.write_bytes('Información de versión\r\n'.encode(encoding))
             self.assertEqual('Información de versión\r\n',retos.read_text(p))
+    def test_curriculum_and_theme(self):
+        allowed=set('CHKDSK CLS CMD COLOR DATE EXIT HELP LABEL PATH PROMPT SHUTDOWN SYSTEMINFO START TIME TITLE VER VOL'.split())
+        acts=m.available();seen=set()
+        for a in acts:
+            self.assertEqual(2,a['version'])
+            self.assertFalse(a['archivos'])
+            self.assertIn('introduccion',a)
+            seen.update(a['comandos_temario'])
+            for step in a['pasos']:
+                for line in step['solucion_docente'].splitlines():
+                    if not line.strip():continue
+                    self.assertIn(line.split()[0].upper(),allowed|{'COMPROBAR','REM'})
+                for t in step['pruebas']:
+                    self.assertIn(t['tipo'],('respuesta','respuesta_sistema','entorno','reentrada'))
+        self.assertEqual(allowed,seen)
+        self.assertEqual(17,len(acts[-1]['pasos']))
     def test_catalog_hashes(self):
         import hashlib
         for e in m.read(ROOT/'catalogo.json')['actividades']:
@@ -123,18 +139,17 @@ class UpdateTests(unittest.TestCase):
         self.assertTrue((src/'jugar.bat').is_file())
 @unittest.skipUnless(os.name=='nt','Necesita CMD real en Windows')
 class WindowsIntegration(unittest.TestCase):
-    def test_real_cmd_wrappers_and_batch(self):
-        # Copia aislada para no tocar datos del alumno.
+    def test_real_cmd_help_and_check(self):
         with tempfile.TemporaryDirectory(prefix='wa prueba ') as tmp:
             root=Path(tmp)/'juego';shutil.copytree(ROOT,root,ignore=shutil.ignore_patterns('datos','__pycache__'))
-            env=os.environ.copy();env.update(PYTHONUTF8='1',PYTHONIOENCODING='utf-8',LA_ROOT=str(root),LA_ID='actividad_003',LA_SESSION_ID='test',LA_PYTHON=sys.executable)
+            env=os.environ.copy();env.update(PYTHONUTF8='1',PYTHONIOENCODING='utf-8',LA_ROOT=str(root),LA_ID='actividad_001',LA_SESSION_ID='test',LA_PYTHON=sys.executable)
             env['PATH']=str(root/'comandos')+os.pathsep+env['PATH']
-            setup='import motor as m; m.write(m.DATA/"preferencias.json",{"idioma":"es"}); m.start(m.available()[2])'
+            setup='import motor as m; m.write(m.DATA/"preferencias.json",{"idioma":"es"}); m.start(m.available()[0])'
             subprocess.run([sys.executable,'-c',setup],cwd=root,env=env,check=True)
-            work=root/'datos'/'actividad_003'/'escenario';env['LA_SCENARIO']=str(work)
-            script=work/'prueba.bat'
-            script.write_bytes(('@echo off\r\ncall "%LA_ROOT%\\terminal.bat"\r\nmd refugio\r\nmd refugio\\copias\r\ncall COMPROBAR\r\ncopy documentos\\mapa.txt refugio\\copias\\\r\ncall COMPROBAR\r\nren refugio\\copias\\mapa.txt plano.txt\r\ncall COMPROBAR\r\nmove refugio\\copias\\plano.txt refugio\\plano.txt\r\ntype nul > refugio\\listo.txt\r\ncall COMPROBAR\r\n').encode('utf-8'))
-            result=subprocess.run(f'"{env["COMSPEC"]}" /d /v:off /s /c ""{script}""',cwd=work,env=env,capture_output=True,timeout=45)
+            work=root/'datos'/'actividad_001'/'escenario';env['LA_SCENARIO']=str(work)
+            script=work/'test-driver.bat'
+            script.write_bytes(('@echo off\r\ncall "%LA_ROOT%\\terminal.bat"\r\nhelp\r\ncall COMPROBAR\r\n').encode('utf-8'))
+            result=subprocess.run(f'"{env["COMSPEC"]}" /d /v:off /s /c ""{script}""',cwd=work,env=env,input=b'HELP\r\n',capture_output=True,timeout=45)
             state=json.loads((work.parent/'estado.json').read_text(encoding='utf-8'))
-            self.assertEqual(4,state['paso'],result.stdout.decode('utf-8',errors='replace')+result.stderr.decode('utf-8',errors='replace'))
+            self.assertEqual(1,state['paso'],result.stdout.decode('utf-8',errors='replace')+result.stderr.decode('utf-8',errors='replace'))
 if __name__=='__main__':unittest.main(verbosity=2)

@@ -1,67 +1,37 @@
 {
   "schema": 1,
   "motor_minimo": 1,
-  "version": 1,
+  "version": 2,
   "id": "actividad_002",
   "titulo": {
-    "es": "Bienvenido a Windows 2 — Ayuda y consultas",
-    "eu": "Ongi etorri Windowsera 2 — Laguntza eta kontsultak"
+    "es": "Bienvenido a Paleo Isla — El reloj de la expedición",
+    "eu": "Ongi etorri Paleo Uhartera — Espedizioaren erlojua"
   },
-  "archivos": {
-    "LEEME.txt": {
-      "es": "Bienvenido al centro IZAR. Lee las instrucciones y usa COMPROBAR al terminar cada paso.\n",
-      "eu": "Ongi etorri IZAR zentrora. Irakurri argibideak eta erabili COMPROBAR urrats bakoitzaren amaieran.\n"
-    }
+  "introduccion": {
+    "es": "La expedición a la zona de los diplodocus sale hoy. Revisa el equipo y su reloj sin cambiar ninguna configuración.",
+    "eu": "Diplodocusen gunerako espedizioa gaur abiatuko da. Berrikusi ekipoa eta erlojua konfigurazioa aldatu gabe."
   },
+  "comandos_temario": [
+    "VER",
+    "DATE",
+    "TIME"
+  ],
+  "archivos": {},
   "carpetas": [],
   "pasos": [
     {
       "texto": {
-        "es": "HELP muestra la ayuda de comandos. Ejecuta HELP y después HELP DIR. ¿Qué símbolo acompaña a la barra para pedir ayuda con DIR /?",
-        "eu": "HELP komandoak laguntza erakusten du. Exekutatu HELP eta HELP DIR. Zer ikur dator barraren ondoren DIR /? idaztean?"
+        "es": "VER muestra la versión de Windows del puesto. Ejecuta VER y copia su línea completa cuando se te pregunte. Después escribe COMPROBAR.",
+        "eu": "VER komandoak postuko Windowsen bertsioa erakusten du. Exekutatu VER eta kopiatu lerro osoa galdetzean. Ondoren idatzi COMPROBAR."
       },
       "pistas": {
         "es": [
-          "Lee la ayuda del comando y revisa la carpeta actual.",
-          "HELP\nHELP DIR\nDIR /?\nCOMPROBAR"
+          "Consulta la ayuda y observa qué información necesita el equipo del parque.",
+          "VER"
         ],
         "eu": [
-          "Irakurri komandoaren laguntza eta egiaztatu uneko karpeta.",
-          "HELP\nHELP DIR\nDIR /?\nCOMPROBAR"
-        ]
-      },
-      "pruebas": [
-        {
-          "tipo": "respuesta",
-          "pregunta": {
-            "es": "Opción completa de ayuda:",
-            "eu": "Laguntza aukera osoa:"
-          },
-          "respuestas": {
-            "es": [
-              "/?"
-            ],
-            "eu": [
-              "/?"
-            ]
-          }
-        }
-      ],
-      "solucion_docente": "HELP\nHELP DIR\nDIR /?\nCOMPROBAR"
-    },
-    {
-      "texto": {
-        "es": "CLS limpia la pantalla. Ejecuta CLS y luego VER para consultar la versión de Windows. COMPROBAR pedirá la línea de versión completa.",
-        "eu": "CLS komandoak pantaila garbitzen du. Exekutatu CLS eta VER Windowsen bertsioa ikusteko. COMPROBAR komandoak bertsioaren lerro osoa eskatuko du."
-      },
-      "pistas": {
-        "es": [
-          "Lee la ayuda del comando y revisa la carpeta actual.",
-          "CLS\nVER\nCOMPROBAR"
-        ],
-        "eu": [
-          "Irakurri komandoaren laguntza eta egiaztatu uneko karpeta.",
-          "CLS\nVER\nCOMPROBAR"
+          "Kontsultatu laguntza eta begiratu parkeko taldeak zer informazio behar duen.",
+          "VER"
         ]
       },
       "pruebas": [
@@ -69,84 +39,77 @@
           "tipo": "respuesta_sistema",
           "consulta": "version",
           "pregunta": {
-            "es": "Línea de VER:",
-            "eu": "VER lerroa:"
+            "es": "Línea completa de VER:",
+            "eu": "VERen lerro osoa:"
           }
         }
       ],
-      "solucion_docente": "CLS\nVER\nCOMPROBAR"
+      "solucion_docente": "VER\nCOMPROBAR"
     },
     {
       "texto": {
-        "es": "DATE /T y TIME /T muestran fecha y hora sin pedir cambios. Pruébalos. Usa flecha arriba para recuperar una orden.",
-        "eu": "DATE /T eta TIME /T komandoek data eta ordua erakusten dituzte aldaketarik eskatu gabe. Probatu eta erabili gora gezia agindu bat berreskuratzeko."
+        "es": "Ejecuta DATE /T. /T permite consultar sin pedir una fecha nueva. Copia la salida completa, incluido el día de la semana si aparece. Después escribe COMPROBAR.",
+        "eu": "Exekutatu DATE /T. /T aukerak data berririk eskatu gabe kontsultatzen du. Kopiatu irteera osoa, asteko eguna agertzen bada barne. Ondoren idatzi COMPROBAR."
       },
       "pistas": {
         "es": [
-          "Lee la ayuda del comando y revisa la carpeta actual.",
-          "DATE /T\nTIME /T\nCOMPROBAR"
+          "Consulta la ayuda y observa qué información necesita el equipo del parque.",
+          "DATE /T"
         ],
         "eu": [
-          "Irakurri komandoaren laguntza eta egiaztatu uneko karpeta.",
-          "DATE /T\nTIME /T\nCOMPROBAR"
+          "Kontsultatu laguntza eta begiratu parkeko taldeak zer informazio behar duen.",
+          "DATE /T"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "respuesta_sistema",
+          "consulta": "fecha",
+          "pregunta": {
+            "es": "Salida de DATE /T:",
+            "eu": "DATE /T irteera:"
+          }
+        }
+      ],
+      "solucion_docente": "DATE /T\nCOMPROBAR"
+    },
+    {
+      "texto": {
+        "es": "Ejecuta TIME /T y observa la hora. Usa flecha arriba para recuperar la orden y repetirla. No se evalúa la pulsación de la tecla. Después escribe COMPROBAR.",
+        "eu": "Exekutatu TIME /T eta begiratu ordua. Erabili gora gezia agindua berreskuratu eta errepikatzeko. Tekla sakatzea ez da ebaluatzen. Ondoren idatzi COMPROBAR."
+      },
+      "pistas": {
+        "es": [
+          "Consulta la ayuda y observa qué información necesita el equipo del parque.",
+          "TIME /T"
+        ],
+        "eu": [
+          "Kontsultatu laguntza eta begiratu parkeko taldeak zer informazio behar duen.",
+          "TIME /T"
         ]
       },
       "pruebas": [
         {
           "tipo": "respuesta",
           "pregunta": {
-            "es": "Opción para consultar sin modificar:",
-            "eu": "Aldatu gabe kontsultatzeko aukera:"
+            "es": "Orden para consultar la hora sin modificarla:",
+            "eu": "Ordua aldatu gabe kontsultatzeko agindua:"
           },
           "respuestas": {
             "es": [
-              "/T"
+              "TIME /T"
             ],
             "eu": [
-              "/T"
+              "TIME /T"
             ]
           }
         }
       ],
-      "solucion_docente": "DATE /T\nTIME /T\nCOMPROBAR"
-    },
-    {
-      "texto": {
-        "es": "Tab completa nombres de archivos y carpetas. Prueba TYPE L y pulsa Tab para completar LEEME.txt; después pulsa Intro. La comprobación no registra la tecla, solo la respuesta.",
-        "eu": "Tab teklak fitxategi eta karpeta izenak osatzen ditu. Probatu TYPE L eta sakatu Tab LEEME.txt osatzeko; gero sakatu Sartu. Egiaztapenak ez du tekla erregistratzen, erantzuna bakarrik."
-      },
-      "pistas": {
-        "es": [
-          "Lee la ayuda del comando y revisa la carpeta actual.",
-          "TYPE LEEME.txt\nCOMPROBAR"
-        ],
-        "eu": [
-          "Irakurri komandoaren laguntza eta egiaztatu uneko karpeta.",
-          "TYPE LEEME.txt\nCOMPROBAR"
-        ]
-      },
-      "pruebas": [
-        {
-          "tipo": "respuesta",
-          "pregunta": {
-            "es": "Comando para leer un archivo:",
-            "eu": "Fitxategia irakurtzeko komandoa:"
-          },
-          "respuestas": {
-            "es": [
-              "TYPE"
-            ],
-            "eu": [
-              "TYPE"
-            ]
-          }
-        }
-      ],
-      "solucion_docente": "TYPE LEEME.txt\nCOMPROBAR"
+      "solucion_docente": "TIME /T\nCOMPROBAR"
     }
   ],
   "final": {
-    "es": "Actividad completada. MENU para elegir otra o REINICIAR para repetir.",
-    "eu": "Jarduera osatuta. MENU beste bat aukeratzeko edo REINICIAR errepikatzeko."
+    "es": "Misión del parque completada. MENU para elegir otra expedición.",
+    "eu": "Parkeko misioa osatuta. MENU beste espedizio bat aukeratzeko."
   }
 }

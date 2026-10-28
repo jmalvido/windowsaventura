@@ -1,148 +1,146 @@
 {
   "schema": 1,
   "motor_minimo": 1,
-  "version": 1,
+  "version": 2,
   "id": "actividad_011",
   "titulo": {
-    "es": "El relevo del técnico",
-    "eu": "Teknikariaren txanda aldaketa"
+    "es": "Los accesos del puesto de los velociraptores",
+    "eu": "Velociraptoreen postuko lasterbideak"
   },
-  "archivos": {
-    "LEEME.txt": {
-      "es": "Bienvenido al centro IZAR. Lee las instrucciones y usa COMPROBAR al terminar cada paso.\n",
-      "eu": "Ongi etorri IZAR zentrora. Irakurri argibideak eta erabili COMPROBAR urrats bakoitzaren amaieran.\n"
-    },
-    "Documentos del turno/nota.txt": {
-      "es": "Clave: RELEVO. No cambies el reloj ni la etiqueta del sistema.\n",
-      "eu": "Gakoa: RELEVO. Ez aldatu erlojua edo sistemaren etiketa.\n"
-    }
+  "introduccion": {
+    "es": "El encargado del recinto necesita accesos directos reconocibles en el escritorio. Se crean desde Windows, no mediante scripts.",
+    "eu": "Esparruko arduradunak mahaigainean lasterbide argiak behar ditu. Windowsetik sortzen dira, ez scripten bidez."
   },
+  "comandos_temario": [
+    "CMD",
+    "EXIT",
+    "SHUTDOWN"
+  ],
+  "archivos": {},
   "carpetas": [],
   "pasos": [
     {
       "texto": {
-        "es": "Encuentra y lee la nota dentro de Documentos del turno. Usa comillas o Tab para los espacios del nombre.",
-        "eu": "Aurkitu eta irakurri Documentos del turno barruko oharra. Erabili komatxoak edo Tab izeneko zuriuneetarako."
+        "es": "En el escritorio crea un acceso directo con destino cmd.exe y nombre Puesto Velociraptores. Ábrelo y ciérralo con EXIT. El profesor revisa el acceso; el corrector pregunta el destino. Después escribe COMPROBAR.",
+        "eu": "Sortu mahaigainean lasterbidea cmd.exe helburuarekin eta Puesto Velociraptores izenarekin. Ireki eta itxi EXIT erabiliz. Irakasleak lasterbidea ikusiko du; zuzentzaileak helburua galdetzen du. Ondoren idatzi COMPROBAR."
       },
       "pistas": {
         "es": [
-          "Lee la ayuda del comando y revisa la carpeta actual.",
-          "TYPE \"Documentos del turno\\nota.txt\"\nCOMPROBAR"
+          "Consulta la ayuda y observa qué información necesita el equipo del parque.",
+          "REM Escritorio: Nuevo, Acceso directo / Mahaigaina: Berria, Lasterbidea\nREM Destino / Helburua: cmd.exe"
         ],
         "eu": [
-          "Irakurri komandoaren laguntza eta egiaztatu uneko karpeta.",
-          "TYPE \"Documentos del turno\\nota.txt\"\nCOMPROBAR"
+          "Kontsultatu laguntza eta begiratu parkeko taldeak zer informazio behar duen.",
+          "REM Escritorio: Nuevo, Acceso directo / Mahaigaina: Berria, Lasterbidea\nREM Destino / Helburua: cmd.exe"
         ]
       },
       "pruebas": [
         {
           "tipo": "respuesta",
           "pregunta": {
-            "es": "Clave:",
-            "eu": "Gakoa:"
+            "es": "Destino del acceso al terminal:",
+            "eu": "Terminalaren lasterbidearen helburua:"
           },
           "respuestas": {
             "es": [
-              "RELEVO"
+              "cmd.exe"
             ],
             "eu": [
-              "RELEVO"
+              "cmd.exe"
             ]
           }
         }
       ],
-      "solucion_docente": "TYPE \"Documentos del turno\\nota.txt\"\nCOMPROBAR"
+      "solucion_docente": "REM Escritorio: Nuevo, Acceso directo / Mahaigaina: Berria, Lasterbidea\nREM Destino / Helburua: cmd.exe\nCOMPROBAR"
     },
     {
       "texto": {
-        "es": "Crea entrega. Copia la nota allí como instrucciones.txt conservando el original.",
-        "eu": "Sortu entrega. Kopiatu oharra hara instrucciones.txt izenarekin, jatorrizkoa mantenduz."
+        "es": "Prepara con el profesor los accesos Apagar y No apagar. Apagar debe esperar 20 segundos y mostrar Apagando...; No apagar debe cancelar. No los abras para comprobar esta etapa. Después escribe COMPROBAR.",
+        "eu": "Prestatu irakaslearekin Apagar eta No apagar lasterbideak. Apagar: 20 segundo eta Apagando... mezua; No apagar: ezeztatu. Ez ireki urratsa egiaztatzeko. Ondoren idatzi COMPROBAR."
       },
       "pistas": {
         "es": [
-          "Lee la ayuda del comando y revisa la carpeta actual.",
-          "MD entrega\nCOPY \"Documentos del turno\\nota.txt\" entrega\\instrucciones.txt\nCOMPROBAR"
+          "Consulta la ayuda y observa qué información necesita el equipo del parque.",
+          "SHUTDOWN /?"
         ],
         "eu": [
-          "Irakurri komandoaren laguntza eta egiaztatu uneko karpeta.",
-          "MD entrega\nCOPY \"Documentos del turno\\nota.txt\" entrega\\instrucciones.txt\nCOMPROBAR"
+          "Kontsultatu laguntza eta begiratu parkeko taldeak zer informazio behar duen.",
+          "SHUTDOWN /?"
         ]
       },
       "pruebas": [
         {
-          "tipo": "contenido",
-          "ruta": "entrega/instrucciones.txt",
-          "origen": "Documentos del turno/nota.txt"
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Destino de Apagar:",
+            "eu": "Apagar helburua:"
+          },
+          "respuestas": {
+            "es": [
+              "shutdown /s /t 20 /c \"Apagando...\""
+            ],
+            "eu": [
+              "shutdown /s /t 20 /c \"Apagando...\""
+            ]
+          }
         },
         {
-          "tipo": "contenido",
-          "ruta": "Documentos del turno/nota.txt",
-          "origen": "Documentos del turno/nota.txt"
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Destino de No apagar:",
+            "eu": "No apagar helburua:"
+          },
+          "respuestas": {
+            "es": [
+              "shutdown /a"
+            ],
+            "eu": [
+              "shutdown /a"
+            ]
+          }
         }
       ],
-      "solucion_docente": "MD entrega\nCOPY \"Documentos del turno\\nota.txt\" entrega\\instrucciones.txt\nCOMPROBAR"
+      "solucion_docente": "SHUTDOWN /?\nCOMPROBAR"
     },
     {
       "texto": {
-        "es": "Añade a entrega el informe de versión (version.txt) y el de volumen (volumen.txt).",
-        "eu": "Gehitu entrega karpetan bertsioaren txostena (version.txt) eta bolumenarena (volumen.txt)."
+        "es": "Revisa con el profesor el icono y las opciones de anclar los accesos al Inicio o la barra. Dependen de la versión y políticas de Windows. No sustituimos estas acciones por un script. Para cerrar, identifica el comando del intérprete. Después escribe COMPROBAR.",
+        "eu": "Berrikusi irakaslearekin ikonoa eta lasterbideak Hasieran edo barran ainguratzeko aukerak. Windowsen bertsioaren eta politiken araberakoak dira. Ez ditugu script batekin ordezten. Amaitzeko, identifikatu interpretearen komandoa. Ondoren idatzi COMPROBAR."
       },
       "pistas": {
         "es": [
-          "Lee la ayuda del comando y revisa la carpeta actual.",
-          "VER > entrega\\version.txt\nVOL %SystemDrive% > entrega\\volumen.txt\nCOMPROBAR"
+          "Consulta la ayuda y observa qué información necesita el equipo del parque.",
+          "CMD /?"
         ],
         "eu": [
-          "Irakurri komandoaren laguntza eta egiaztatu uneko karpeta.",
-          "VER > entrega\\version.txt\nVOL %SystemDrive% > entrega\\volumen.txt\nCOMPROBAR"
+          "Kontsultatu laguntza eta begiratu parkeko taldeak zer informazio behar duen.",
+          "CMD /?"
         ]
       },
       "pruebas": [
         {
-          "tipo": "salida",
-          "consulta": "version",
-          "ruta": "entrega/version.txt"
-        },
-        {
-          "tipo": "salida",
-          "consulta": "volumen",
-          "ruta": "entrega/volumen.txt"
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Intérprete usado en la unidad:",
+            "eu": "Unitateko interpretea:"
+          },
+          "respuestas": {
+            "es": [
+              "CMD",
+              "CMD.EXE"
+            ],
+            "eu": [
+              "CMD",
+              "CMD.EXE"
+            ]
+          }
         }
       ],
-      "solucion_docente": "VER > entrega\\version.txt\nVOL %SystemDrive% > entrega\\volumen.txt\nCOMPROBAR"
-    },
-    {
-      "texto": {
-        "es": "Personaliza el prompt a [TURNO] seguido de ruta y >. Después comprueba la entrega.",
-        "eu": "Pertsonalizatu prompta: [TURNO], bidea eta >. Ondoren egiaztatu entrega."
-      },
-      "pistas": {
-        "es": [
-          "Lee la ayuda del comando y revisa la carpeta actual.",
-          "PROMPT [TURNO] $P$G\nCOMPROBAR"
-        ],
-        "eu": [
-          "Irakurri komandoaren laguntza eta egiaztatu uneko karpeta.",
-          "PROMPT [TURNO] $P$G\nCOMPROBAR"
-        ]
-      },
-      "pruebas": [
-        {
-          "tipo": "entorno",
-          "nombre": "PROMPT",
-          "valor": "[TURNO] $P$G"
-        },
-        {
-          "tipo": "contenido",
-          "ruta": "entrega/instrucciones.txt",
-          "origen": "Documentos del turno/nota.txt"
-        }
-      ],
-      "solucion_docente": "PROMPT [TURNO] $P$G\nCOMPROBAR"
+      "solucion_docente": "CMD /?\nCOMPROBAR"
     }
   ],
   "final": {
-    "es": "Actividad completada. MENU para elegir otra o REINICIAR para repetir.",
-    "eu": "Jarduera osatuta. MENU beste bat aukeratzeko edo REINICIAR errepikatzeko."
+    "es": "Misión del parque completada. MENU para elegir otra expedición.",
+    "eu": "Parkeko misioa osatuta. MENU beste espedizio bat aukeratzeko."
   }
 }

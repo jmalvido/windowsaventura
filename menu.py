@@ -16,7 +16,7 @@ def main():
         if not (m.DATA/'preferencias.json').exists():choose_language()
         while True:
             ui.clear()
-            print(ui.color('WINDOWSAVENTURA 0.1 | CMD + .BAT','title'))
+            print(ui.color('WINDOWSAVENTURA 0.2 | PALEO ISLA | CMD','title'))
             acts=m.available()
             for i,a in enumerate(acts,1):
                 status=m.tr('Sin empezar','Hasi gabe')

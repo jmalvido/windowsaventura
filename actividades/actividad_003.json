@@ -1,143 +1,119 @@
 {
   "schema": 1,
   "motor_minimo": 1,
-  "version": 1,
+  "version": 2,
   "id": "actividad_003",
   "titulo": {
-    "es": "Bienvenido a Windows 3 — Organiza archivos",
-    "eu": "Ongi etorri Windowsera 3 — Antolatu fitxategiak"
+    "es": "Bienvenido a Paleo Isla — Tu puesto de guardia",
+    "eu": "Ongi etorri Paleo Uhartera — Zure zaintza postua"
   },
-  "archivos": {
-    "LEEME.txt": {
-      "es": "Bienvenido al centro IZAR. Lee las instrucciones y usa COMPROBAR al terminar cada paso.\n",
-      "eu": "Ongi etorri IZAR zentrora. Irakurri argibideak eta erabili COMPROBAR urrats bakoitzaren amaieran.\n"
-    },
-    "documentos/mapa.txt": {
-      "es": "Plano de IZAR.\n",
-      "eu": "IZAR planoa.\n"
-    },
-    "documentos/normas.txt": {
-      "es": "Conserva los originales.\n",
-      "eu": "Gorde jatorrizkoak.\n"
-    }
+  "introduccion": {
+    "es": "Te asignan la torre de vigilancia de los triceratops. Personaliza la consola para reconocer el puesto.",
+    "eu": "Triceratopsen zaintza dorrea esleitu dizute. Pertsonalizatu kontsola postua identifikatzeko."
   },
+  "comandos_temario": [
+    "TITLE",
+    "COLOR",
+    "PROMPT"
+  ],
+  "archivos": {},
   "carpetas": [],
   "pasos": [
     {
       "texto": {
-        "es": "Desde la raíz del escenario crea refugio y refugio\\copias con MD. MD y MKDIR son equivalentes.",
-        "eu": "Eszenatokiaren errotik sortu refugio eta refugio\\copias MD erabiliz. MD eta MKDIR baliokideak dira."
+        "es": "TITLE cambia el título de la ventana. Ejecuta TITLE Torre Triceratops y observa el resultado. La revisión del título es visual. Después escribe COMPROBAR.",
+        "eu": "TITLE komandoak leihoaren izenburua aldatzen du. Exekutatu TITLE Torre Triceratops eta begiratu emaitza. Izenburua bisualki berrikusten da. Ondoren idatzi COMPROBAR."
       },
       "pistas": {
         "es": [
-          "Lee la ayuda del comando y revisa la carpeta actual.",
-          "MD refugio\nMD refugio\\copias\nCOMPROBAR"
+          "Consulta la ayuda y observa qué información necesita el equipo del parque.",
+          "TITLE Torre Triceratops"
         ],
         "eu": [
-          "Irakurri komandoaren laguntza eta egiaztatu uneko karpeta.",
-          "MD refugio\nMD refugio\\copias\nCOMPROBAR"
+          "Kontsultatu laguntza eta begiratu parkeko taldeak zer informazio behar duen.",
+          "TITLE Torre Triceratops"
         ]
       },
       "pruebas": [
         {
-          "tipo": "carpeta",
-          "ruta": "refugio/copias"
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Orden utilizada:",
+            "eu": "Erabilitako agindua:"
+          },
+          "respuestas": {
+            "es": [
+              "TITLE Torre Triceratops"
+            ],
+            "eu": [
+              "TITLE Torre Triceratops"
+            ]
+          }
         }
       ],
-      "solucion_docente": "MD refugio\nMD refugio\\copias\nCOMPROBAR"
+      "solucion_docente": "TITLE Torre Triceratops\nCOMPROBAR"
     },
     {
       "texto": {
-        "es": "COPY copia y conserva el original. Copia documentos\\mapa.txt a refugio\\copias.",
-        "eu": "COPY komandoak kopia egiten du jatorrizkoa mantenduz. Kopiatu documentos\\mapa.txt refugio\\copias karpetara."
+        "es": "Consulta COLOR /?. Pon fondo azul y letras rojas con COLOR 14. El primer dígito indica el fondo y el segundo el texto. Después restaura COLOR 0B. Después escribe COMPROBAR.",
+        "eu": "Kontsultatu COLOR /?. Jarri atzealde urdina eta letra gorriak COLOR 14 erabiliz. Lehen digitua atzealdea da eta bigarrena testua. Gero erabili COLOR 0B. Ondoren idatzi COMPROBAR."
       },
       "pistas": {
         "es": [
-          "Lee la ayuda del comando y revisa la carpeta actual.",
-          "COPY documentos\\mapa.txt refugio\\copias\\\nCOMPROBAR"
+          "Consulta la ayuda y observa qué información necesita el equipo del parque.",
+          "COLOR /?\nCOLOR 14\nCOLOR 0B"
         ],
         "eu": [
-          "Irakurri komandoaren laguntza eta egiaztatu uneko karpeta.",
-          "COPY documentos\\mapa.txt refugio\\copias\\\nCOMPROBAR"
+          "Kontsultatu laguntza eta begiratu parkeko taldeak zer informazio behar duen.",
+          "COLOR /?\nCOLOR 14\nCOLOR 0B"
         ]
       },
       "pruebas": [
         {
-          "tipo": "contenido",
-          "ruta": "refugio/copias/mapa.txt",
-          "origen": "documentos/mapa.txt"
-        },
-        {
-          "tipo": "contenido",
-          "ruta": "documentos/mapa.txt",
-          "origen": "documentos/mapa.txt"
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Código para fondo azul y letras rojas:",
+            "eu": "Atzealde urdina eta letra gorriak jartzeko kodea:"
+          },
+          "respuestas": {
+            "es": [
+              "14"
+            ],
+            "eu": [
+              "14"
+            ]
+          }
         }
       ],
-      "solucion_docente": "COPY documentos\\mapa.txt refugio\\copias\\\nCOMPROBAR"
+      "solucion_docente": "COLOR /?\nCOLOR 14\nCOLOR 0B\nCOMPROBAR"
     },
     {
       "texto": {
-        "es": "REN cambia el nombre. Renombra la copia a plano.txt; el segundo argumento de REN es el nombre nuevo, no otra carpeta.",
-        "eu": "REN komandoak izena aldatzen du. Aldatu kopiaren izena plano.txt izenera; bigarren argumentua izen berria da, ez beste karpeta bat."
+        "es": "PROMPT cambia el indicador donde escribes. Ejecuta PROMPT [TRICERATOPS] $P$G. $P representa la ruta y $G el signo de cierre. Después escribe COMPROBAR.",
+        "eu": "PROMPT komandoak idazteko adierazlea aldatzen du. Exekutatu PROMPT [TRICERATOPS] $P$G. $P bidea da eta $G itxiera ikurra. Ondoren idatzi COMPROBAR."
       },
       "pistas": {
         "es": [
-          "Lee la ayuda del comando y revisa la carpeta actual.",
-          "REN refugio\\copias\\mapa.txt plano.txt\nCOMPROBAR"
+          "Consulta la ayuda y observa qué información necesita el equipo del parque.",
+          "PROMPT [TRICERATOPS] $P$G"
         ],
         "eu": [
-          "Irakurri komandoaren laguntza eta egiaztatu uneko karpeta.",
-          "REN refugio\\copias\\mapa.txt plano.txt\nCOMPROBAR"
+          "Kontsultatu laguntza eta begiratu parkeko taldeak zer informazio behar duen.",
+          "PROMPT [TRICERATOPS] $P$G"
         ]
       },
       "pruebas": [
         {
-          "tipo": "contenido",
-          "ruta": "refugio/copias/plano.txt",
-          "origen": "documentos/mapa.txt"
-        },
-        {
-          "tipo": "ausente",
-          "ruta": "refugio/copias/mapa.txt"
+          "tipo": "entorno",
+          "nombre": "PROMPT",
+          "valor": "[TRICERATOPS] $P$G"
         }
       ],
-      "solucion_docente": "REN refugio\\copias\\mapa.txt plano.txt\nCOMPROBAR"
-    },
-    {
-      "texto": {
-        "es": "MOVE cambia la ubicación. Mueve plano.txt a refugio. Crea una señal vacía con TYPE NUL > refugio\\listo.txt. > sobrescribe el destino; úsalo solo con esta señal.",
-        "eu": "MOVE komandoak kokapena aldatzen du. Eraman plano.txt refugio karpetara. Sortu seinale hutsa TYPE NUL > refugio\\listo.txt erabiliz. > ikurrak helburua gainidazten du; erabili seinale honekin bakarrik."
-      },
-      "pistas": {
-        "es": [
-          "Lee la ayuda del comando y revisa la carpeta actual.",
-          "MOVE refugio\\copias\\plano.txt refugio\\plano.txt\nTYPE NUL > refugio\\listo.txt\nCOMPROBAR"
-        ],
-        "eu": [
-          "Irakurri komandoaren laguntza eta egiaztatu uneko karpeta.",
-          "MOVE refugio\\copias\\plano.txt refugio\\plano.txt\nTYPE NUL > refugio\\listo.txt\nCOMPROBAR"
-        ]
-      },
-      "pruebas": [
-        {
-          "tipo": "contenido",
-          "ruta": "refugio/plano.txt",
-          "origen": "documentos/mapa.txt"
-        },
-        {
-          "tipo": "ausente",
-          "ruta": "refugio/copias/plano.txt"
-        },
-        {
-          "tipo": "vacio",
-          "ruta": "refugio/listo.txt"
-        }
-      ],
-      "solucion_docente": "MOVE refugio\\copias\\plano.txt refugio\\plano.txt\nTYPE NUL > refugio\\listo.txt\nCOMPROBAR"
+      "solucion_docente": "PROMPT [TRICERATOPS] $P$G\nCOMPROBAR"
     }
   ],
   "final": {
-    "es": "Actividad completada. MENU para elegir otra o REINICIAR para repetir.",
-    "eu": "Jarduera osatuta. MENU beste bat aukeratzeko edo REINICIAR errepikatzeko."
+    "es": "Misión del parque completada. MENU para elegir otra expedición.",
+    "eu": "Parkeko misioa osatuta. MENU beste espedizio bat aukeratzeko."
   }
 }

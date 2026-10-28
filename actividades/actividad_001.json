@@ -1,163 +1,129 @@
 {
   "schema": 1,
   "motor_minimo": 1,
-  "version": 1,
+  "version": 2,
   "id": "actividad_001",
   "titulo": {
-    "es": "Bienvenido a Windows 1 — Primeros pasos",
-    "eu": "Ongi etorri Windowsera 1 — Lehen urratsak"
+    "es": "Bienvenido a Paleo Isla — La consola del visitante",
+    "eu": "Ongi etorri Paleo Uhartera — Bisitariaren kontsola"
   },
-  "archivos": {
-    "LEEME.txt": {
-      "es": "Bienvenido a CMD. La clave es KAIXO. El segundo mensaje está en centro/entrada.txt.\n",
-      "eu": "Ongi etorri CMDra. Gakoa KAIXO da. Bigarren mezua centro/entrada.txt fitxategian dago.\n"
-    },
-    "centro/entrada.txt": {
-      "es": "Responsable: ALEX.\n",
-      "eu": "Arduraduna: ALEX.\n"
-    }
+  "introduccion": {
+    "es": "Llegas a Paleo Isla como técnico en prácticas. Antes de entrar en los recintos, aprende a pedir ayuda al terminal. Todo se lee en pantalla; no necesitas abrir archivos.",
+    "eu": "Paleo Uhartera iritsi zara praktiketako teknikari gisa. Esparruetara sartu aurretik, ikasi terminalean laguntza eskatzen. Dena pantailan irakurtzen da; ez duzu fitxategirik ireki behar."
   },
+  "comandos_temario": [
+    "HELP",
+    "COLOR",
+    "CLS"
+  ],
+  "archivos": {},
   "carpetas": [],
   "pasos": [
     {
       "texto": {
-        "es": "Estás en CMD real. CD, sin argumentos, muestra la carpeta actual. Escribe CD y después COMPROBAR. No escribas el símbolo > del prompt.",
-        "eu": "Benetako CMD erabiltzen ari zara. CD komandoak, argumenturik gabe, uneko karpeta erakusten du. Idatzi CD eta gero COMPROBAR. Ez idatzi promptaren > ikurra."
+        "es": "El puesto de recepción necesita su catálogo de órdenes. Ejecuta HELP. En las respuestas introduce el comando, no toda la salida. Después escribe COMPROBAR.",
+        "eu": "Harrerako postuak aginduen katalogoa behar du. Exekutatu HELP. Erantzunean idatzi komandoa, ez irteera osoa. Ondoren idatzi COMPROBAR."
       },
       "pistas": {
         "es": [
-          "Lee la ayuda del comando y revisa la carpeta actual.",
-          "CD\nCOMPROBAR"
+          "Consulta la ayuda y observa qué información necesita el equipo del parque.",
+          "HELP"
         ],
         "eu": [
-          "Irakurri komandoaren laguntza eta egiaztatu uneko karpeta.",
-          "CD\nCOMPROBAR"
+          "Kontsultatu laguntza eta begiratu parkeko taldeak zer informazio behar duen.",
+          "HELP"
         ]
       },
       "pruebas": [
         {
           "tipo": "respuesta",
           "pregunta": {
-            "es": "Ruta completa:",
-            "eu": "Bide osoa:"
+            "es": "¿Qué comando muestra la ayuda general?",
+            "eu": "Zer komandok erakusten du laguntza orokorra?"
           },
           "respuestas": {
             "es": [
-              "{escenario}"
+              "HELP"
             ],
             "eu": [
-              "{escenario}"
+              "HELP"
             ]
           }
         }
       ],
-      "solucion_docente": "CD\nCOMPROBAR"
+      "solucion_docente": "HELP\nCOMPROBAR"
     },
     {
       "texto": {
-        "es": "DIR lista archivos y carpetas. Ejecuta DIR y localiza el archivo de bienvenida.",
-        "eu": "DIR komandoak fitxategiak eta karpetak zerrendatzen ditu. Exekutatu DIR eta aurkitu ongietorri fitxategia."
+        "es": "La cuidadora quiere consultar los colores disponibles. Ejecuta COLOR /?. La ayuda también puede pedirse con HELP COLOR. Después escribe COMPROBAR.",
+        "eu": "Zaintzaileak kolore erabilgarriak kontsultatu nahi ditu. Exekutatu COLOR /?. HELP COLOR ere erabil daiteke. Ondoren idatzi COMPROBAR."
       },
       "pistas": {
         "es": [
-          "Lee la ayuda del comando y revisa la carpeta actual.",
-          "DIR\nCOMPROBAR"
+          "Consulta la ayuda y observa qué información necesita el equipo del parque.",
+          "COLOR /?\nHELP COLOR"
         ],
         "eu": [
-          "Irakurri komandoaren laguntza eta egiaztatu uneko karpeta.",
-          "DIR\nCOMPROBAR"
+          "Kontsultatu laguntza eta begiratu parkeko taldeak zer informazio behar duen.",
+          "COLOR /?\nHELP COLOR"
         ]
       },
       "pruebas": [
         {
           "tipo": "respuesta",
           "pregunta": {
-            "es": "Nombre del archivo de bienvenida:",
-            "eu": "Ongietorri fitxategiaren izena:"
+            "es": "Opción de ayuda que acompaña a COLOR:",
+            "eu": "COLOR komandoaren laguntza aukera:"
           },
           "respuestas": {
             "es": [
-              "LEEME.txt"
+              "/?"
             ],
             "eu": [
-              "LEEME.txt"
+              "/?"
             ]
           }
         }
       ],
-      "solucion_docente": "DIR\nCOMPROBAR"
+      "solucion_docente": "COLOR /?\nHELP COLOR\nCOMPROBAR"
     },
     {
       "texto": {
-        "es": "TYPE muestra el contenido. Ejecuta TYPE LEEME.txt y lee la clave.",
-        "eu": "TYPE komandoak edukia erakusten du. Exekutatu TYPE LEEME.txt eta irakurri gakoa."
+        "es": "La pantalla de recepción está llena de consultas. Ejecuta CLS para despejarla y vuelve a escribir COMPROBAR; el objetivo reaparece con AYUDA si lo necesitas. Después escribe COMPROBAR.",
+        "eu": "Harrerako pantaila kontsultez beteta dago. Exekutatu CLS garbitzeko eta idatzi COMPROBAR; helburua AYUDA erabiliz ikus daiteke. Ondoren idatzi COMPROBAR."
       },
       "pistas": {
         "es": [
-          "Lee la ayuda del comando y revisa la carpeta actual.",
-          "TYPE LEEME.txt\nCOMPROBAR"
+          "Consulta la ayuda y observa qué información necesita el equipo del parque.",
+          "CLS"
         ],
         "eu": [
-          "Irakurri komandoaren laguntza eta egiaztatu uneko karpeta.",
-          "TYPE LEEME.txt\nCOMPROBAR"
+          "Kontsultatu laguntza eta begiratu parkeko taldeak zer informazio behar duen.",
+          "CLS"
         ]
       },
       "pruebas": [
         {
           "tipo": "respuesta",
           "pregunta": {
-            "es": "Clave:",
-            "eu": "Gakoa:"
+            "es": "Comando para limpiar la pantalla:",
+            "eu": "Pantaila garbitzeko komandoa:"
           },
           "respuestas": {
             "es": [
-              "KAIXO"
+              "CLS"
             ],
             "eu": [
-              "KAIXO"
+              "CLS"
             ]
           }
         }
       ],
-      "solucion_docente": "TYPE LEEME.txt\nCOMPROBAR"
-    },
-    {
-      "texto": {
-        "es": "Entra con CD centro. Lista y lee entrada.txt. Después vuelve con CD .. antes de COMPROBAR. Las rutas Windows usan la barra invertida.",
-        "eu": "Sartu CD centro erabiliz. Zerrendatu eta irakurri entrada.txt. Itzuli CD .. erabiliz COMPROBAR baino lehen. Windows bideek alderantzizko barra erabiltzen dute."
-      },
-      "pistas": {
-        "es": [
-          "Lee la ayuda del comando y revisa la carpeta actual.",
-          "CD centro\nDIR\nTYPE entrada.txt\nCD ..\nCOMPROBAR"
-        ],
-        "eu": [
-          "Irakurri komandoaren laguntza eta egiaztatu uneko karpeta.",
-          "CD centro\nDIR\nTYPE entrada.txt\nCD ..\nCOMPROBAR"
-        ]
-      },
-      "pruebas": [
-        {
-          "tipo": "respuesta",
-          "pregunta": {
-            "es": "Responsable:",
-            "eu": "Arduraduna:"
-          },
-          "respuestas": {
-            "es": [
-              "ALEX"
-            ],
-            "eu": [
-              "ALEX"
-            ]
-          }
-        }
-      ],
-      "solucion_docente": "CD centro\nDIR\nTYPE entrada.txt\nCD ..\nCOMPROBAR"
+      "solucion_docente": "CLS\nCOMPROBAR"
     }
   ],
   "final": {
-    "es": "Actividad completada. MENU para elegir otra o REINICIAR para repetir.",
-    "eu": "Jarduera osatuta. MENU beste bat aukeratzeko edo REINICIAR errepikatzeko."
+    "es": "Misión del parque completada. MENU para elegir otra expedición.",
+    "eu": "Parkeko misioa osatuta. MENU beste espedizio bat aukeratzeko."
   }
 }

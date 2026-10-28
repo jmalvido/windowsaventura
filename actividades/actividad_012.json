@@ -1,111 +1,127 @@
 {
   "schema": 1,
   "motor_minimo": 1,
-  "version": 1,
+  "version": 2,
   "id": "actividad_012",
   "titulo": {
-    "es": "Operación IZAR — Misión final",
-    "eu": "IZAR operazioa — Azken misioa"
+    "es": "La gran reapertura de Paleo Isla",
+    "eu": "Paleo Uhartearen berrirekiera handia"
   },
-  "archivos": {
-    "LEEME.txt": {
-      "es": "Operación IZAR. Recupera el expediente y aísla el paquete NIEBLA-42. La primera clave está en archivo\\orden.txt.\n",
-      "eu": "IZAR operazioa. Berreskuratu espedientea eta isolatu NIEBLA-42 paketea. Lehen gakoa archivo\\orden.txt fitxategian dago.\n"
-    },
-    "archivo/orden.txt": {
-      "es": "Clave: IZAR-2028.\n",
-      "eu": "Gakoa: IZAR-2028.\n"
-    },
-    "fuentes/aviso.txt": {
-      "es": "Identifica el paquete por NIEBLA-42. Conserva los originales del informe.\n",
-      "eu": "Identifikatu paketea NIEBLA-42 markarekin. Gorde txostenaren jatorrizkoak.\n"
-    },
-    "archivo/paquetes/resumen.txt": {
-      "es": "Marca NIEBLA-42. Texto de simulación.\n",
-      "eu": "NIEBLA-42 marka. Simulazio testua.\n"
-    },
-    "archivo/paquetes/normal.txt": {
-      "es": "Paquete verificado.\n",
-      "eu": "Egiaztatutako paketea.\n"
-    }
+  "introduccion": {
+    "es": "Mañana llegan los visitantes. Coordina recepción, incubadoras, cámaras y torres para preparar la reapertura. Las órdenes de mantenimiento se diseñan sin ejecutarlas. Cada etapa pertenece a este mismo turno.",
+    "eu": "Bihar bisitariak datoz. Koordinatu harrera, inkubagailuak, kamerak eta dorreak berrirekiera prestatzeko. Mantentze aginduak diseinatu egiten dira, exekutatu gabe. Urrats guztiak txanda berekoak dira."
   },
+  "comandos_temario": [
+    "HELP",
+    "CLS",
+    "VER",
+    "SYSTEMINFO",
+    "DATE",
+    "TIME",
+    "TITLE",
+    "COLOR",
+    "PROMPT",
+    "PATH",
+    "VOL",
+    "LABEL",
+    "CHKDSK",
+    "START",
+    "CMD",
+    "EXIT",
+    "SHUTDOWN"
+  ],
+  "archivos": {},
   "carpetas": [],
   "pasos": [
     {
       "texto": {
-        "es": "Investiga el escenario y encuentra la primera clave. No recibes el comando directamente: combina lo aprendido.",
-        "eu": "Ikertu eszenatokia eta aurkitu lehen gakoa. Ez duzu komandoa zuzenean jasoko: erabili ikasitakoa."
+        "es": "Recepción pide recuperar el catálogo de ayuda y despejar la pantalla antes de iniciar el turno. Elige las dos órdenes. Después escribe COMPROBAR.",
+        "eu": "Harrerak laguntza katalogoa berreskuratu eta pantaila garbitu nahi du txanda hasi aurretik. Aukeratu bi aginduak. Ondoren idatzi COMPROBAR."
       },
       "pistas": {
         "es": [
-          "Lee la ayuda del comando y revisa la carpeta actual.",
-          "TYPE LEEME.txt\nTYPE archivo\\orden.txt\nCOMPROBAR"
+          "Consulta la ayuda y observa qué información necesita el equipo del parque.",
+          "HELP\nCLS"
         ],
         "eu": [
-          "Irakurri komandoaren laguntza eta egiaztatu uneko karpeta.",
-          "TYPE LEEME.txt\nTYPE archivo\\orden.txt\nCOMPROBAR"
+          "Kontsultatu laguntza eta begiratu parkeko taldeak zer informazio behar duen.",
+          "HELP\nCLS"
         ]
       },
       "pruebas": [
         {
           "tipo": "respuesta",
           "pregunta": {
-            "es": "Clave:",
-            "eu": "Gakoa:"
+            "es": "Catálogo de ayuda:",
+            "eu": "Laguntza katalogoa:"
           },
           "respuestas": {
             "es": [
-              "IZAR-2028"
+              "HELP"
             ],
             "eu": [
-              "IZAR-2028"
+              "HELP"
+            ]
+          }
+        },
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Limpiar pantalla:",
+            "eu": "Pantaila garbitu:"
+          },
+          "respuestas": {
+            "es": [
+              "CLS"
+            ],
+            "eu": [
+              "CLS"
             ]
           }
         }
       ],
-      "solucion_docente": "TYPE LEEME.txt\nTYPE archivo\\orden.txt\nCOMPROBAR"
+      "solucion_docente": "HELP\nCLS\nCOMPROBAR"
     },
     {
       "texto": {
-        "es": "Crea expediente y cuarentena. Copia fuentes\\aviso.txt a expediente conservando el original.",
-        "eu": "Sortu expediente eta cuarentena. Kopiatu fuentes\\aviso.txt expediente karpetara, jatorrizkoa mantenduz."
+        "es": "Identifica la versión del puesto de recepción con la consulta breve y copia su salida. Después escribe COMPROBAR.",
+        "eu": "Identifikatu harrerako postuaren bertsioa kontsulta laburrarekin eta kopiatu irteera. Ondoren idatzi COMPROBAR."
       },
       "pistas": {
         "es": [
-          "Lee la ayuda del comando y revisa la carpeta actual.",
-          "MD expediente\nMD cuarentena\nCOPY fuentes\\aviso.txt expediente\\\nCOMPROBAR"
+          "Consulta la ayuda y observa qué información necesita el equipo del parque.",
+          "VER"
         ],
         "eu": [
-          "Irakurri komandoaren laguntza eta egiaztatu uneko karpeta.",
-          "MD expediente\nMD cuarentena\nCOPY fuentes\\aviso.txt expediente\\\nCOMPROBAR"
+          "Kontsultatu laguntza eta begiratu parkeko taldeak zer informazio behar duen.",
+          "VER"
         ]
       },
       "pruebas": [
         {
-          "tipo": "carpeta",
-          "ruta": "cuarentena"
-        },
-        {
-          "tipo": "contenido",
-          "ruta": "expediente/aviso.txt",
-          "origen": "fuentes/aviso.txt"
+          "tipo": "respuesta_sistema",
+          "consulta": "version",
+          "pregunta": {
+            "es": "Versión:",
+            "eu": "Bertsioa:"
+          }
         }
       ],
-      "solucion_docente": "MD expediente\nMD cuarentena\nCOPY fuentes\\aviso.txt expediente\\\nCOMPROBAR"
+      "solucion_docente": "VER\nCOMPROBAR"
     },
     {
       "texto": {
-        "es": "Consulta la ayuda de SYSTEMINFO y ejecuta la consulta. Identifica el nombre de este equipo.",
-        "eu": "Kontsultatu SYSTEMINFOren laguntza eta exekutatu kontsulta. Identifikatu ekipo honen izena."
+        "es": "El laboratorio necesita el nombre del equipo y revisar memoria y sistema operativo. Consulta el informe completo; responde con el nombre. Después escribe COMPROBAR.",
+        "eu": "Laborategiak ekipoaren izena behar du eta memoria eta sistema eragilea berrikusi nahi ditu. Kontsultatu txosten osoa; erantzun izenarekin. Ondoren idatzi COMPROBAR."
       },
       "pistas": {
         "es": [
-          "Lee la ayuda del comando y revisa la carpeta actual.",
-          "SYSTEMINFO /?\nSYSTEMINFO\nCOMPROBAR"
+          "Consulta la ayuda y observa qué información necesita el equipo del parque.",
+          "SYSTEMINFO"
         ],
         "eu": [
-          "Irakurri komandoaren laguntza eta egiaztatu uneko karpeta.",
-          "SYSTEMINFO /?\nSYSTEMINFO\nCOMPROBAR"
+          "Kontsultatu laguntza eta begiratu parkeko taldeak zer informazio behar duen.",
+          "SYSTEMINFO"
         ]
       },
       "pruebas": [
@@ -118,67 +134,36 @@
           }
         }
       ],
-      "solucion_docente": "SYSTEMINFO /?\nSYSTEMINFO\nCOMPROBAR"
+      "solucion_docente": "SYSTEMINFO\nCOMPROBAR"
     },
     {
       "texto": {
-        "es": "Deja la versión de Windows en expediente\\version.txt, sin añadir títulos ni etiquetas.",
-        "eu": "Utzi Windowsen bertsioa expediente\\version.txt fitxategian, izenburu edo etiketarik gehitu gabe."
+        "es": "Consulta fecha y hora de las incubadoras sin cambiarlas. Copia la fecha y explica con qué orden consultaste la hora. Después escribe COMPROBAR.",
+        "eu": "Kontsultatu inkubagailuen data eta ordua aldatu gabe. Kopiatu data eta adierazi ordua ikusteko agindua. Ondoren idatzi COMPROBAR."
       },
       "pistas": {
         "es": [
-          "Lee la ayuda del comando y revisa la carpeta actual.",
-          "VER > expediente\\version.txt\nCOMPROBAR"
+          "Consulta la ayuda y observa qué información necesita el equipo del parque.",
+          "DATE /T\nTIME /T"
         ],
         "eu": [
-          "Irakurri komandoaren laguntza eta egiaztatu uneko karpeta.",
-          "VER > expediente\\version.txt\nCOMPROBAR"
+          "Kontsultatu laguntza eta begiratu parkeko taldeak zer informazio behar duen.",
+          "DATE /T\nTIME /T"
         ]
       },
       "pruebas": [
         {
-          "tipo": "salida",
-          "consulta": "version",
-          "ruta": "expediente/version.txt"
-        }
-      ],
-      "solucion_docente": "VER > expediente\\version.txt\nCOMPROBAR"
-    },
-    {
-      "texto": {
-        "es": "Consulta fecha y hora sin cambiarlas. Responde con ambas órdenes, una por pregunta.",
-        "eu": "Kontsultatu data eta ordua aldatu gabe. Erantzun bi aginduekin, bana galdera bakoitzeko."
-      },
-      "pistas": {
-        "es": [
-          "Lee la ayuda del comando y revisa la carpeta actual.",
-          "DATE /T\nTIME /T\nCOMPROBAR"
-        ],
-        "eu": [
-          "Irakurri komandoaren laguntza eta egiaztatu uneko karpeta.",
-          "DATE /T\nTIME /T\nCOMPROBAR"
-        ]
-      },
-      "pruebas": [
-        {
-          "tipo": "respuesta",
+          "tipo": "respuesta_sistema",
+          "consulta": "fecha",
           "pregunta": {
-            "es": "Orden para la fecha:",
-            "eu": "Datarako agindua:"
-          },
-          "respuestas": {
-            "es": [
-              "DATE /T"
-            ],
-            "eu": [
-              "DATE /T"
-            ]
+            "es": "Fecha completa:",
+            "eu": "Data osoa:"
           }
         },
         {
           "tipo": "respuesta",
           "pregunta": {
-            "es": "Orden para la hora:",
+            "es": "Orden de hora:",
             "eu": "Ordurako agindua:"
           },
           "respuestas": {
@@ -195,121 +180,279 @@
     },
     {
       "texto": {
-        "es": "Guarda la información del volumen del sistema en expediente\\volumen.txt. No cambies su etiqueta.",
-        "eu": "Gorde sistemaren bolumenaren informazioa expediente\\volumen.txt fitxategian. Ez aldatu etiketa."
+        "es": "Pon el título Reapertura Paleo Isla. El puesto exige fondo blanco brillante y texto rojo normal: consulta COLOR si lo necesitas. Vuelve a COLOR 0B después de observarlo. Después escribe COMPROBAR.",
+        "eu": "Jarri Reapertura Paleo Isla izenburua. Postuak atzealde zuri distiratsua eta testu gorri arrunta behar ditu: kontsultatu COLOR behar baduzu. Itzuli COLOR 0B erabiliz emaitza ikusi ondoren. Ondoren idatzi COMPROBAR."
       },
       "pistas": {
         "es": [
-          "Lee la ayuda del comando y revisa la carpeta actual.",
-          "VOL %SystemDrive% > expediente\\volumen.txt\nCOMPROBAR"
+          "Consulta la ayuda y observa qué información necesita el equipo del parque.",
+          "TITLE Reapertura Paleo Isla\nCOLOR F4\nCOLOR 0B"
         ],
         "eu": [
-          "Irakurri komandoaren laguntza eta egiaztatu uneko karpeta.",
-          "VOL %SystemDrive% > expediente\\volumen.txt\nCOMPROBAR"
+          "Kontsultatu laguntza eta begiratu parkeko taldeak zer informazio behar duen.",
+          "TITLE Reapertura Paleo Isla\nCOLOR F4\nCOLOR 0B"
         ]
       },
       "pruebas": [
         {
-          "tipo": "salida",
-          "consulta": "volumen",
-          "ruta": "expediente/volumen.txt"
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Orden de título:",
+            "eu": "Izenburuaren agindua:"
+          },
+          "respuestas": {
+            "es": [
+              "TITLE Reapertura Paleo Isla"
+            ],
+            "eu": [
+              "TITLE Reapertura Paleo Isla"
+            ]
+          }
+        },
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Código solicitado:",
+            "eu": "Eskatutako kodea:"
+          },
+          "respuestas": {
+            "es": [
+              "F4"
+            ],
+            "eu": [
+              "F4"
+            ]
+          }
         }
       ],
-      "solucion_docente": "VOL %SystemDrive% > expediente\\volumen.txt\nCOMPROBAR"
+      "solucion_docente": "TITLE Reapertura Paleo Isla\nCOLOR F4\nCOLOR 0B\nCOMPROBAR"
     },
     {
       "texto": {
-        "es": "Personaliza el prompt con [IZAR] seguido de la ruta y >. Cambia el título a Operacion IZAR y consulta PATH sin alterarlo. Solo se valida automáticamente el prompt y la respuesta conceptual.",
-        "eu": "Pertsonalizatu prompta [IZAR], bidea eta > erabiliz. Aldatu izenburua Operacion IZAR izenera eta kontsultatu PATH aldatu gabe. Prompta eta erantzun kontzeptuala bakarrik egiaztatzen dira automatikoki."
+        "es": "Configura el indicador con [PALEO] seguido de la ruta y el signo de cierre. Esta condición se comprueba en el entorno real. Después escribe COMPROBAR.",
+        "eu": "Konfiguratu adierazlea [PALEO], bidea eta itxiera ikurrarekin. Baldintza benetako ingurunean egiaztatzen da. Ondoren idatzi COMPROBAR."
       },
       "pistas": {
         "es": [
-          "Lee la ayuda del comando y revisa la carpeta actual.",
-          "PROMPT [IZAR] $P$G\nTITLE Operacion IZAR\nPATH\nCOMPROBAR"
+          "Consulta la ayuda y observa qué información necesita el equipo del parque.",
+          "PROMPT [PALEO] $P$G"
         ],
         "eu": [
-          "Irakurri komandoaren laguntza eta egiaztatu uneko karpeta.",
-          "PROMPT [IZAR] $P$G\nTITLE Operacion IZAR\nPATH\nCOMPROBAR"
+          "Kontsultatu laguntza eta begiratu parkeko taldeak zer informazio behar duen.",
+          "PROMPT [PALEO] $P$G"
         ]
       },
       "pruebas": [
         {
           "tipo": "entorno",
           "nombre": "PROMPT",
-          "valor": "[IZAR] $P$G"
+          "valor": "[PALEO] $P$G"
+        }
+      ],
+      "solucion_docente": "PROMPT [PALEO] $P$G\nCOMPROBAR"
+    },
+    {
+      "texto": {
+        "es": "Comprueba dónde busca programas la consola sin modificar esa lista. Identifica el separador. Después escribe COMPROBAR.",
+        "eu": "Egiaztatu kontsolak programak non bilatzen dituen zerrenda aldatu gabe. Identifikatu bereizlea. Ondoren idatzi COMPROBAR."
+      },
+      "pistas": {
+        "es": [
+          "Consulta la ayuda y observa qué información necesita el equipo del parque.",
+          "PATH"
+        ],
+        "eu": [
+          "Kontsultatu laguntza eta begiratu parkeko taldeak zer informazio behar duen.",
+          "PATH"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Comando de consulta:",
+            "eu": "Kontsulta komandoa:"
+          },
+          "respuestas": {
+            "es": [
+              "PATH"
+            ],
+            "eu": [
+              "PATH"
+            ]
+          }
         },
         {
           "tipo": "respuesta",
           "pregunta": {
-            "es": "Comando que cambia el título:",
-            "eu": "Izenburua aldatzeko komandoa:"
+            "es": "Separador:",
+            "eu": "Bereizlea:"
           },
           "respuestas": {
             "es": [
-              "TITLE"
+              ";"
             ],
             "eu": [
-              "TITLE"
+              ";"
             ]
           }
         }
       ],
-      "solucion_docente": "PROMPT [IZAR] $P$G\nTITLE Operacion IZAR\nPATH\nCOMPROBAR"
+      "solucion_docente": "PATH\nCOMPROBAR"
     },
     {
       "texto": {
-        "es": "Investiga los paquetes. Mueve el que tiene NIEBLA-42 a cuarentena\\sospechoso.txt. Conserva normal.txt.",
-        "eu": "Ikertu paketeak. Eraman NIEBLA-42 duen fitxategia cuarentena\\sospechoso.txt kokapenera. Mantendu normal.txt."
+        "es": "Consulta la etiqueta y serie del volumen. Diseña, sin ejecutarla, la orden que pondría FOSILES a un USB E: previamente identificado. Después escribe COMPROBAR.",
+        "eu": "Kontsultatu bolumenaren etiketa eta seriea. Diseinatu, exekutatu gabe, aurrez identifikatutako E: USB bati FOSILES etiketa jartzeko agindua. Ondoren idatzi COMPROBAR."
       },
       "pistas": {
         "es": [
-          "Lee la ayuda del comando y revisa la carpeta actual.",
-          "TYPE archivo\\paquetes\\resumen.txt\nTYPE archivo\\paquetes\\normal.txt\nMOVE archivo\\paquetes\\resumen.txt cuarentena\\sospechoso.txt\nCOMPROBAR"
+          "Consulta la ayuda y observa qué información necesita el equipo del parque.",
+          "VOL\nLABEL /?"
         ],
         "eu": [
-          "Irakurri komandoaren laguntza eta egiaztatu uneko karpeta.",
-          "TYPE archivo\\paquetes\\resumen.txt\nTYPE archivo\\paquetes\\normal.txt\nMOVE archivo\\paquetes\\resumen.txt cuarentena\\sospechoso.txt\nCOMPROBAR"
-        ]
-      },
-      "pruebas": [
-        {
-          "tipo": "contenido",
-          "ruta": "cuarentena/sospechoso.txt",
-          "origen": "archivo/paquetes/resumen.txt"
-        },
-        {
-          "tipo": "ausente",
-          "ruta": "archivo/paquetes/resumen.txt"
-        },
-        {
-          "tipo": "contenido",
-          "ruta": "archivo/paquetes/normal.txt",
-          "origen": "archivo/paquetes/normal.txt"
-        }
-      ],
-      "solucion_docente": "TYPE archivo\\paquetes\\resumen.txt\nTYPE archivo\\paquetes\\normal.txt\nMOVE archivo\\paquetes\\resumen.txt cuarentena\\sospechoso.txt\nCOMPROBAR"
-    },
-    {
-      "texto": {
-        "es": "Planifica, sin ejecutar: apagado en 60 segundos; cancelación; comprobación de C: sin solicitar reparaciones.",
-        "eu": "Planifikatu, exekutatu gabe: 60 segundotan itzaltzea; ezeztatzea; C: konponketarik eskatu gabe egiaztatzea."
-      },
-      "pistas": {
-        "es": [
-          "Lee la ayuda del comando y revisa la carpeta actual.",
-          "COMPROBAR"
-        ],
-        "eu": [
-          "Irakurri komandoaren laguntza eta egiaztatu uneko karpeta.",
-          "COMPROBAR"
+          "Kontsultatu laguntza eta begiratu parkeko taldeak zer informazio behar duen.",
+          "VOL\nLABEL /?"
         ]
       },
       "pruebas": [
         {
           "tipo": "respuesta",
           "pregunta": {
-            "es": "Apagado:",
-            "eu": "Itzaltzea:"
+            "es": "Consulta de etiqueta y serie:",
+            "eu": "Etiketa eta seriea kontsultatzeko:"
+          },
+          "respuestas": {
+            "es": [
+              "VOL"
+            ],
+            "eu": [
+              "VOL"
+            ]
+          }
+        },
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Cambio propuesto para el USB:",
+            "eu": "USBrako proposatutako aldaketa:"
+          },
+          "respuestas": {
+            "es": [
+              "LABEL E: FOSILES"
+            ],
+            "eu": [
+              "LABEL E: FOSILES"
+            ]
+          }
+        }
+      ],
+      "solucion_docente": "VOL\nLABEL /?\nCOMPROBAR"
+    },
+    {
+      "texto": {
+        "es": "Las cámaras necesitan diagnóstico de C: sin reparación. Propón la orden como texto e identifica la opción que NO debes añadir si solo consultas. Después escribe COMPROBAR.",
+        "eu": "Kamerek C: diagnostikoa behar dute konponketarik gabe. Proposatu agindua testu gisa eta identifikatu kontsultarako gehitu behar EZ den aukera. Ondoren idatzi COMPROBAR."
+      },
+      "pistas": {
+        "es": [
+          "Consulta la ayuda y observa qué información necesita el equipo del parque.",
+          "CHKDSK /?"
+        ],
+        "eu": [
+          "Kontsultatu laguntza eta begiratu parkeko taldeak zer informazio behar duen.",
+          "CHKDSK /?"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Diagnóstico:",
+            "eu": "Diagnostikoa:"
+          },
+          "respuestas": {
+            "es": [
+              "CHKDSK C:"
+            ],
+            "eu": [
+              "CHKDSK C:"
+            ]
+          }
+        },
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Opción de reparación que omites:",
+            "eu": "Kanpoan utziko duzun konponketa aukera:"
+          },
+          "respuestas": {
+            "es": [
+              "/F"
+            ],
+            "eu": [
+              "/F"
+            ]
+          }
+        }
+      ],
+      "solucion_docente": "CHKDSK /?\nCOMPROBAR"
+    },
+    {
+      "texto": {
+        "es": "Abre otra consola para la torre con título Torre Paleo y consulta de versión, dejándola abierta. Ciérrala con EXIT y vuelve a esta actividad. Después escribe COMPROBAR.",
+        "eu": "Ireki dorrerako beste kontsola bat Torre Paleo izenburuarekin eta bertsio kontsultarekin, irekita utziz. Itxi EXIT erabiliz eta itzuli jarduerara. Ondoren idatzi COMPROBAR."
+      },
+      "pistas": {
+        "es": [
+          "Consulta la ayuda y observa qué información necesita el equipo del parque.",
+          "START \"Torre Paleo\" CMD /K VER"
+        ],
+        "eu": [
+          "Kontsultatu laguntza eta begiratu parkeko taldeak zer informazio behar duen.",
+          "START \"Torre Paleo\" CMD /K VER"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Orden para abrirla:",
+            "eu": "Irekitzeko agindua:"
+          },
+          "respuestas": {
+            "es": [
+              "START \"Torre Paleo\" CMD /K VER"
+            ],
+            "eu": [
+              "START \"Torre Paleo\" CMD /K VER"
+            ]
+          }
+        }
+      ],
+      "solucion_docente": "START \"Torre Paleo\" CMD /K VER\nCOMPROBAR"
+    },
+    {
+      "texto": {
+        "es": "Elabora el plan de cierre: apagado en 60 segundos y cancelación si llega una visita tardía. Responde como texto, sin ejecutar el plan. Después escribe COMPROBAR.",
+        "eu": "Prestatu itxiera plana: 60 segundotan itzaltzea eta ezeztatzea bisitari berantiarra badator. Erantzun testu gisa, plana exekutatu gabe. Ondoren idatzi COMPROBAR."
+      },
+      "pistas": {
+        "es": [
+          "Consulta la ayuda y observa qué información necesita el equipo del parque.",
+          "SHUTDOWN /?"
+        ],
+        "eu": [
+          "Kontsultatu laguntza eta begiratu parkeko taldeak zer informazio behar duen.",
+          "SHUTDOWN /?"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Apagado programado:",
+            "eu": "Programatutako itzaltzea:"
           },
           "respuestas": {
             "es": [
@@ -334,137 +477,23 @@
               "shutdown /a"
             ]
           }
-        },
-        {
-          "tipo": "respuesta",
-          "pregunta": {
-            "es": "Comprobación de disco:",
-            "eu": "Diskoaren egiaztapena:"
-          },
-          "respuestas": {
-            "es": [
-              "chkdsk C:"
-            ],
-            "eu": [
-              "chkdsk C:"
-            ]
-          }
         }
       ],
-      "solucion_docente": "COMPROBAR"
+      "solucion_docente": "SHUTDOWN /?\nCOMPROBAR"
     },
     {
       "texto": {
-        "es": "Crea cierre.bat con cuatro líneas exactas: desactiva eco, genera versión, genera volumen y escribe LISTO en expediente\\listo.txt. Consulta PISTA para ver la plantilla completa. No incluyas apagado ni reparación.",
-        "eu": "Sortu cierre.bat lau lerro zehatzekin: oihartzuna desaktibatu, bertsioa sortu, bolumena sortu eta LISTO idatzi expediente\\listo.txt fitxategian. PISTA komandoak txantiloia erakusten du. Ez sartu itzaltzeko edo konpontzeko agindurik."
+        "es": "Entrega el turno: sal con EXIT y vuelve a esta misión desde el menú. Restablece el indicador [PALEO] con ruta y signo de cierre y comprueba el final. Después escribe COMPROBAR.",
+        "eu": "Eman txanda: irten EXIT erabiliz eta itzuli misiora menutik. Berrezarri [PALEO] adierazlea bidearekin eta itxiera ikurrarekin eta egiaztatu amaiera. Ondoren idatzi COMPROBAR."
       },
       "pistas": {
         "es": [
-          "Lee la ayuda del comando y revisa la carpeta actual.",
-          "NOTEPAD cierre.bat\n# Contenido / Edukia:\n@echo off\nver > expediente\\version.txt\nvol %SystemDrive% > expediente\\volumen.txt\necho LISTO > expediente\\listo.txt\n# Guarda y vuelve a CMD / Gorde eta itzuli CMDra\nCOMPROBAR"
+          "Consulta la ayuda y observa qué información necesita el equipo del parque.",
+          "EXIT\nREM Vuelve a la actividad 12 / Itzuli 12. jarduerara\nPROMPT [PALEO] $P$G"
         ],
         "eu": [
-          "Irakurri komandoaren laguntza eta egiaztatu uneko karpeta.",
-          "NOTEPAD cierre.bat\n# Contenido / Edukia:\n@echo off\nver > expediente\\version.txt\nvol %SystemDrive% > expediente\\volumen.txt\necho LISTO > expediente\\listo.txt\n# Guarda y vuelve a CMD / Gorde eta itzuli CMDra\nCOMPROBAR"
-        ]
-      },
-      "pruebas": [
-        {
-          "tipo": "texto",
-          "ruta": "cierre.bat",
-          "lineas": [
-            "@echo off",
-            "ver > expediente\\version.txt",
-            "vol %SystemDrive% > expediente\\volumen.txt",
-            "echo LISTO > expediente\\listo.txt"
-          ]
-        }
-      ],
-      "solucion_docente": "NOTEPAD cierre.bat\n# Contenido / Edukia:\n@echo off\nver > expediente\\version.txt\nvol %SystemDrive% > expediente\\volumen.txt\necho LISTO > expediente\\listo.txt\n# Guarda y vuelve a CMD / Gorde eta itzuli CMDra\nCOMPROBAR"
-    },
-    {
-      "texto": {
-        "es": "Ejecuta cierre.bat desde la raíz del escenario. COMPROBAR revisará todo el expediente, no solo el último archivo.",
-        "eu": "Exekutatu cierre.bat eszenatokiaren errotik. COMPROBAR komandoak espediente osoa berrikusiko du, ez azken fitxategia bakarrik."
-      },
-      "pistas": {
-        "es": [
-          "Lee la ayuda del comando y revisa la carpeta actual.",
-          "CALL cierre.bat\nCOMPROBAR"
-        ],
-        "eu": [
-          "Irakurri komandoaren laguntza eta egiaztatu uneko karpeta.",
-          "CALL cierre.bat\nCOMPROBAR"
-        ]
-      },
-      "pruebas": [
-        {
-          "tipo": "contenido",
-          "ruta": "expediente/aviso.txt",
-          "origen": "fuentes/aviso.txt"
-        },
-        {
-          "tipo": "contenido",
-          "ruta": "fuentes/aviso.txt",
-          "origen": "fuentes/aviso.txt"
-        },
-        {
-          "tipo": "contenido",
-          "ruta": "cuarentena/sospechoso.txt",
-          "origen": "archivo/paquetes/resumen.txt"
-        },
-        {
-          "tipo": "ausente",
-          "ruta": "archivo/paquetes/resumen.txt"
-        },
-        {
-          "tipo": "contenido",
-          "ruta": "archivo/paquetes/normal.txt",
-          "origen": "archivo/paquetes/normal.txt"
-        },
-        {
-          "tipo": "salida",
-          "consulta": "version",
-          "ruta": "expediente/version.txt"
-        },
-        {
-          "tipo": "salida",
-          "consulta": "volumen",
-          "ruta": "expediente/volumen.txt"
-        },
-        {
-          "tipo": "texto",
-          "ruta": "expediente/listo.txt",
-          "lineas": [
-            "LISTO"
-          ]
-        },
-        {
-          "tipo": "texto",
-          "ruta": "cierre.bat",
-          "lineas": [
-            "@echo off",
-            "ver > expediente\\version.txt",
-            "vol %SystemDrive% > expediente\\volumen.txt",
-            "echo LISTO > expediente\\listo.txt"
-          ]
-        }
-      ],
-      "solucion_docente": "CALL cierre.bat\nCOMPROBAR"
-    },
-    {
-      "texto": {
-        "es": "Sal con EXIT y vuelve a esta actividad. Comprueba que el expediente sigue completo. No uses REINICIAR.",
-        "eu": "Irten EXIT erabiliz eta sartu berriro jardueran. Egiaztatu espedienteak osorik jarraitzen duela. Ez erabili REINICIAR."
-      },
-      "pistas": {
-        "es": [
-          "Lee la ayuda del comando y revisa la carpeta actual.",
-          "EXIT\n# Volver a la actividad 12 / Itzuli 12. jarduerara\nCOMPROBAR"
-        ],
-        "eu": [
-          "Irakurri komandoaren laguntza eta egiaztatu uneko karpeta.",
-          "EXIT\n# Volver a la actividad 12 / Itzuli 12. jarduerara\nCOMPROBAR"
+          "Kontsultatu laguntza eta begiratu parkeko taldeak zer informazio behar duen.",
+          "EXIT\nREM Vuelve a la actividad 12 / Itzuli 12. jarduerara\nPROMPT [PALEO] $P$G"
         ]
       },
       "pruebas": [
@@ -472,62 +501,16 @@
           "tipo": "reentrada"
         },
         {
-          "tipo": "contenido",
-          "ruta": "expediente/aviso.txt",
-          "origen": "fuentes/aviso.txt"
-        },
-        {
-          "tipo": "contenido",
-          "ruta": "fuentes/aviso.txt",
-          "origen": "fuentes/aviso.txt"
-        },
-        {
-          "tipo": "contenido",
-          "ruta": "cuarentena/sospechoso.txt",
-          "origen": "archivo/paquetes/resumen.txt"
-        },
-        {
-          "tipo": "ausente",
-          "ruta": "archivo/paquetes/resumen.txt"
-        },
-        {
-          "tipo": "contenido",
-          "ruta": "archivo/paquetes/normal.txt",
-          "origen": "archivo/paquetes/normal.txt"
-        },
-        {
-          "tipo": "salida",
-          "consulta": "version",
-          "ruta": "expediente/version.txt"
-        },
-        {
-          "tipo": "salida",
-          "consulta": "volumen",
-          "ruta": "expediente/volumen.txt"
-        },
-        {
-          "tipo": "texto",
-          "ruta": "expediente/listo.txt",
-          "lineas": [
-            "LISTO"
-          ]
-        },
-        {
-          "tipo": "texto",
-          "ruta": "cierre.bat",
-          "lineas": [
-            "@echo off",
-            "ver > expediente\\version.txt",
-            "vol %SystemDrive% > expediente\\volumen.txt",
-            "echo LISTO > expediente\\listo.txt"
-          ]
+          "tipo": "entorno",
+          "nombre": "PROMPT",
+          "valor": "[PALEO] $P$G"
         }
       ],
-      "solucion_docente": "EXIT\n# Volver a la actividad 12 / Itzuli 12. jarduerara\nCOMPROBAR"
+      "solucion_docente": "EXIT\nREM Vuelve a la actividad 12 / Itzuli 12. jarduerara\nPROMPT [PALEO] $P$G\nCOMPROBAR"
     }
   ],
   "final": {
-    "es": "Actividad completada. MENU para elegir otra o REINICIAR para repetir.",
-    "eu": "Jarduera osatuta. MENU beste bat aukeratzeko edo REINICIAR errepikatzeko."
+    "es": "Misión del parque completada. MENU para elegir otra expedición.",
+    "eu": "Parkeko misioa osatuta. MENU beste espedizio bat aukeratzeko."
   }
 }

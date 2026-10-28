@@ -1,13 +1,13 @@
 # Prácticas que revisa el profesor
 
-Complemento de los juegos 7 y 9, basado en la hoja aportada. El corrector comprueba
+Complemento de los juegos 6, 7, 10 y 11, basado en la hoja aportada. El corrector comprueba
 respuestas conceptuales; no certifica la realización de estas operaciones.
 
 ## Accesos directos
 
-1. Escritorio → Nuevo → Acceso directo. Destino cmd.exe; nombre Simbolo del sistema.
+1. Escritorio → Nuevo → Acceso directo. Destino cmd.exe; nombre Puesto Velociraptores.
 2. Crea Apagar 60 con destino:
-   shutdown.exe /s /t 60 /c "El equipo se apagará en un minuto"
+   shutdown.exe /s /t 60 /c "El parque cierra en un minuto"
 3. En Propiedades → Cambiar icono, selecciona un icono de Windows.
 4. Crea Apagar con destino: shutdown.exe /s /t 20 /c "Apagando..."
 5. Crea No apagar con destino: shutdown.exe /a
@@ -26,7 +26,7 @@ la demostración con documentos sin guardar. Capturas: propiedades y cancelació
 ## Etiqueta de un USB
 
 Consulta VOL C: sin cambiar el sistema. Si hay un USB de prácticas, confirma primero
-su letra en el Explorador. Usa VOL X:, LABEL X: APELLIDO y de nuevo VOL X:.
+su letra en el Explorador. Usa VOL X:, LABEL X: HUELLAS y de nuevo VOL X:.
 Sustituye X: por la letra verificada. Sin USB, documenta la sintaxis sin utilizar otra unidad.
 
 ## CHKDSK

@@ -1,134 +1,127 @@
 {
   "schema": 1,
   "motor_minimo": 1,
-  "version": 1,
+  "version": 2,
   "id": "actividad_010",
   "titulo": {
-    "es": "Tu primer archivo bat",
-    "eu": "Zure lehen bat fitxategia"
+    "es": "El cierre del centro de visitantes",
+    "eu": "Bisitarien zentroaren itxiera"
   },
-  "archivos": {
-    "LEEME.txt": {
-      "es": "Bienvenido al centro IZAR. Lee las instrucciones y usa COMPROBAR al terminar cada paso.\n",
-      "eu": "Ongi etorri IZAR zentrora. Irakurri argibideak eta erabili COMPROBAR urrats bakoitzaren amaieran.\n"
-    },
-    "plantilla.txt": {
-      "es": "@echo off\necho INICIO\nver > version.txt\necho FIN\n",
-      "eu": "@echo off\necho INICIO\nver > version.txt\necho FIN\n"
-    }
+  "introduccion": {
+    "es": "El parque cierra, pero los cuidadores siguen trabajando. Prepara el apagado del puesto como una propuesta escrita, sin ejecutarlo.",
+    "eu": "Parkea ixten ari da, baina zaintzaileek lanean jarraitzen dute. Prestatu postua itzaltzeko proposamena testu gisa, exekutatu gabe."
   },
+  "comandos_temario": [
+    "SHUTDOWN"
+  ],
+  "archivos": {},
   "carpetas": [],
   "pasos": [
     {
       "texto": {
-        "es": "Un .bat contiene órdenes de CMD. Lee plantilla.txt. @echo off oculta las órdenes; ECHO escribe mensajes. Copia la plantilla como informe.bat.",
-        "eu": " .bat fitxategiak CMD aginduak ditu. Irakurri plantilla.txt. @echo off aginduak ezkutatzen ditu; ECHO komandoak mezuak idazten ditu. Kopiatu txantiloia informe.bat izenarekin."
+        "es": "Consulta SHUTDOWN /? y localiza la opción de apagado, diferenciándola de reiniciar. Después escribe COMPROBAR.",
+        "eu": "Kontsultatu SHUTDOWN /? eta aurkitu itzaltzeko aukera, berrabiarazteko aukeratik bereiziz. Ondoren idatzi COMPROBAR."
       },
       "pistas": {
         "es": [
-          "Lee la ayuda del comando y revisa la carpeta actual.",
-          "TYPE plantilla.txt\nCOPY plantilla.txt informe.bat\nCOMPROBAR"
+          "Consulta la ayuda y observa qué información necesita el equipo del parque.",
+          "SHUTDOWN /?"
         ],
         "eu": [
-          "Irakurri komandoaren laguntza eta egiaztatu uneko karpeta.",
-          "TYPE plantilla.txt\nCOPY plantilla.txt informe.bat\nCOMPROBAR"
+          "Kontsultatu laguntza eta begiratu parkeko taldeak zer informazio behar duen.",
+          "SHUTDOWN /?"
         ]
       },
       "pruebas": [
         {
-          "tipo": "contenido",
-          "ruta": "informe.bat",
-          "origen": "plantilla.txt"
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Opción para apagar:",
+            "eu": "Itzaltzeko aukera:"
+          },
+          "respuestas": {
+            "es": [
+              "/S"
+            ],
+            "eu": [
+              "/S"
+            ]
+          }
         }
       ],
-      "solucion_docente": "TYPE plantilla.txt\nCOPY plantilla.txt informe.bat\nCOMPROBAR"
+      "solucion_docente": "SHUTDOWN /?\nCOMPROBAR"
     },
     {
       "texto": {
-        "es": "Ejecuta CALL informe.bat. CALL permite regresar al script que lo invoca; en CMD interactivo también puedes escribir informe.bat. Revisa version.txt.",
-        "eu": "Exekutatu CALL informe.bat. CALL komandoak deitzen duen script-era itzultzea ahalbidetzen du; CMD interaktiboan informe.bat ere idatz dezakezu. Aztertu version.txt."
+        "es": "Diseña un apagado en 60 segundos con el mensaje El parque cierra en un minuto. Introdúcelo solo como respuesta de COMPROBAR. Después escribe COMPROBAR.",
+        "eu": "Diseinatu 60 segundoko itzaltzea El parque cierra en un minuto mezuarekin. Idatzi COMPROBARen erantzun gisa bakarrik. Ondoren idatzi COMPROBAR."
       },
       "pistas": {
         "es": [
-          "Lee la ayuda del comando y revisa la carpeta actual.",
-          "CALL informe.bat\nTYPE version.txt\nCOMPROBAR"
+          "Consulta la ayuda y observa qué información necesita el equipo del parque.",
+          "SHUTDOWN /?"
         ],
         "eu": [
-          "Irakurri komandoaren laguntza eta egiaztatu uneko karpeta.",
-          "CALL informe.bat\nTYPE version.txt\nCOMPROBAR"
+          "Kontsultatu laguntza eta begiratu parkeko taldeak zer informazio behar duen.",
+          "SHUTDOWN /?"
         ]
       },
       "pruebas": [
         {
-          "tipo": "salida",
-          "consulta": "version",
-          "ruta": "version.txt"
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Orden propuesta, sin ejecutarla:",
+            "eu": "Proposatutako agindua, exekutatu gabe:"
+          },
+          "respuestas": {
+            "es": [
+              "shutdown /s /t 60 /c \"El parque cierra en un minuto\""
+            ],
+            "eu": [
+              "shutdown /s /t 60 /c \"El parque cierra en un minuto\""
+            ]
+          }
         }
       ],
-      "solucion_docente": "CALL informe.bat\nTYPE version.txt\nCOMPROBAR"
+      "solucion_docente": "SHUTDOWN /?\nCOMPROBAR"
     },
     {
       "texto": {
-        "es": "Crea inicio.bat con un editor de texto (NOTEPAD inicio.bat). Debe contener exactamente estas tres líneas: @echo off, call informe.bat, echo LISTO > listo.txt. Guarda como .bat, no .bat.txt. La comprobación inspecciona el archivo, no lo ejecuta.",
-        "eu": "Sortu inicio.bat testu editore batekin (NOTEPAD inicio.bat). Hiru lerro hauek izan behar ditu: @echo off, call informe.bat, echo LISTO > listo.txt. Gorde .bat gisa, ez .bat.txt gisa. Egiaztapenak fitxategia irakurtzen du; ez du exekutatzen."
+        "es": "Una cuidadora necesita seguir trabajando. ¿Qué orden cancelaría un apagado pendiente? No programes ninguno para responder. Después escribe COMPROBAR.",
+        "eu": "Zaintzaile batek lanean jarraitu behar du. Zer aginduk ezeztatuko luke programatutako itzaltzea? Ez programatu itzaltzerik erantzuteko. Ondoren idatzi COMPROBAR."
       },
       "pistas": {
         "es": [
-          "Lee la ayuda del comando y revisa la carpeta actual.",
-          "NOTEPAD inicio.bat\n# Contenido / Edukia:\n@echo off\ncall informe.bat\necho LISTO > listo.txt\n# Guarda y vuelve a CMD / Gorde eta itzuli CMDra\nCOMPROBAR"
+          "Consulta la ayuda y observa qué información necesita el equipo del parque.",
+          "SHUTDOWN /?"
         ],
         "eu": [
-          "Irakurri komandoaren laguntza eta egiaztatu uneko karpeta.",
-          "NOTEPAD inicio.bat\n# Contenido / Edukia:\n@echo off\ncall informe.bat\necho LISTO > listo.txt\n# Guarda y vuelve a CMD / Gorde eta itzuli CMDra\nCOMPROBAR"
+          "Kontsultatu laguntza eta begiratu parkeko taldeak zer informazio behar duen.",
+          "SHUTDOWN /?"
         ]
       },
       "pruebas": [
         {
-          "tipo": "texto",
-          "ruta": "inicio.bat",
-          "lineas": [
-            "@echo off",
-            "call informe.bat",
-            "echo LISTO > listo.txt"
-          ]
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Orden de cancelación:",
+            "eu": "Ezeztatzeko agindua:"
+          },
+          "respuestas": {
+            "es": [
+              "shutdown /a"
+            ],
+            "eu": [
+              "shutdown /a"
+            ]
+          }
         }
       ],
-      "solucion_docente": "NOTEPAD inicio.bat\n# Contenido / Edukia:\n@echo off\ncall informe.bat\necho LISTO > listo.txt\n# Guarda y vuelve a CMD / Gorde eta itzuli CMDra\nCOMPROBAR"
-    },
-    {
-      "texto": {
-        "es": "Ejecuta CALL inicio.bat. Debe volver del primer script y escribir LISTO en listo.txt.",
-        "eu": "Exekutatu CALL inicio.bat. Lehen script-etik itzuli eta LISTO idatzi behar du listo.txt fitxategian."
-      },
-      "pistas": {
-        "es": [
-          "Lee la ayuda del comando y revisa la carpeta actual.",
-          "CALL inicio.bat\nTYPE listo.txt\nCOMPROBAR"
-        ],
-        "eu": [
-          "Irakurri komandoaren laguntza eta egiaztatu uneko karpeta.",
-          "CALL inicio.bat\nTYPE listo.txt\nCOMPROBAR"
-        ]
-      },
-      "pruebas": [
-        {
-          "tipo": "texto",
-          "ruta": "listo.txt",
-          "lineas": [
-            "LISTO"
-          ]
-        },
-        {
-          "tipo": "salida",
-          "consulta": "version",
-          "ruta": "version.txt"
-        }
-      ],
-      "solucion_docente": "CALL inicio.bat\nTYPE listo.txt\nCOMPROBAR"
+      "solucion_docente": "SHUTDOWN /?\nCOMPROBAR"
     }
   ],
   "final": {
-    "es": "Actividad completada. MENU para elegir otra o REINICIAR para repetir.",
-    "eu": "Jarduera osatuta. MENU beste bat aukeratzeko edo REINICIAR errepikatzeko."
+    "es": "Misión del parque completada. MENU para elegir otra expedición.",
+    "eu": "Parkeko misioa osatuta. MENU beste espedizio bat aukeratzeko."
   }
 }

@@ -1,9 +1,13 @@
 # WindowsAventura
 
-Juego educativo para practicar CMD y archivos .bat en una máquina virtual Windows.
-Usa CMD real. Python solo gestiona menú, actividades y progreso. No usa PowerShell,
-Bash ni WSL. Incluye 12 juegos independientes y un extra de 30 definiciones,
-en castellano y euskera.
+Paleo Isla es una aventura de dinosaurios para practicar CMD real en Windows.
+Python gestiona menú y progreso. Los .bat del paquete solo arrancan y actualizan
+el programa: no se pide crearlos ni programarlos en las actividades.
+
+Incluye 12 juegos independientes y un extra de 17 definiciones, en castellano y euskera.
+Los ejercicios se ciñen a los 17 comandos del material aportado. No requieren
+administración de archivos, redirecciones ni comandos de otras unidades.
+La historia y las instrucciones aparecen directamente en la pantalla del juego.
 
 ## Descargar y jugar
 
@@ -38,8 +42,7 @@ Elige el idioma y cualquier actividad. Lee el objetivo, trabaja en CMD y escribe
 | IDIOMA | Cambia el idioma desde el menú |
 
 Los comandos del juego se muestran en mayúsculas, pero CMD no distingue su caja.
-Dentro de un .bat usa CALL COMPROBAR o CALL PISTA para regresar al script.
-En la terminal interactiva basta con COMPROBAR.
+Escribe COMPROBAR directamente en la terminal interactiva.
 
 Los archivos permanecen en datos\actividad_NNN\escenario. Los pasos se guardan tras
 cada acierto. MENU recuerda la carpeta; EXIT conserva archivos y pasos pero no registra
@@ -52,21 +55,21 @@ organiza la práctica, pero no limita los permisos de CMD.
 
 ## Juegos
 
-| Nº | Actividad | Contenido |
+| Nº | Misión | Comandos |
 |---|---|---|
-| 1 | Bienvenido a Windows 1 | CD, DIR, TYPE, rutas |
-| 2 | Bienvenido a Windows 2 | HELP, /?, CLS, VER, DATE, TIME, Tab |
-| 3 | Bienvenido a Windows 3 | MD, COPY, REN, MOVE, archivo vacío |
-| 4 | Encuentra el virus | Investigación y cuarentena de texto |
-| 5 | Tu puesto de mando | TITLE, COLOR, PROMPT |
-| 6 | El inventario del equipo | SYSTEMINFO, consultas e informes |
-| 7 | La unidad bajo examen | VOL, LABEL, CHKDSK |
-| 8 | Ventanas y rutas de búsqueda | PATH, CMD, START, EXIT |
-| 9 | El apagado planificado | SHUTDOWN, cancelación, accesos directos |
-| 10 | Tu primer archivo bat | ECHO, CALL, edición y ejecución |
-| 11 | El relevo del técnico | Rutas con espacios e informes |
-| 12 | Operación IZAR | Misión final de 12 etapas |
-| 13 | Extra | 30 definiciones |
+| 1 | Bienvenido a Paleo Isla — La consola del visitante | HELP, COLOR, CLS |
+| 2 | Bienvenido a Paleo Isla — El reloj de la expedición | VER, DATE, TIME |
+| 3 | Bienvenido a Paleo Isla — Tu puesto de guardia | TITLE, COLOR, PROMPT |
+| 4 | La ficha del laboratorio de fósiles | SYSTEMINFO, VER, HELP |
+| 5 | El turno de las incubadoras | DATE, TIME, CLS |
+| 6 | El archivo de huellas | VOL, LABEL |
+| 7 | El disco de las cámaras de los estegosaurios | CHKDSK, HELP |
+| 8 | Las rutas de la estación de rastreo | PATH, CMD, VER |
+| 9 | Una segunda torre de observación | START, CMD, VER, EXIT |
+| 10 | El cierre del centro de visitantes | SHUTDOWN |
+| 11 | Los accesos del puesto de los velociraptores | CMD, EXIT, SHUTDOWN |
+| 12 | La gran reapertura de Paleo Isla | HELP, CLS, VER, SYSTEMINFO, DATE, TIME, TITLE, COLOR, PROMPT, PATH, VOL, LABEL, CHKDSK, START, CMD, EXIT, SHUTDOWN |
+| 13 | Extra — El examen de los guardas del parque | 17 definiciones del temario |
 
 Las órdenes de apagado y cambio de etiqueta se responden como texto. El programa
 nunca las ejecuta automáticamente. Accesos directos, iconos y anclaje se revisan con
@@ -124,7 +127,7 @@ para actualizar el motor utiliza el archivo externo.
 
 ## Verificación
 
-18 pruebas de lógica han pasado en Linux, incluidas las condiciones de todas las etapas
+19 pruebas de lógica han pasado en Linux, incluidas las condiciones de todas las etapas
 en ambos idiomas, guardado, reinicio aislado, codificaciones y actualización. Las consultas
 del sistema están simuladas en esas pruebas; no equivalen a probar CMD real.
 
@@ -138,3 +141,18 @@ py -3 -m unittest discover -s tests -v
 Usa una copia temporal y no modifica el progreso del alumno. Después sigue
  docs/PRUEBA_EN_WINDOWS.md para verificar la consola, los colores y las utilidades reales.
 Guía de soluciones: docs/GUIA_PROFESOR.md.
+
+## Pasar de la edición 0.1 a Paleo Isla 0.2
+
+Actualiza el programa completo y las actividades. Conserva datos si quieres mantener
+el progreso anterior. Una actividad ya iniciada conserva su versión antigua: entra en
+ella y escribe REINICIAR para cargar el nuevo juego de dinosaurios. Se pedirá confirmación
+porque se borran el progreso y el trabajo de esa actividad; las demás se conservan.
+Las actividades sin empezar muestran directamente la edición nueva.
+
+## Qué se comprueba
+
+El motor compara respuestas, consultas del sistema, el PROMPT y la reentrada.
+No demuestra que se haya ejecutado cada comando. El título, los colores, las teclas
+y los accesos directos se revisan visualmente. Las consultas peligrosas se diseñan
+como texto y se practican aparte con el profesor cuando corresponda.

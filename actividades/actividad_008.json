@@ -1,0 +1,149 @@
+{
+  "schema": 1,
+  "motor_minimo": 1,
+  "version": 1,
+  "id": "actividad_008",
+  "titulo": {
+    "es": "Ventanas y rutas de búsqueda",
+    "eu": "Leihoak eta bilaketa bideak"
+  },
+  "archivos": {
+    "LEEME.txt": {
+      "es": "Bienvenido al centro IZAR. Lee las instrucciones y usa COMPROBAR al terminar cada paso.\n",
+      "eu": "Ongi etorri IZAR zentrora. Irakurri argibideak eta erabili COMPROBAR urrats bakoitzaren amaieran.\n"
+    }
+  },
+  "carpetas": [],
+  "pasos": [
+    {
+      "texto": {
+        "es": "PATH sin argumentos muestra dónde busca ejecutables CMD. Consúltalo sin sustituir su contenido.",
+        "eu": "PATH komandoak argumenturik gabe CMDk exekutagarriak non bilatzen dituen erakusten du. Kontsultatu edukia ordeztu gabe."
+      },
+      "pistas": {
+        "es": [
+          "Lee la ayuda del comando y revisa la carpeta actual.",
+          "PATH\nCOMPROBAR"
+        ],
+        "eu": [
+          "Irakurri komandoaren laguntza eta egiaztatu uneko karpeta.",
+          "PATH\nCOMPROBAR"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Separador entre carpetas en PATH:",
+            "eu": "PATH karpeten arteko bereizlea:"
+          },
+          "respuestas": {
+            "es": [
+              ";"
+            ],
+            "eu": [
+              ";"
+            ]
+          }
+        }
+      ],
+      "solucion_docente": "PATH\nCOMPROBAR"
+    },
+    {
+      "texto": {
+        "es": "CMD /C ejecuta una orden y termina; CMD /K ejecuta y permanece abierto. Ejecuta CMD /C VER.",
+        "eu": "CMD /C komandoak agindua exekutatu eta amaitzen du; CMD /K komandoak irekita jarraitzen du. Exekutatu CMD /C VER."
+      },
+      "pistas": {
+        "es": [
+          "Lee la ayuda del comando y revisa la carpeta actual.",
+          "CMD /C VER\nCOMPROBAR"
+        ],
+        "eu": [
+          "Irakurri komandoaren laguntza eta egiaztatu uneko karpeta.",
+          "CMD /C VER\nCOMPROBAR"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Opción que termina tras la orden:",
+            "eu": "Aginduaren ondoren amaitzeko aukera:"
+          },
+          "respuestas": {
+            "es": [
+              "/C"
+            ],
+            "eu": [
+              "/C"
+            ]
+          }
+        }
+      ],
+      "solucion_docente": "CMD /C VER\nCOMPROBAR"
+    },
+    {
+      "texto": {
+        "es": "Prueba START \"Practica\" CMD /D /K VER. Se abre otra consola o pestaña. Ciérrala con EXIT y vuelve a la actividad original. El primer texto entre comillas de START es el título.",
+        "eu": "Probatu START \"Practica\" CMD /D /K VER. Beste kontsola edo fitxa bat irekiko da. Itxi EXIT erabiliz eta itzuli jatorrizko jarduerara. STARTen lehen testu komatxoduna izenburua da."
+      },
+      "pistas": {
+        "es": [
+          "Lee la ayuda del comando y revisa la carpeta actual.",
+          "START \"Practica\" CMD /D /K VER\nCOMPROBAR"
+        ],
+        "eu": [
+          "Irakurri komandoaren laguntza eta egiaztatu uneko karpeta.",
+          "START \"Practica\" CMD /D /K VER\nCOMPROBAR"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Qué representa Practica: escribe TITULO.",
+            "eu": "Zer adierazten du Practica hitzak? Idatzi TITULO."
+          },
+          "respuestas": {
+            "es": [
+              "TITULO",
+              "TÍTULO"
+            ],
+            "eu": [
+              "TITULO",
+              "TÍTULO"
+            ]
+          }
+        }
+      ],
+      "solucion_docente": "START \"Practica\" CMD /D /K VER\nCOMPROBAR"
+    },
+    {
+      "texto": {
+        "es": "Para practicar EXIT en la consola principal, sal de esta actividad y vuelve a entrar desde el menú. Después escribe COMPROBAR.",
+        "eu": "EXIT kontsola nagusian praktikatzeko, irten jardueratik eta sartu berriro menutik. Ondoren idatzi COMPROBAR."
+      },
+      "pistas": {
+        "es": [
+          "Lee la ayuda del comando y revisa la carpeta actual.",
+          "EXIT\n# Volver a la actividad 8 / Itzuli 8. jarduerara\nCOMPROBAR"
+        ],
+        "eu": [
+          "Irakurri komandoaren laguntza eta egiaztatu uneko karpeta.",
+          "EXIT\n# Volver a la actividad 8 / Itzuli 8. jarduerara\nCOMPROBAR"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "reentrada"
+        }
+      ],
+      "solucion_docente": "EXIT\n# Volver a la actividad 8 / Itzuli 8. jarduerara\nCOMPROBAR"
+    }
+  ],
+  "final": {
+    "es": "Actividad completada. MENU para elegir otra o REINICIAR para repetir.",
+    "eu": "Jarduera osatuta. MENU beste bat aukeratzeko edo REINICIAR errepikatzeko."
+  }
+}

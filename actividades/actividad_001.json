@@ -1,0 +1,163 @@
+{
+  "schema": 1,
+  "motor_minimo": 1,
+  "version": 1,
+  "id": "actividad_001",
+  "titulo": {
+    "es": "Bienvenido a Windows 1 — Primeros pasos",
+    "eu": "Ongi etorri Windowsera 1 — Lehen urratsak"
+  },
+  "archivos": {
+    "LEEME.txt": {
+      "es": "Bienvenido a CMD. La clave es KAIXO. El segundo mensaje está en centro/entrada.txt.\n",
+      "eu": "Ongi etorri CMDra. Gakoa KAIXO da. Bigarren mezua centro/entrada.txt fitxategian dago.\n"
+    },
+    "centro/entrada.txt": {
+      "es": "Responsable: ALEX.\n",
+      "eu": "Arduraduna: ALEX.\n"
+    }
+  },
+  "carpetas": [],
+  "pasos": [
+    {
+      "texto": {
+        "es": "Estás en CMD real. CD, sin argumentos, muestra la carpeta actual. Escribe CD y después COMPROBAR. No escribas el símbolo > del prompt.",
+        "eu": "Benetako CMD erabiltzen ari zara. CD komandoak, argumenturik gabe, uneko karpeta erakusten du. Idatzi CD eta gero COMPROBAR. Ez idatzi promptaren > ikurra."
+      },
+      "pistas": {
+        "es": [
+          "Lee la ayuda del comando y revisa la carpeta actual.",
+          "CD\nCOMPROBAR"
+        ],
+        "eu": [
+          "Irakurri komandoaren laguntza eta egiaztatu uneko karpeta.",
+          "CD\nCOMPROBAR"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Ruta completa:",
+            "eu": "Bide osoa:"
+          },
+          "respuestas": {
+            "es": [
+              "{escenario}"
+            ],
+            "eu": [
+              "{escenario}"
+            ]
+          }
+        }
+      ],
+      "solucion_docente": "CD\nCOMPROBAR"
+    },
+    {
+      "texto": {
+        "es": "DIR lista archivos y carpetas. Ejecuta DIR y localiza el archivo de bienvenida.",
+        "eu": "DIR komandoak fitxategiak eta karpetak zerrendatzen ditu. Exekutatu DIR eta aurkitu ongietorri fitxategia."
+      },
+      "pistas": {
+        "es": [
+          "Lee la ayuda del comando y revisa la carpeta actual.",
+          "DIR\nCOMPROBAR"
+        ],
+        "eu": [
+          "Irakurri komandoaren laguntza eta egiaztatu uneko karpeta.",
+          "DIR\nCOMPROBAR"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Nombre del archivo de bienvenida:",
+            "eu": "Ongietorri fitxategiaren izena:"
+          },
+          "respuestas": {
+            "es": [
+              "LEEME.txt"
+            ],
+            "eu": [
+              "LEEME.txt"
+            ]
+          }
+        }
+      ],
+      "solucion_docente": "DIR\nCOMPROBAR"
+    },
+    {
+      "texto": {
+        "es": "TYPE muestra el contenido. Ejecuta TYPE LEEME.txt y lee la clave.",
+        "eu": "TYPE komandoak edukia erakusten du. Exekutatu TYPE LEEME.txt eta irakurri gakoa."
+      },
+      "pistas": {
+        "es": [
+          "Lee la ayuda del comando y revisa la carpeta actual.",
+          "TYPE LEEME.txt\nCOMPROBAR"
+        ],
+        "eu": [
+          "Irakurri komandoaren laguntza eta egiaztatu uneko karpeta.",
+          "TYPE LEEME.txt\nCOMPROBAR"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Clave:",
+            "eu": "Gakoa:"
+          },
+          "respuestas": {
+            "es": [
+              "KAIXO"
+            ],
+            "eu": [
+              "KAIXO"
+            ]
+          }
+        }
+      ],
+      "solucion_docente": "TYPE LEEME.txt\nCOMPROBAR"
+    },
+    {
+      "texto": {
+        "es": "Entra con CD centro. Lista y lee entrada.txt. Después vuelve con CD .. antes de COMPROBAR. Las rutas Windows usan la barra invertida.",
+        "eu": "Sartu CD centro erabiliz. Zerrendatu eta irakurri entrada.txt. Itzuli CD .. erabiliz COMPROBAR baino lehen. Windows bideek alderantzizko barra erabiltzen dute."
+      },
+      "pistas": {
+        "es": [
+          "Lee la ayuda del comando y revisa la carpeta actual.",
+          "CD centro\nDIR\nTYPE entrada.txt\nCD ..\nCOMPROBAR"
+        ],
+        "eu": [
+          "Irakurri komandoaren laguntza eta egiaztatu uneko karpeta.",
+          "CD centro\nDIR\nTYPE entrada.txt\nCD ..\nCOMPROBAR"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Responsable:",
+            "eu": "Arduraduna:"
+          },
+          "respuestas": {
+            "es": [
+              "ALEX"
+            ],
+            "eu": [
+              "ALEX"
+            ]
+          }
+        }
+      ],
+      "solucion_docente": "CD centro\nDIR\nTYPE entrada.txt\nCD ..\nCOMPROBAR"
+    }
+  ],
+  "final": {
+    "es": "Actividad completada. MENU para elegir otra o REINICIAR para repetir.",
+    "eu": "Jarduera osatuta. MENU beste bat aukeratzeko edo REINICIAR errepikatzeko."
+  }
+}

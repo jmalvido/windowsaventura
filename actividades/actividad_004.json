@@ -1,0 +1,174 @@
+{
+  "schema": 1,
+  "motor_minimo": 1,
+  "version": 1,
+  "id": "actividad_004",
+  "titulo": {
+    "es": "Encuentra el virus",
+    "eu": "Aurkitu birusa"
+  },
+  "archivos": {
+    "LEEME.txt": {
+      "es": "Alerta IZAR. Empieza por informes\\aviso.txt. Todos los archivos son texto inofensivo.\n",
+      "eu": "IZAR alerta. Hasi informes\\aviso.txt fitxategitik. Fitxategi guztiak testu kaltegabeak dira.\n"
+    },
+    "informes/aviso.txt": {
+      "es": "Incidencia IZAR-17. Busca la marca SOMBRA-73 en almacen.\n",
+      "eu": "IZAR-17 gorabehera. Bilatu SOMBRA-73 marka almacen karpetan.\n"
+    },
+    "almacen/actualizacion.txt": {
+      "es": "Paquete con marca SOMBRA-73.\n",
+      "eu": "SOMBRA-73 marka duen paketea.\n"
+    },
+    "almacen/antivirus.txt": {
+      "es": "Paquete normal.\n",
+      "eu": "Pakete arrunta.\n"
+    }
+  },
+  "carpetas": [],
+  "pasos": [
+    {
+      "texto": {
+        "es": "Lee el aviso y averigua el código de incidencia.",
+        "eu": "Irakurri abisua eta aurkitu gorabeheraren kodea."
+      },
+      "pistas": {
+        "es": [
+          "Lee la ayuda del comando y revisa la carpeta actual.",
+          "TYPE LEEME.txt\nTYPE informes\\aviso.txt\nCOMPROBAR"
+        ],
+        "eu": [
+          "Irakurri komandoaren laguntza eta egiaztatu uneko karpeta.",
+          "TYPE LEEME.txt\nTYPE informes\\aviso.txt\nCOMPROBAR"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Código:",
+            "eu": "Kodea:"
+          },
+          "respuestas": {
+            "es": [
+              "IZAR-17"
+            ],
+            "eu": [
+              "IZAR-17"
+            ]
+          }
+        }
+      ],
+      "solucion_docente": "TYPE LEEME.txt\nTYPE informes\\aviso.txt\nCOMPROBAR"
+    },
+    {
+      "texto": {
+        "es": "Investiga almacen y lee los archivos. Identifica el sospechoso por su contenido.",
+        "eu": "Ikertu almacen eta irakurri fitxategiak. Identifikatu susmagarria edukiaren arabera."
+      },
+      "pistas": {
+        "es": [
+          "Lee la ayuda del comando y revisa la carpeta actual.",
+          "DIR almacen\nTYPE almacen\\actualizacion.txt\nTYPE almacen\\antivirus.txt\nCOMPROBAR"
+        ],
+        "eu": [
+          "Irakurri komandoaren laguntza eta egiaztatu uneko karpeta.",
+          "DIR almacen\nTYPE almacen\\actualizacion.txt\nTYPE almacen\\antivirus.txt\nCOMPROBAR"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Archivo sospechoso:",
+            "eu": "Fitxategi susmagarria:"
+          },
+          "respuestas": {
+            "es": [
+              "actualizacion.txt"
+            ],
+            "eu": [
+              "actualizacion.txt"
+            ]
+          }
+        }
+      ],
+      "solucion_docente": "DIR almacen\nTYPE almacen\\actualizacion.txt\nTYPE almacen\\antivirus.txt\nCOMPROBAR"
+    },
+    {
+      "texto": {
+        "es": "Crea evidencias y copia el aviso. Crea cuarentena y mueve el sospechoso con el nombre sospechoso.txt. Conserva el otro paquete.",
+        "eu": "Sortu evidencias eta kopiatu abisua. Sortu cuarentena eta eraman susmagarria sospechoso.txt izenarekin. Mantendu beste paketea."
+      },
+      "pistas": {
+        "es": [
+          "Lee la ayuda del comando y revisa la carpeta actual.",
+          "MD evidencias\nCOPY informes\\aviso.txt evidencias\\\nMD cuarentena\nMOVE almacen\\actualizacion.txt cuarentena\\sospechoso.txt\nCOMPROBAR"
+        ],
+        "eu": [
+          "Irakurri komandoaren laguntza eta egiaztatu uneko karpeta.",
+          "MD evidencias\nCOPY informes\\aviso.txt evidencias\\\nMD cuarentena\nMOVE almacen\\actualizacion.txt cuarentena\\sospechoso.txt\nCOMPROBAR"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "contenido",
+          "ruta": "evidencias/aviso.txt",
+          "origen": "informes/aviso.txt"
+        },
+        {
+          "tipo": "contenido",
+          "ruta": "cuarentena/sospechoso.txt",
+          "origen": "almacen/actualizacion.txt"
+        },
+        {
+          "tipo": "ausente",
+          "ruta": "almacen/actualizacion.txt"
+        },
+        {
+          "tipo": "contenido",
+          "ruta": "almacen/antivirus.txt",
+          "origen": "almacen/antivirus.txt"
+        }
+      ],
+      "solucion_docente": "MD evidencias\nCOPY informes\\aviso.txt evidencias\\\nMD cuarentena\nMOVE almacen\\actualizacion.txt cuarentena\\sospechoso.txt\nCOMPROBAR"
+    },
+    {
+      "texto": {
+        "es": "Cierra la investigación creando evidencias\\resuelto.txt vacío. Mover este texto es una simulación, no una desinfección real.",
+        "eu": "Amaitu ikerketa evidencias\\resuelto.txt fitxategi hutsa sortuz. Testua mugitzea simulazioa da, ez benetako desinfekzioa."
+      },
+      "pistas": {
+        "es": [
+          "Lee la ayuda del comando y revisa la carpeta actual.",
+          "TYPE NUL > evidencias\\resuelto.txt\nCOMPROBAR"
+        ],
+        "eu": [
+          "Irakurri komandoaren laguntza eta egiaztatu uneko karpeta.",
+          "TYPE NUL > evidencias\\resuelto.txt\nCOMPROBAR"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "vacio",
+          "ruta": "evidencias/resuelto.txt"
+        },
+        {
+          "tipo": "contenido",
+          "ruta": "cuarentena/sospechoso.txt",
+          "origen": "almacen/actualizacion.txt"
+        },
+        {
+          "tipo": "contenido",
+          "ruta": "informes/aviso.txt",
+          "origen": "informes/aviso.txt"
+        }
+      ],
+      "solucion_docente": "TYPE NUL > evidencias\\resuelto.txt\nCOMPROBAR"
+    }
+  ],
+  "final": {
+    "es": "Actividad completada. MENU para elegir otra o REINICIAR para repetir.",
+    "eu": "Jarduera osatuta. MENU beste bat aukeratzeko edo REINICIAR errepikatzeko."
+  }
+}

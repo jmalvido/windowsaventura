@@ -1,0 +1,164 @@
+{
+  "schema": 1,
+  "motor_minimo": 1,
+  "version": 1,
+  "id": "actividad_005",
+  "titulo": {
+    "es": "Tu puesto de mando",
+    "eu": "Zure aginte postua"
+  },
+  "archivos": {
+    "LEEME.txt": {
+      "es": "Bienvenido al centro IZAR. Lee las instrucciones y usa COMPROBAR al terminar cada paso.\n",
+      "eu": "Ongi etorri IZAR zentrora. Irakurri argibideak eta erabili COMPROBAR urrats bakoitzaren amaieran.\n"
+    }
+  },
+  "carpetas": [],
+  "pasos": [
+    {
+      "texto": {
+        "es": "Consulta HELP TITLE y cambia el título a Comandos. Observa la ventana o pestaña. La comprobación es conceptual; el profesor revisa el título.",
+        "eu": "Kontsultatu HELP TITLE eta aldatu izenburua Comandos izenera. Begiratu leihoari edo fitxari. Irakasleak ikusiko du emaitza; egiaztapena kontzeptuala da."
+      },
+      "pistas": {
+        "es": [
+          "Lee la ayuda del comando y revisa la carpeta actual.",
+          "HELP TITLE\nTITLE Comandos\nCOMPROBAR"
+        ],
+        "eu": [
+          "Irakurri komandoaren laguntza eta egiaztatu uneko karpeta.",
+          "HELP TITLE\nTITLE Comandos\nCOMPROBAR"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Orden usada:",
+            "eu": "Erabilitako agindua:"
+          },
+          "respuestas": {
+            "es": [
+              "TITLE Comandos"
+            ],
+            "eu": [
+              "TITLE Comandos"
+            ]
+          }
+        }
+      ],
+      "solucion_docente": "HELP TITLE\nTITLE Comandos\nCOMPROBAR"
+    },
+    {
+      "texto": {
+        "es": "Consulta COLOR /?. Fondo azul y letras rojas: COLOR 14. El primer dígito es fondo; el segundo, texto. Después vuelve a COLOR 0B.",
+        "eu": "Kontsultatu COLOR /?. Atzealde urdina eta letra gorriak: COLOR 14. Lehen digitua atzealdea da, bigarrena testua. Gero itzuli COLOR 0B erabiliz."
+      },
+      "pistas": {
+        "es": [
+          "Lee la ayuda del comando y revisa la carpeta actual.",
+          "COLOR /?\nCOLOR 14\nCOLOR 0B\nCOMPROBAR"
+        ],
+        "eu": [
+          "Irakurri komandoaren laguntza eta egiaztatu uneko karpeta.",
+          "COLOR /?\nCOLOR 14\nCOLOR 0B\nCOMPROBAR"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Código para fondo azul y texto rojo:",
+            "eu": "Atzealde urdin eta testu gorrirako kodea:"
+          },
+          "respuestas": {
+            "es": [
+              "14"
+            ],
+            "eu": [
+              "14"
+            ]
+          }
+        }
+      ],
+      "solucion_docente": "COLOR /?\nCOLOR 14\nCOLOR 0B\nCOMPROBAR"
+    },
+    {
+      "texto": {
+        "es": "Prueba fondo blanco brillante con rojo brillante (COLOR FC) y después con rojo normal (COLOR F4). Consulta COLOR /? y vuelve a COLOR 0B.",
+        "eu": "Probatu atzealde zuri distiratsua gorri distiratsuarekin (COLOR FC) eta gorri arruntarekin (COLOR F4). Kontsultatu COLOR /? eta itzuli COLOR 0B erabiliz."
+      },
+      "pistas": {
+        "es": [
+          "Lee la ayuda del comando y revisa la carpeta actual.",
+          "COLOR FC\nCOLOR F4\nCOLOR 0B\nCOMPROBAR"
+        ],
+        "eu": [
+          "Irakurri komandoaren laguntza eta egiaztatu uneko karpeta.",
+          "COLOR FC\nCOLOR F4\nCOLOR 0B\nCOMPROBAR"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Código con blanco brillante y rojo brillante:",
+            "eu": "Zuri distiratsu eta gorri distiratsurako kodea:"
+          },
+          "respuestas": {
+            "es": [
+              "FC"
+            ],
+            "eu": [
+              "FC"
+            ]
+          }
+        },
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Código con blanco brillante y rojo normal:",
+            "eu": "Zuri distiratsu eta gorri arrunterako kodea:"
+          },
+          "respuestas": {
+            "es": [
+              "F4"
+            ],
+            "eu": [
+              "F4"
+            ]
+          }
+        }
+      ],
+      "solucion_docente": "COLOR FC\nCOLOR F4\nCOLOR 0B\nCOMPROBAR"
+    },
+    {
+      "texto": {
+        "es": "Personaliza el prompt con PROMPT [IZAR] $P$G. $P es la ruta y $G representa >. No escribas > literal en esta orden.",
+        "eu": "Pertsonalizatu prompta PROMPT [IZAR] $P$G erabiliz. $P bidea da eta $G ikurrak > adierazten du. Ez idatzi > zuzenean aginduan."
+      },
+      "pistas": {
+        "es": [
+          "Lee la ayuda del comando y revisa la carpeta actual.",
+          "PROMPT [IZAR] $P$G\nCOMPROBAR"
+        ],
+        "eu": [
+          "Irakurri komandoaren laguntza eta egiaztatu uneko karpeta.",
+          "PROMPT [IZAR] $P$G\nCOMPROBAR"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "entorno",
+          "nombre": "PROMPT",
+          "valor": "[IZAR] $P$G"
+        }
+      ],
+      "solucion_docente": "PROMPT [IZAR] $P$G\nCOMPROBAR"
+    }
+  ],
+  "final": {
+    "es": "Actividad completada. MENU para elegir otra o REINICIAR para repetir.",
+    "eu": "Jarduera osatuta. MENU beste bat aukeratzeko edo REINICIAR errepikatzeko."
+  }
+}

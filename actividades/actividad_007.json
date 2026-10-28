@@ -1,0 +1,149 @@
+{
+  "schema": 1,
+  "motor_minimo": 1,
+  "version": 1,
+  "id": "actividad_007",
+  "titulo": {
+    "es": "La unidad bajo examen",
+    "eu": "Unitatea aztergai"
+  },
+  "archivos": {
+    "LEEME.txt": {
+      "es": "Bienvenido al centro IZAR. Lee las instrucciones y usa COMPROBAR al terminar cada paso.\n",
+      "eu": "Ongi etorri IZAR zentrora. Irakurri argibideak eta erabili COMPROBAR urrats bakoitzaren amaieran.\n"
+    }
+  },
+  "carpetas": [],
+  "pasos": [
+    {
+      "texto": {
+        "es": "VOL consulta etiqueta y número de serie. Ejecuta VOL %SystemDrive% y guarda el resultado en volumen.txt. No cambies la etiqueta.",
+        "eu": "VOL komandoak etiketa eta serie zenbakia kontsultatzen ditu. Exekutatu VOL %SystemDrive% eta gorde emaitza volumen.txt fitxategian. Ez aldatu etiketa."
+      },
+      "pistas": {
+        "es": [
+          "Lee la ayuda del comando y revisa la carpeta actual.",
+          "VOL %SystemDrive% > volumen.txt\nTYPE volumen.txt\nCOMPROBAR"
+        ],
+        "eu": [
+          "Irakurri komandoaren laguntza eta egiaztatu uneko karpeta.",
+          "VOL %SystemDrive% > volumen.txt\nTYPE volumen.txt\nCOMPROBAR"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "salida",
+          "consulta": "volumen",
+          "ruta": "volumen.txt"
+        }
+      ],
+      "solucion_docente": "VOL %SystemDrive% > volumen.txt\nTYPE volumen.txt\nCOMPROBAR"
+    },
+    {
+      "texto": {
+        "es": "Consulta LABEL /?. No lo ejecutes para modificar el disco del sistema. ¿Qué orden asignaría APELLIDO a una unidad USB E: ya identificada? Contesta como texto; E: es solo un ejemplo.",
+        "eu": "Kontsultatu LABEL /?. Ez aldatu sistemako diskoa. Zer aginduk jarriko luke APELLIDO etiketa aurrez identifikatutako E: USB unitatean? Erantzun testu gisa; E: adibidea da."
+      },
+      "pistas": {
+        "es": [
+          "Lee la ayuda del comando y revisa la carpeta actual.",
+          "LABEL /?\nCOMPROBAR"
+        ],
+        "eu": [
+          "Irakurri komandoaren laguntza eta egiaztatu uneko karpeta.",
+          "LABEL /?\nCOMPROBAR"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Orden de ejemplo, sin ejecutarla:",
+            "eu": "Adibideko agindua, exekutatu gabe:"
+          },
+          "respuestas": {
+            "es": [
+              "LABEL E: APELLIDO"
+            ],
+            "eu": [
+              "LABEL E: APELLIDO"
+            ]
+          }
+        }
+      ],
+      "solucion_docente": "LABEL /?\nCOMPROBAR"
+    },
+    {
+      "texto": {
+        "es": "Consulta CHKDSK /?. Sin /F ni /R informa sin pedir reparaciones. La ejecución real se hará aparte, en CMD como administrador con el profesor; el juego no necesita elevación.",
+        "eu": "Kontsultatu CHKDSK /?. /F eta /R gabe egoera azaltzen du konponketarik eskatu gabe. Benetako proba aparte egingo da, administratzailearen CMDn irakaslearekin; jokoak ez du baimen igoerarik behar."
+      },
+      "pistas": {
+        "es": [
+          "Lee la ayuda del comando y revisa la carpeta actual.",
+          "CHKDSK /?\nCOMPROBAR"
+        ],
+        "eu": [
+          "Irakurri komandoaren laguntza eta egiaztatu uneko karpeta.",
+          "CHKDSK /?\nCOMPROBAR"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Orden para consultar C: sin solicitar reparación:",
+            "eu": "C: konponketarik eskatu gabe kontsultatzeko agindua:"
+          },
+          "respuestas": {
+            "es": [
+              "CHKDSK C:"
+            ],
+            "eu": [
+              "CHKDSK C:"
+            ]
+          }
+        }
+      ],
+      "solucion_docente": "CHKDSK /?\nCOMPROBAR"
+    },
+    {
+      "texto": {
+        "es": "Distingue etiqueta, número de serie y comprobación. ¿Qué opción de CHKDSK solicita reparar errores? No la ejecutes.",
+        "eu": "Bereizi etiketa, serie zenbakia eta egiaztapena. CHKDSKen zer aukerak eskatzen du akatsak konpontzea? Ez exekutatu."
+      },
+      "pistas": {
+        "es": [
+          "Lee la ayuda del comando y revisa la carpeta actual.",
+          "HELP CHKDSK\nCOMPROBAR"
+        ],
+        "eu": [
+          "Irakurri komandoaren laguntza eta egiaztatu uneko karpeta.",
+          "HELP CHKDSK\nCOMPROBAR"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Opción de reparación:",
+            "eu": "Konponketa aukera:"
+          },
+          "respuestas": {
+            "es": [
+              "/F"
+            ],
+            "eu": [
+              "/F"
+            ]
+          }
+        }
+      ],
+      "solucion_docente": "HELP CHKDSK\nCOMPROBAR"
+    }
+  ],
+  "final": {
+    "es": "Actividad completada. MENU para elegir otra o REINICIAR para repetir.",
+    "eu": "Jarduera osatuta. MENU beste bat aukeratzeko edo REINICIAR errepikatzeko."
+  }
+}

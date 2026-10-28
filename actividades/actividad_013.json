@@ -1,0 +1,1049 @@
+{
+  "schema": 1,
+  "motor_minimo": 1,
+  "version": 1,
+  "id": "actividad_013",
+  "titulo": {
+    "es": "Extra — Adivina el comando",
+    "eu": "Gehigarria — Asmatu komandoa"
+  },
+  "archivos": {
+    "LEEME.txt": {
+      "es": "Bienvenido al centro IZAR. Lee las instrucciones y usa COMPROBAR al terminar cada paso.\n",
+      "eu": "Ongi etorri IZAR zentrora. Irakurri argibideak eta erabili COMPROBAR urrats bakoitzaren amaieran.\n"
+    }
+  },
+  "carpetas": [],
+  "pasos": [
+    {
+      "texto": {
+        "es": "Definición 1: Muestra la carpeta actual. Escribe COMPROBAR y responde como texto; no ejecutes la respuesta.",
+        "eu": "1. definizioa: Uneko karpeta erakusten du. Idatzi COMPROBAR eta erantzun testu gisa; ez exekutatu erantzuna."
+      },
+      "pistas": {
+        "es": [
+          "Inicial: C",
+          "CD"
+        ],
+        "eu": [
+          "Hasierako karakterea: C",
+          "CD"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Respuesta:",
+            "eu": "Erantzuna:"
+          },
+          "respuestas": {
+            "es": [
+              "CD"
+            ],
+            "eu": [
+              "CD"
+            ]
+          }
+        }
+      ],
+      "solucion_docente": "CD"
+    },
+    {
+      "texto": {
+        "es": "Definición 2: Lista archivos y carpetas. Escribe COMPROBAR y responde como texto; no ejecutes la respuesta.",
+        "eu": "2. definizioa: Fitxategiak eta karpetak zerrendatzen ditu. Idatzi COMPROBAR eta erantzun testu gisa; ez exekutatu erantzuna."
+      },
+      "pistas": {
+        "es": [
+          "Inicial: D",
+          "DIR"
+        ],
+        "eu": [
+          "Hasierako karakterea: D",
+          "DIR"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Respuesta:",
+            "eu": "Erantzuna:"
+          },
+          "respuestas": {
+            "es": [
+              "DIR"
+            ],
+            "eu": [
+              "DIR"
+            ]
+          }
+        }
+      ],
+      "solucion_docente": "DIR"
+    },
+    {
+      "texto": {
+        "es": "Definición 3: Muestra el contenido de un archivo de texto. Escribe COMPROBAR y responde como texto; no ejecutes la respuesta.",
+        "eu": "3. definizioa: Testu fitxategiaren edukia erakusten du. Idatzi COMPROBAR eta erantzun testu gisa; ez exekutatu erantzuna."
+      },
+      "pistas": {
+        "es": [
+          "Inicial: T",
+          "TYPE"
+        ],
+        "eu": [
+          "Hasierako karakterea: T",
+          "TYPE"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Respuesta:",
+            "eu": "Erantzuna:"
+          },
+          "respuestas": {
+            "es": [
+              "TYPE"
+            ],
+            "eu": [
+              "TYPE"
+            ]
+          }
+        }
+      ],
+      "solucion_docente": "TYPE"
+    },
+    {
+      "texto": {
+        "es": "Definición 4: Crea una carpeta. Escribe COMPROBAR y responde como texto; no ejecutes la respuesta.",
+        "eu": "4. definizioa: Karpeta sortzen du. Idatzi COMPROBAR eta erantzun testu gisa; ez exekutatu erantzuna."
+      },
+      "pistas": {
+        "es": [
+          "Inicial: M",
+          "MD"
+        ],
+        "eu": [
+          "Hasierako karakterea: M",
+          "MD"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Respuesta:",
+            "eu": "Erantzuna:"
+          },
+          "respuestas": {
+            "es": [
+              "MD",
+              "MKDIR"
+            ],
+            "eu": [
+              "MD",
+              "MKDIR"
+            ]
+          }
+        }
+      ],
+      "solucion_docente": "MD"
+    },
+    {
+      "texto": {
+        "es": "Definición 5: Copia conservando el original. Escribe COMPROBAR y responde como texto; no ejecutes la respuesta.",
+        "eu": "5. definizioa: Jatorrizkoa mantenduz kopiatzen du. Idatzi COMPROBAR eta erantzun testu gisa; ez exekutatu erantzuna."
+      },
+      "pistas": {
+        "es": [
+          "Inicial: C",
+          "COPY"
+        ],
+        "eu": [
+          "Hasierako karakterea: C",
+          "COPY"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Respuesta:",
+            "eu": "Erantzuna:"
+          },
+          "respuestas": {
+            "es": [
+              "COPY"
+            ],
+            "eu": [
+              "COPY"
+            ]
+          }
+        }
+      ],
+      "solucion_docente": "COPY"
+    },
+    {
+      "texto": {
+        "es": "Definición 6: Mueve archivos. Escribe COMPROBAR y responde como texto; no ejecutes la respuesta.",
+        "eu": "6. definizioa: Fitxategiak mugitzen ditu. Idatzi COMPROBAR eta erantzun testu gisa; ez exekutatu erantzuna."
+      },
+      "pistas": {
+        "es": [
+          "Inicial: M",
+          "MOVE"
+        ],
+        "eu": [
+          "Hasierako karakterea: M",
+          "MOVE"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Respuesta:",
+            "eu": "Erantzuna:"
+          },
+          "respuestas": {
+            "es": [
+              "MOVE"
+            ],
+            "eu": [
+              "MOVE"
+            ]
+          }
+        }
+      ],
+      "solucion_docente": "MOVE"
+    },
+    {
+      "texto": {
+        "es": "Definición 7: Cambia el nombre de un archivo. Escribe COMPROBAR y responde como texto; no ejecutes la respuesta.",
+        "eu": "7. definizioa: Fitxategiaren izena aldatzen du. Idatzi COMPROBAR eta erantzun testu gisa; ez exekutatu erantzuna."
+      },
+      "pistas": {
+        "es": [
+          "Inicial: R",
+          "REN"
+        ],
+        "eu": [
+          "Hasierako karakterea: R",
+          "REN"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Respuesta:",
+            "eu": "Erantzuna:"
+          },
+          "respuestas": {
+            "es": [
+              "REN",
+              "RENAME"
+            ],
+            "eu": [
+              "REN",
+              "RENAME"
+            ]
+          }
+        }
+      ],
+      "solucion_docente": "REN"
+    },
+    {
+      "texto": {
+        "es": "Definición 8: Muestra la ayuda general. Escribe COMPROBAR y responde como texto; no ejecutes la respuesta.",
+        "eu": "8. definizioa: Laguntza orokorra erakusten du. Idatzi COMPROBAR eta erantzun testu gisa; ez exekutatu erantzuna."
+      },
+      "pistas": {
+        "es": [
+          "Inicial: H",
+          "HELP"
+        ],
+        "eu": [
+          "Hasierako karakterea: H",
+          "HELP"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Respuesta:",
+            "eu": "Erantzuna:"
+          },
+          "respuestas": {
+            "es": [
+              "HELP"
+            ],
+            "eu": [
+              "HELP"
+            ]
+          }
+        }
+      ],
+      "solucion_docente": "HELP"
+    },
+    {
+      "texto": {
+        "es": "Definición 9: Opción habitual para pedir ayuda. Escribe COMPROBAR y responde como texto; no ejecutes la respuesta.",
+        "eu": "9. definizioa: Laguntza eskatzeko ohiko aukera. Idatzi COMPROBAR eta erantzun testu gisa; ez exekutatu erantzuna."
+      },
+      "pistas": {
+        "es": [
+          "Inicial: /",
+          "/?"
+        ],
+        "eu": [
+          "Hasierako karakterea: /",
+          "/?"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Respuesta:",
+            "eu": "Erantzuna:"
+          },
+          "respuestas": {
+            "es": [
+              "/?"
+            ],
+            "eu": [
+              "/?"
+            ]
+          }
+        }
+      ],
+      "solucion_docente": "/?"
+    },
+    {
+      "texto": {
+        "es": "Definición 10: Limpia la pantalla. Escribe COMPROBAR y responde como texto; no ejecutes la respuesta.",
+        "eu": "10. definizioa: Pantaila garbitzen du. Idatzi COMPROBAR eta erantzun testu gisa; ez exekutatu erantzuna."
+      },
+      "pistas": {
+        "es": [
+          "Inicial: C",
+          "CLS"
+        ],
+        "eu": [
+          "Hasierako karakterea: C",
+          "CLS"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Respuesta:",
+            "eu": "Erantzuna:"
+          },
+          "respuestas": {
+            "es": [
+              "CLS"
+            ],
+            "eu": [
+              "CLS"
+            ]
+          }
+        }
+      ],
+      "solucion_docente": "CLS"
+    },
+    {
+      "texto": {
+        "es": "Definición 11: Muestra la versión de Windows. Escribe COMPROBAR y responde como texto; no ejecutes la respuesta.",
+        "eu": "11. definizioa: Windowsen bertsioa erakusten du. Idatzi COMPROBAR eta erantzun testu gisa; ez exekutatu erantzuna."
+      },
+      "pistas": {
+        "es": [
+          "Inicial: V",
+          "VER"
+        ],
+        "eu": [
+          "Hasierako karakterea: V",
+          "VER"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Respuesta:",
+            "eu": "Erantzuna:"
+          },
+          "respuestas": {
+            "es": [
+              "VER"
+            ],
+            "eu": [
+              "VER"
+            ]
+          }
+        }
+      ],
+      "solucion_docente": "VER"
+    },
+    {
+      "texto": {
+        "es": "Definición 12: Consulta fecha sin pedir una nueva. Escribe COMPROBAR y responde como texto; no ejecutes la respuesta.",
+        "eu": "12. definizioa: Data kontsultatzen du berririk eskatu gabe. Idatzi COMPROBAR eta erantzun testu gisa; ez exekutatu erantzuna."
+      },
+      "pistas": {
+        "es": [
+          "Inicial: D",
+          "DATE /T"
+        ],
+        "eu": [
+          "Hasierako karakterea: D",
+          "DATE /T"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Respuesta:",
+            "eu": "Erantzuna:"
+          },
+          "respuestas": {
+            "es": [
+              "DATE /T"
+            ],
+            "eu": [
+              "DATE /T"
+            ]
+          }
+        }
+      ],
+      "solucion_docente": "DATE /T"
+    },
+    {
+      "texto": {
+        "es": "Definición 13: Consulta hora sin pedir una nueva. Escribe COMPROBAR y responde como texto; no ejecutes la respuesta.",
+        "eu": "13. definizioa: Ordua kontsultatzen du berririk eskatu gabe. Idatzi COMPROBAR eta erantzun testu gisa; ez exekutatu erantzuna."
+      },
+      "pistas": {
+        "es": [
+          "Inicial: T",
+          "TIME /T"
+        ],
+        "eu": [
+          "Hasierako karakterea: T",
+          "TIME /T"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Respuesta:",
+            "eu": "Erantzuna:"
+          },
+          "respuestas": {
+            "es": [
+              "TIME /T"
+            ],
+            "eu": [
+              "TIME /T"
+            ]
+          }
+        }
+      ],
+      "solucion_docente": "TIME /T"
+    },
+    {
+      "texto": {
+        "es": "Definición 14: Cambia el título de CMD. Escribe COMPROBAR y responde como texto; no ejecutes la respuesta.",
+        "eu": "14. definizioa: CMDren izenburua aldatzen du. Idatzi COMPROBAR eta erantzun testu gisa; ez exekutatu erantzuna."
+      },
+      "pistas": {
+        "es": [
+          "Inicial: T",
+          "TITLE"
+        ],
+        "eu": [
+          "Hasierako karakterea: T",
+          "TITLE"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Respuesta:",
+            "eu": "Erantzuna:"
+          },
+          "respuestas": {
+            "es": [
+              "TITLE"
+            ],
+            "eu": [
+              "TITLE"
+            ]
+          }
+        }
+      ],
+      "solucion_docente": "TITLE"
+    },
+    {
+      "texto": {
+        "es": "Definición 15: Cambia los colores de CMD. Escribe COMPROBAR y responde como texto; no ejecutes la respuesta.",
+        "eu": "15. definizioa: CMDren koloreak aldatzen ditu. Idatzi COMPROBAR eta erantzun testu gisa; ez exekutatu erantzuna."
+      },
+      "pistas": {
+        "es": [
+          "Inicial: C",
+          "COLOR"
+        ],
+        "eu": [
+          "Hasierako karakterea: C",
+          "COLOR"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Respuesta:",
+            "eu": "Erantzuna:"
+          },
+          "respuestas": {
+            "es": [
+              "COLOR"
+            ],
+            "eu": [
+              "COLOR"
+            ]
+          }
+        }
+      ],
+      "solucion_docente": "COLOR"
+    },
+    {
+      "texto": {
+        "es": "Definición 16: Personaliza el indicador de órdenes. Escribe COMPROBAR y responde como texto; no ejecutes la respuesta.",
+        "eu": "16. definizioa: Aginduen adierazlea pertsonalizatzen du. Idatzi COMPROBAR eta erantzun testu gisa; ez exekutatu erantzuna."
+      },
+      "pistas": {
+        "es": [
+          "Inicial: P",
+          "PROMPT"
+        ],
+        "eu": [
+          "Hasierako karakterea: P",
+          "PROMPT"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Respuesta:",
+            "eu": "Erantzuna:"
+          },
+          "respuestas": {
+            "es": [
+              "PROMPT"
+            ],
+            "eu": [
+              "PROMPT"
+            ]
+          }
+        }
+      ],
+      "solucion_docente": "PROMPT"
+    },
+    {
+      "texto": {
+        "es": "Definición 17: Muestra las rutas de búsqueda de ejecutables. Escribe COMPROBAR y responde como texto; no ejecutes la respuesta.",
+        "eu": "17. definizioa: Exekutagarrien bilaketa bideak erakusten ditu. Idatzi COMPROBAR eta erantzun testu gisa; ez exekutatu erantzuna."
+      },
+      "pistas": {
+        "es": [
+          "Inicial: P",
+          "PATH"
+        ],
+        "eu": [
+          "Hasierako karakterea: P",
+          "PATH"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Respuesta:",
+            "eu": "Erantzuna:"
+          },
+          "respuestas": {
+            "es": [
+              "PATH"
+            ],
+            "eu": [
+              "PATH"
+            ]
+          }
+        }
+      ],
+      "solucion_docente": "PATH"
+    },
+    {
+      "texto": {
+        "es": "Definición 18: Abre otra ventana para un programa. Escribe COMPROBAR y responde como texto; no ejecutes la respuesta.",
+        "eu": "18. definizioa: Beste leiho bat irekitzen du programa baterako. Idatzi COMPROBAR eta erantzun testu gisa; ez exekutatu erantzuna."
+      },
+      "pistas": {
+        "es": [
+          "Inicial: S",
+          "START"
+        ],
+        "eu": [
+          "Hasierako karakterea: S",
+          "START"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Respuesta:",
+            "eu": "Erantzuna:"
+          },
+          "respuestas": {
+            "es": [
+              "START"
+            ],
+            "eu": [
+              "START"
+            ]
+          }
+        }
+      ],
+      "solucion_docente": "START"
+    },
+    {
+      "texto": {
+        "es": "Definición 19: Inicia el intérprete de comandos. Escribe COMPROBAR y responde como texto; no ejecutes la respuesta.",
+        "eu": "19. definizioa: Komando interpretea abiatzen du. Idatzi COMPROBAR eta erantzun testu gisa; ez exekutatu erantzuna."
+      },
+      "pistas": {
+        "es": [
+          "Inicial: C",
+          "CMD"
+        ],
+        "eu": [
+          "Hasierako karakterea: C",
+          "CMD"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Respuesta:",
+            "eu": "Erantzuna:"
+          },
+          "respuestas": {
+            "es": [
+              "CMD",
+              "CMD.EXE"
+            ],
+            "eu": [
+              "CMD",
+              "CMD.EXE"
+            ]
+          }
+        }
+      ],
+      "solucion_docente": "CMD"
+    },
+    {
+      "texto": {
+        "es": "Definición 20: Sale del intérprete actual. Escribe COMPROBAR y responde como texto; no ejecutes la respuesta.",
+        "eu": "20. definizioa: Uneko interpretetik irteten da. Idatzi COMPROBAR eta erantzun testu gisa; ez exekutatu erantzuna."
+      },
+      "pistas": {
+        "es": [
+          "Inicial: E",
+          "EXIT"
+        ],
+        "eu": [
+          "Hasierako karakterea: E",
+          "EXIT"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Respuesta:",
+            "eu": "Erantzuna:"
+          },
+          "respuestas": {
+            "es": [
+              "EXIT"
+            ],
+            "eu": [
+              "EXIT"
+            ]
+          }
+        }
+      ],
+      "solucion_docente": "EXIT"
+    },
+    {
+      "texto": {
+        "es": "Definición 21: Muestra información detallada del sistema. Escribe COMPROBAR y responde como texto; no ejecutes la respuesta.",
+        "eu": "21. definizioa: Sistemaren informazio zehatza erakusten du. Idatzi COMPROBAR eta erantzun testu gisa; ez exekutatu erantzuna."
+      },
+      "pistas": {
+        "es": [
+          "Inicial: S",
+          "SYSTEMINFO"
+        ],
+        "eu": [
+          "Hasierako karakterea: S",
+          "SYSTEMINFO"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Respuesta:",
+            "eu": "Erantzuna:"
+          },
+          "respuestas": {
+            "es": [
+              "SYSTEMINFO"
+            ],
+            "eu": [
+              "SYSTEMINFO"
+            ]
+          }
+        }
+      ],
+      "solucion_docente": "SYSTEMINFO"
+    },
+    {
+      "texto": {
+        "es": "Definición 22: Muestra etiqueta y número de serie del volumen. Escribe COMPROBAR y responde como texto; no ejecutes la respuesta.",
+        "eu": "22. definizioa: Bolumenaren etiketa eta serie zenbakia erakusten ditu. Idatzi COMPROBAR eta erantzun testu gisa; ez exekutatu erantzuna."
+      },
+      "pistas": {
+        "es": [
+          "Inicial: V",
+          "VOL"
+        ],
+        "eu": [
+          "Hasierako karakterea: V",
+          "VOL"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Respuesta:",
+            "eu": "Erantzuna:"
+          },
+          "respuestas": {
+            "es": [
+              "VOL"
+            ],
+            "eu": [
+              "VOL"
+            ]
+          }
+        }
+      ],
+      "solucion_docente": "VOL"
+    },
+    {
+      "texto": {
+        "es": "Definición 23: Permite cambiar la etiqueta de un volumen. Escribe COMPROBAR y responde como texto; no ejecutes la respuesta.",
+        "eu": "23. definizioa: Bolumenaren etiketa aldatzeko aukera ematen du. Idatzi COMPROBAR eta erantzun testu gisa; ez exekutatu erantzuna."
+      },
+      "pistas": {
+        "es": [
+          "Inicial: L",
+          "LABEL"
+        ],
+        "eu": [
+          "Hasierako karakterea: L",
+          "LABEL"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Respuesta:",
+            "eu": "Erantzuna:"
+          },
+          "respuestas": {
+            "es": [
+              "LABEL"
+            ],
+            "eu": [
+              "LABEL"
+            ]
+          }
+        }
+      ],
+      "solucion_docente": "LABEL"
+    },
+    {
+      "texto": {
+        "es": "Definición 24: Comprueba el sistema de archivos del disco. Escribe COMPROBAR y responde como texto; no ejecutes la respuesta.",
+        "eu": "24. definizioa: Diskoaren fitxategi sistema egiaztatzen du. Idatzi COMPROBAR eta erantzun testu gisa; ez exekutatu erantzuna."
+      },
+      "pistas": {
+        "es": [
+          "Inicial: C",
+          "CHKDSK"
+        ],
+        "eu": [
+          "Hasierako karakterea: C",
+          "CHKDSK"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Respuesta:",
+            "eu": "Erantzuna:"
+          },
+          "respuestas": {
+            "es": [
+              "CHKDSK"
+            ],
+            "eu": [
+              "CHKDSK"
+            ]
+          }
+        }
+      ],
+      "solucion_docente": "CHKDSK"
+    },
+    {
+      "texto": {
+        "es": "Definición 25: Gestiona el apagado del sistema. Solo responde el nombre. Escribe COMPROBAR y responde como texto; no ejecutes la respuesta.",
+        "eu": "25. definizioa: Sistema itzaltzea kudeatzen du. Erantzun izena bakarrik. Idatzi COMPROBAR eta erantzun testu gisa; ez exekutatu erantzuna."
+      },
+      "pistas": {
+        "es": [
+          "Inicial: S",
+          "SHUTDOWN"
+        ],
+        "eu": [
+          "Hasierako karakterea: S",
+          "SHUTDOWN"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Respuesta:",
+            "eu": "Erantzuna:"
+          },
+          "respuestas": {
+            "es": [
+              "SHUTDOWN"
+            ],
+            "eu": [
+              "SHUTDOWN"
+            ]
+          }
+        }
+      ],
+      "solucion_docente": "SHUTDOWN"
+    },
+    {
+      "texto": {
+        "es": "Definición 26: Cancela un apagado pendiente. Escribe COMPROBAR y responde como texto; no ejecutes la respuesta.",
+        "eu": "26. definizioa: Programatutako itzaltzea ezeztatzen du. Idatzi COMPROBAR eta erantzun testu gisa; ez exekutatu erantzuna."
+      },
+      "pistas": {
+        "es": [
+          "Inicial: S",
+          "SHUTDOWN /A"
+        ],
+        "eu": [
+          "Hasierako karakterea: S",
+          "SHUTDOWN /A"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Respuesta:",
+            "eu": "Erantzuna:"
+          },
+          "respuestas": {
+            "es": [
+              "SHUTDOWN /A"
+            ],
+            "eu": [
+              "SHUTDOWN /A"
+            ]
+          }
+        }
+      ],
+      "solucion_docente": "SHUTDOWN /A"
+    },
+    {
+      "texto": {
+        "es": "Definición 27: Llama a otro .bat y permite regresar al primero. Escribe COMPROBAR y responde como texto; no ejecutes la respuesta.",
+        "eu": "27. definizioa: Beste .bat bati deitu eta lehenengora itzultzen da. Idatzi COMPROBAR eta erantzun testu gisa; ez exekutatu erantzuna."
+      },
+      "pistas": {
+        "es": [
+          "Inicial: C",
+          "CALL"
+        ],
+        "eu": [
+          "Hasierako karakterea: C",
+          "CALL"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Respuesta:",
+            "eu": "Erantzuna:"
+          },
+          "respuestas": {
+            "es": [
+              "CALL"
+            ],
+            "eu": [
+              "CALL"
+            ]
+          }
+        }
+      ],
+      "solucion_docente": "CALL"
+    },
+    {
+      "texto": {
+        "es": "Definición 28: Muestra un mensaje en pantalla. Escribe COMPROBAR y responde como texto; no ejecutes la respuesta.",
+        "eu": "28. definizioa: Mezua pantailan erakusten du. Idatzi COMPROBAR eta erantzun testu gisa; ez exekutatu erantzuna."
+      },
+      "pistas": {
+        "es": [
+          "Inicial: E",
+          "ECHO"
+        ],
+        "eu": [
+          "Hasierako karakterea: E",
+          "ECHO"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Respuesta:",
+            "eu": "Erantzuna:"
+          },
+          "respuestas": {
+            "es": [
+              "ECHO"
+            ],
+            "eu": [
+              "ECHO"
+            ]
+          }
+        }
+      ],
+      "solucion_docente": "ECHO"
+    },
+    {
+      "texto": {
+        "es": "Definición 29: Extensión de los scripts de esta unidad, incluido el punto. Escribe COMPROBAR y responde como texto; no ejecutes la respuesta.",
+        "eu": "29. definizioa: Unitate honetako scripten luzapena, puntua barne. Idatzi COMPROBAR eta erantzun testu gisa; ez exekutatu erantzuna."
+      },
+      "pistas": {
+        "es": [
+          "Inicial: .",
+          ".BAT"
+        ],
+        "eu": [
+          "Hasierako karakterea: .",
+          ".BAT"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Respuesta:",
+            "eu": "Erantzuna:"
+          },
+          "respuestas": {
+            "es": [
+              ".BAT"
+            ],
+            "eu": [
+              ".BAT"
+            ]
+          }
+        }
+      ],
+      "solucion_docente": ".BAT"
+    },
+    {
+      "texto": {
+        "es": "Definición 30: Símbolo que guarda salida sobrescribiendo un archivo. Escribe COMPROBAR y responde como texto; no ejecutes la respuesta.",
+        "eu": "30. definizioa: Irteera fitxategi batean gordetzen du, gainidatziz. Idatzi COMPROBAR eta erantzun testu gisa; ez exekutatu erantzuna."
+      },
+      "pistas": {
+        "es": [
+          "Inicial: >",
+          ">"
+        ],
+        "eu": [
+          "Hasierako karakterea: >",
+          ">"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Respuesta:",
+            "eu": "Erantzuna:"
+          },
+          "respuestas": {
+            "es": [
+              ">"
+            ],
+            "eu": [
+              ">"
+            ]
+          }
+        }
+      ],
+      "solucion_docente": ">"
+    }
+  ],
+  "final": {
+    "es": "Actividad completada. MENU para elegir otra o REINICIAR para repetir.",
+    "eu": "Jarduera osatuta. MENU beste bat aukeratzeko edo REINICIAR errepikatzeko."
+  }
+}

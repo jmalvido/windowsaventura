@@ -1,0 +1,152 @@
+{
+  "schema": 1,
+  "motor_minimo": 1,
+  "version": 1,
+  "id": "actividad_002",
+  "titulo": {
+    "es": "Bienvenido a Windows 2 — Ayuda y consultas",
+    "eu": "Ongi etorri Windowsera 2 — Laguntza eta kontsultak"
+  },
+  "archivos": {
+    "LEEME.txt": {
+      "es": "Bienvenido al centro IZAR. Lee las instrucciones y usa COMPROBAR al terminar cada paso.\n",
+      "eu": "Ongi etorri IZAR zentrora. Irakurri argibideak eta erabili COMPROBAR urrats bakoitzaren amaieran.\n"
+    }
+  },
+  "carpetas": [],
+  "pasos": [
+    {
+      "texto": {
+        "es": "HELP muestra la ayuda de comandos. Ejecuta HELP y después HELP DIR. ¿Qué símbolo acompaña a la barra para pedir ayuda con DIR /?",
+        "eu": "HELP komandoak laguntza erakusten du. Exekutatu HELP eta HELP DIR. Zer ikur dator barraren ondoren DIR /? idaztean?"
+      },
+      "pistas": {
+        "es": [
+          "Lee la ayuda del comando y revisa la carpeta actual.",
+          "HELP\nHELP DIR\nDIR /?\nCOMPROBAR"
+        ],
+        "eu": [
+          "Irakurri komandoaren laguntza eta egiaztatu uneko karpeta.",
+          "HELP\nHELP DIR\nDIR /?\nCOMPROBAR"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Opción completa de ayuda:",
+            "eu": "Laguntza aukera osoa:"
+          },
+          "respuestas": {
+            "es": [
+              "/?"
+            ],
+            "eu": [
+              "/?"
+            ]
+          }
+        }
+      ],
+      "solucion_docente": "HELP\nHELP DIR\nDIR /?\nCOMPROBAR"
+    },
+    {
+      "texto": {
+        "es": "CLS limpia la pantalla. Ejecuta CLS y luego VER para consultar la versión de Windows. COMPROBAR pedirá la línea de versión completa.",
+        "eu": "CLS komandoak pantaila garbitzen du. Exekutatu CLS eta VER Windowsen bertsioa ikusteko. COMPROBAR komandoak bertsioaren lerro osoa eskatuko du."
+      },
+      "pistas": {
+        "es": [
+          "Lee la ayuda del comando y revisa la carpeta actual.",
+          "CLS\nVER\nCOMPROBAR"
+        ],
+        "eu": [
+          "Irakurri komandoaren laguntza eta egiaztatu uneko karpeta.",
+          "CLS\nVER\nCOMPROBAR"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "respuesta_sistema",
+          "consulta": "version",
+          "pregunta": {
+            "es": "Línea de VER:",
+            "eu": "VER lerroa:"
+          }
+        }
+      ],
+      "solucion_docente": "CLS\nVER\nCOMPROBAR"
+    },
+    {
+      "texto": {
+        "es": "DATE /T y TIME /T muestran fecha y hora sin pedir cambios. Pruébalos. Usa flecha arriba para recuperar una orden.",
+        "eu": "DATE /T eta TIME /T komandoek data eta ordua erakusten dituzte aldaketarik eskatu gabe. Probatu eta erabili gora gezia agindu bat berreskuratzeko."
+      },
+      "pistas": {
+        "es": [
+          "Lee la ayuda del comando y revisa la carpeta actual.",
+          "DATE /T\nTIME /T\nCOMPROBAR"
+        ],
+        "eu": [
+          "Irakurri komandoaren laguntza eta egiaztatu uneko karpeta.",
+          "DATE /T\nTIME /T\nCOMPROBAR"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Opción para consultar sin modificar:",
+            "eu": "Aldatu gabe kontsultatzeko aukera:"
+          },
+          "respuestas": {
+            "es": [
+              "/T"
+            ],
+            "eu": [
+              "/T"
+            ]
+          }
+        }
+      ],
+      "solucion_docente": "DATE /T\nTIME /T\nCOMPROBAR"
+    },
+    {
+      "texto": {
+        "es": "Tab completa nombres de archivos y carpetas. Prueba TYPE L y pulsa Tab para completar LEEME.txt; después pulsa Intro. La comprobación no registra la tecla, solo la respuesta.",
+        "eu": "Tab teklak fitxategi eta karpeta izenak osatzen ditu. Probatu TYPE L eta sakatu Tab LEEME.txt osatzeko; gero sakatu Sartu. Egiaztapenak ez du tekla erregistratzen, erantzuna bakarrik."
+      },
+      "pistas": {
+        "es": [
+          "Lee la ayuda del comando y revisa la carpeta actual.",
+          "TYPE LEEME.txt\nCOMPROBAR"
+        ],
+        "eu": [
+          "Irakurri komandoaren laguntza eta egiaztatu uneko karpeta.",
+          "TYPE LEEME.txt\nCOMPROBAR"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Comando para leer un archivo:",
+            "eu": "Fitxategia irakurtzeko komandoa:"
+          },
+          "respuestas": {
+            "es": [
+              "TYPE"
+            ],
+            "eu": [
+              "TYPE"
+            ]
+          }
+        }
+      ],
+      "solucion_docente": "TYPE LEEME.txt\nCOMPROBAR"
+    }
+  ],
+  "final": {
+    "es": "Actividad completada. MENU para elegir otra o REINICIAR para repetir.",
+    "eu": "Jarduera osatuta. MENU beste bat aukeratzeko edo REINICIAR errepikatzeko."
+  }
+}

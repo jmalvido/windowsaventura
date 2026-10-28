@@ -1,0 +1,57 @@
+{
+  "schema": 1,
+  "actividades": [
+    {
+      "archivo": "actividad_001.json",
+      "sha256": "50b471ee83092f206814c77aa4f897c409e162e6172a59817cd66c9900d79958"
+    },
+    {
+      "archivo": "actividad_002.json",
+      "sha256": "d0fb4a7ac2cb1927d93be0518242423fa61b9017f48dd41ea40426cf27ab4265"
+    },
+    {
+      "archivo": "actividad_003.json",
+      "sha256": "4d4d6933d4aa82959d0c4f6f601aab998780e5ad08637f5b886faf232c277665"
+    },
+    {
+      "archivo": "actividad_004.json",
+      "sha256": "d8308a5cc99742908fe246b35117fe710acf7eb9808172d89e198d0cb6c1bdf3"
+    },
+    {
+      "archivo": "actividad_005.json",
+      "sha256": "9d2e7ab3ca40dd7381458990edd3d7da8cef58b52c050802ac686807b8f34f80"
+    },
+    {
+      "archivo": "actividad_006.json",
+      "sha256": "69b954213275806bf4d3d2c02fd75dd1dfbfc3262ccf9fdbdbbecbe6ae20bf99"
+    },
+    {
+      "archivo": "actividad_007.json",
+      "sha256": "55700711c5556778f839cfac57cc8a32848c84c9dbb8c5281a2a92c3f2d3284d"
+    },
+    {
+      "archivo": "actividad_008.json",
+      "sha256": "4345b72e0c955d2e0921d923758d4cf7651c5f127f096401738f38b3d77a3581"
+    },
+    {
+      "archivo": "actividad_009.json",
+      "sha256": "c27c48150055965c74449e40e12c3be868ce58c22f5da93477417d6d19cd3fe2"
+    },
+    {
+      "archivo": "actividad_010.json",
+      "sha256": "ae13da6ce7c8f6e7931ec203e5210cc355efc58a7ca26e6961213d4e4b432133"
+    },
+    {
+      "archivo": "actividad_011.json",
+      "sha256": "bec110024979fcf31b11d9a5d42295f1c68b5e08cf8b08225c236e678910b2af"
+    },
+    {
+      "archivo": "actividad_012.json",
+      "sha256": "6e0fa52fde10140c06907cab7ddbb83d2c731bd8b0814d0faf0940aeca5a5921"
+    },
+    {
+      "archivo": "actividad_013.json",
+      "sha256": "5c32e083de5f830eb377c4702a92b0e461ca2a3e3026d9bd363e1d3527990eb8"
+    }
+  ]
+}

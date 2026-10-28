@@ -1,0 +1,143 @@
+{
+  "schema": 1,
+  "motor_minimo": 1,
+  "version": 1,
+  "id": "actividad_003",
+  "titulo": {
+    "es": "Bienvenido a Windows 3 — Organiza archivos",
+    "eu": "Ongi etorri Windowsera 3 — Antolatu fitxategiak"
+  },
+  "archivos": {
+    "LEEME.txt": {
+      "es": "Bienvenido al centro IZAR. Lee las instrucciones y usa COMPROBAR al terminar cada paso.\n",
+      "eu": "Ongi etorri IZAR zentrora. Irakurri argibideak eta erabili COMPROBAR urrats bakoitzaren amaieran.\n"
+    },
+    "documentos/mapa.txt": {
+      "es": "Plano de IZAR.\n",
+      "eu": "IZAR planoa.\n"
+    },
+    "documentos/normas.txt": {
+      "es": "Conserva los originales.\n",
+      "eu": "Gorde jatorrizkoak.\n"
+    }
+  },
+  "carpetas": [],
+  "pasos": [
+    {
+      "texto": {
+        "es": "Desde la raíz del escenario crea refugio y refugio\\copias con MD. MD y MKDIR son equivalentes.",
+        "eu": "Eszenatokiaren errotik sortu refugio eta refugio\\copias MD erabiliz. MD eta MKDIR baliokideak dira."
+      },
+      "pistas": {
+        "es": [
+          "Lee la ayuda del comando y revisa la carpeta actual.",
+          "MD refugio\nMD refugio\\copias\nCOMPROBAR"
+        ],
+        "eu": [
+          "Irakurri komandoaren laguntza eta egiaztatu uneko karpeta.",
+          "MD refugio\nMD refugio\\copias\nCOMPROBAR"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "carpeta",
+          "ruta": "refugio/copias"
+        }
+      ],
+      "solucion_docente": "MD refugio\nMD refugio\\copias\nCOMPROBAR"
+    },
+    {
+      "texto": {
+        "es": "COPY copia y conserva el original. Copia documentos\\mapa.txt a refugio\\copias.",
+        "eu": "COPY komandoak kopia egiten du jatorrizkoa mantenduz. Kopiatu documentos\\mapa.txt refugio\\copias karpetara."
+      },
+      "pistas": {
+        "es": [
+          "Lee la ayuda del comando y revisa la carpeta actual.",
+          "COPY documentos\\mapa.txt refugio\\copias\\\nCOMPROBAR"
+        ],
+        "eu": [
+          "Irakurri komandoaren laguntza eta egiaztatu uneko karpeta.",
+          "COPY documentos\\mapa.txt refugio\\copias\\\nCOMPROBAR"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "contenido",
+          "ruta": "refugio/copias/mapa.txt",
+          "origen": "documentos/mapa.txt"
+        },
+        {
+          "tipo": "contenido",
+          "ruta": "documentos/mapa.txt",
+          "origen": "documentos/mapa.txt"
+        }
+      ],
+      "solucion_docente": "COPY documentos\\mapa.txt refugio\\copias\\\nCOMPROBAR"
+    },
+    {
+      "texto": {
+        "es": "REN cambia el nombre. Renombra la copia a plano.txt; el segundo argumento de REN es el nombre nuevo, no otra carpeta.",
+        "eu": "REN komandoak izena aldatzen du. Aldatu kopiaren izena plano.txt izenera; bigarren argumentua izen berria da, ez beste karpeta bat."
+      },
+      "pistas": {
+        "es": [
+          "Lee la ayuda del comando y revisa la carpeta actual.",
+          "REN refugio\\copias\\mapa.txt plano.txt\nCOMPROBAR"
+        ],
+        "eu": [
+          "Irakurri komandoaren laguntza eta egiaztatu uneko karpeta.",
+          "REN refugio\\copias\\mapa.txt plano.txt\nCOMPROBAR"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "contenido",
+          "ruta": "refugio/copias/plano.txt",
+          "origen": "documentos/mapa.txt"
+        },
+        {
+          "tipo": "ausente",
+          "ruta": "refugio/copias/mapa.txt"
+        }
+      ],
+      "solucion_docente": "REN refugio\\copias\\mapa.txt plano.txt\nCOMPROBAR"
+    },
+    {
+      "texto": {
+        "es": "MOVE cambia la ubicación. Mueve plano.txt a refugio. Crea una señal vacía con TYPE NUL > refugio\\listo.txt. > sobrescribe el destino; úsalo solo con esta señal.",
+        "eu": "MOVE komandoak kokapena aldatzen du. Eraman plano.txt refugio karpetara. Sortu seinale hutsa TYPE NUL > refugio\\listo.txt erabiliz. > ikurrak helburua gainidazten du; erabili seinale honekin bakarrik."
+      },
+      "pistas": {
+        "es": [
+          "Lee la ayuda del comando y revisa la carpeta actual.",
+          "MOVE refugio\\copias\\plano.txt refugio\\plano.txt\nTYPE NUL > refugio\\listo.txt\nCOMPROBAR"
+        ],
+        "eu": [
+          "Irakurri komandoaren laguntza eta egiaztatu uneko karpeta.",
+          "MOVE refugio\\copias\\plano.txt refugio\\plano.txt\nTYPE NUL > refugio\\listo.txt\nCOMPROBAR"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "contenido",
+          "ruta": "refugio/plano.txt",
+          "origen": "documentos/mapa.txt"
+        },
+        {
+          "tipo": "ausente",
+          "ruta": "refugio/copias/plano.txt"
+        },
+        {
+          "tipo": "vacio",
+          "ruta": "refugio/listo.txt"
+        }
+      ],
+      "solucion_docente": "MOVE refugio\\copias\\plano.txt refugio\\plano.txt\nTYPE NUL > refugio\\listo.txt\nCOMPROBAR"
+    }
+  ],
+  "final": {
+    "es": "Actividad completada. MENU para elegir otra o REINICIAR para repetir.",
+    "eu": "Jarduera osatuta. MENU beste bat aukeratzeko edo REINICIAR errepikatzeko."
+  }
+}

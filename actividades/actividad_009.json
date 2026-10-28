@@ -1,0 +1,174 @@
+{
+  "schema": 1,
+  "motor_minimo": 1,
+  "version": 1,
+  "id": "actividad_009",
+  "titulo": {
+    "es": "El apagado planificado",
+    "eu": "Planifikatutako itzaltzea"
+  },
+  "archivos": {
+    "LEEME.txt": {
+      "es": "Bienvenido al centro IZAR. Lee las instrucciones y usa COMPROBAR al terminar cada paso.\n",
+      "eu": "Ongi etorri IZAR zentrora. Irakurri argibideak eta erabili COMPROBAR urrats bakoitzaren amaieran.\n"
+    }
+  },
+  "carpetas": [],
+  "pasos": [
+    {
+      "texto": {
+        "es": "Consulta SHUTDOWN /?. En este juego las órdenes de apagado se contestan como texto: no las ejecutes. ¿Qué orden apagaría en 60 segundos con el mensaje El equipo se apagara en un minuto?",
+        "eu": "Kontsultatu SHUTDOWN /?. Joko honetan itzaltzeko aginduak testu gisa erantzuten dira: ez exekutatu. Zer aginduk itzaliko luke 60 segundotan El equipo se apagara en un minuto mezuarekin?"
+      },
+      "pistas": {
+        "es": [
+          "Lee la ayuda del comando y revisa la carpeta actual.",
+          "SHUTDOWN /?\nCOMPROBAR"
+        ],
+        "eu": [
+          "Irakurri komandoaren laguntza eta egiaztatu uneko karpeta.",
+          "SHUTDOWN /?\nCOMPROBAR"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Orden completa, solo como respuesta:",
+            "eu": "Agindu osoa, erantzun gisa bakarrik:"
+          },
+          "respuestas": {
+            "es": [
+              "shutdown /s /t 60 /c \"El equipo se apagara en un minuto\""
+            ],
+            "eu": [
+              "shutdown /s /t 60 /c \"El equipo se apagara en un minuto\""
+            ]
+          }
+        }
+      ],
+      "solucion_docente": "SHUTDOWN /?\nCOMPROBAR"
+    },
+    {
+      "texto": {
+        "es": "¿Cómo se cancela un apagado pendiente? Responde sin programar uno.",
+        "eu": "Nola ezeztatzen da programatutako itzaltzea? Erantzun itzaltzerik programatu gabe."
+      },
+      "pistas": {
+        "es": [
+          "Lee la ayuda del comando y revisa la carpeta actual.",
+          "COMPROBAR"
+        ],
+        "eu": [
+          "Irakurri komandoaren laguntza eta egiaztatu uneko karpeta.",
+          "COMPROBAR"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Orden de cancelación:",
+            "eu": "Ezeztatzeko agindua:"
+          },
+          "respuestas": {
+            "es": [
+              "shutdown /a"
+            ],
+            "eu": [
+              "shutdown /a"
+            ]
+          }
+        }
+      ],
+      "solucion_docente": "COMPROBAR"
+    },
+    {
+      "texto": {
+        "es": "Práctica gráfica: escritorio > Nuevo > Acceso directo. Destino: cmd.exe. Nombre: Simbolo del sistema. Ábrelo y ciérralo con EXIT. El profesor revisa el acceso; el motor solo pregunta su destino. No uses un .bat para sustituir el acceso directo.",
+        "eu": "Praktika grafikoa: mahaigaina > Berria > Lasterbidea. Helburua: cmd.exe. Izena: Simbolo del sistema. Ireki eta itxi EXIT erabiliz. Irakasleak ikusiko du lasterbidea; motorrak helburua bakarrik galdetzen du. Ez ordeztu lasterbidea .bat batekin."
+      },
+      "pistas": {
+        "es": [
+          "Lee la ayuda del comando y revisa la carpeta actual.",
+          "COMPROBAR"
+        ],
+        "eu": [
+          "Irakurri komandoaren laguntza eta egiaztatu uneko karpeta.",
+          "COMPROBAR"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Destino del acceso directo:",
+            "eu": "Lasterbidearen helburua:"
+          },
+          "respuestas": {
+            "es": [
+              "cmd.exe"
+            ],
+            "eu": [
+              "cmd.exe"
+            ]
+          }
+        }
+      ],
+      "solucion_docente": "COMPROBAR"
+    },
+    {
+      "texto": {
+        "es": "Diseña los destinos de dos accesos llamados Apagar y No apagar. Apagar: 20 segundos y mensaje Apagando...; No apagar: cancelar. No los abras durante el juego. Creación, iconos y anclaje se revisan con la ficha docente, porque dependen del escritorio y las políticas de Windows.",
+        "eu": "Diseinatu Apagar eta No apagar lasterbideen helburuak. Apagar: 20 segundo eta Apagando... mezua; No apagar: ezeztatu. Ez ireki jokoan. Sorrera, ikonoak eta ainguratzea irakaslearen fitxarekin berrikusten dira, Windowsen mahaigainaren eta politiken araberakoak baitira."
+      },
+      "pistas": {
+        "es": [
+          "Lee la ayuda del comando y revisa la carpeta actual.",
+          "COMPROBAR"
+        ],
+        "eu": [
+          "Irakurri komandoaren laguntza eta egiaztatu uneko karpeta.",
+          "COMPROBAR"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Destino de Apagar:",
+            "eu": "Apagar helburua:"
+          },
+          "respuestas": {
+            "es": [
+              "shutdown /s /t 20 /c \"Apagando...\""
+            ],
+            "eu": [
+              "shutdown /s /t 20 /c \"Apagando...\""
+            ]
+          }
+        },
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Destino de No apagar:",
+            "eu": "No apagar helburua:"
+          },
+          "respuestas": {
+            "es": [
+              "shutdown /a"
+            ],
+            "eu": [
+              "shutdown /a"
+            ]
+          }
+        }
+      ],
+      "solucion_docente": "COMPROBAR"
+    }
+  ],
+  "final": {
+    "es": "Actividad completada. MENU para elegir otra o REINICIAR para repetir.",
+    "eu": "Jarduera osatuta. MENU beste bat aukeratzeko edo REINICIAR errepikatzeko."
+  }
+}

@@ -1,0 +1,148 @@
+{
+  "schema": 1,
+  "motor_minimo": 1,
+  "version": 1,
+  "id": "actividad_011",
+  "titulo": {
+    "es": "El relevo del técnico",
+    "eu": "Teknikariaren txanda aldaketa"
+  },
+  "archivos": {
+    "LEEME.txt": {
+      "es": "Bienvenido al centro IZAR. Lee las instrucciones y usa COMPROBAR al terminar cada paso.\n",
+      "eu": "Ongi etorri IZAR zentrora. Irakurri argibideak eta erabili COMPROBAR urrats bakoitzaren amaieran.\n"
+    },
+    "Documentos del turno/nota.txt": {
+      "es": "Clave: RELEVO. No cambies el reloj ni la etiqueta del sistema.\n",
+      "eu": "Gakoa: RELEVO. Ez aldatu erlojua edo sistemaren etiketa.\n"
+    }
+  },
+  "carpetas": [],
+  "pasos": [
+    {
+      "texto": {
+        "es": "Encuentra y lee la nota dentro de Documentos del turno. Usa comillas o Tab para los espacios del nombre.",
+        "eu": "Aurkitu eta irakurri Documentos del turno barruko oharra. Erabili komatxoak edo Tab izeneko zuriuneetarako."
+      },
+      "pistas": {
+        "es": [
+          "Lee la ayuda del comando y revisa la carpeta actual.",
+          "TYPE \"Documentos del turno\\nota.txt\"\nCOMPROBAR"
+        ],
+        "eu": [
+          "Irakurri komandoaren laguntza eta egiaztatu uneko karpeta.",
+          "TYPE \"Documentos del turno\\nota.txt\"\nCOMPROBAR"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "respuesta",
+          "pregunta": {
+            "es": "Clave:",
+            "eu": "Gakoa:"
+          },
+          "respuestas": {
+            "es": [
+              "RELEVO"
+            ],
+            "eu": [
+              "RELEVO"
+            ]
+          }
+        }
+      ],
+      "solucion_docente": "TYPE \"Documentos del turno\\nota.txt\"\nCOMPROBAR"
+    },
+    {
+      "texto": {
+        "es": "Crea entrega. Copia la nota allí como instrucciones.txt conservando el original.",
+        "eu": "Sortu entrega. Kopiatu oharra hara instrucciones.txt izenarekin, jatorrizkoa mantenduz."
+      },
+      "pistas": {
+        "es": [
+          "Lee la ayuda del comando y revisa la carpeta actual.",
+          "MD entrega\nCOPY \"Documentos del turno\\nota.txt\" entrega\\instrucciones.txt\nCOMPROBAR"
+        ],
+        "eu": [
+          "Irakurri komandoaren laguntza eta egiaztatu uneko karpeta.",
+          "MD entrega\nCOPY \"Documentos del turno\\nota.txt\" entrega\\instrucciones.txt\nCOMPROBAR"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "contenido",
+          "ruta": "entrega/instrucciones.txt",
+          "origen": "Documentos del turno/nota.txt"
+        },
+        {
+          "tipo": "contenido",
+          "ruta": "Documentos del turno/nota.txt",
+          "origen": "Documentos del turno/nota.txt"
+        }
+      ],
+      "solucion_docente": "MD entrega\nCOPY \"Documentos del turno\\nota.txt\" entrega\\instrucciones.txt\nCOMPROBAR"
+    },
+    {
+      "texto": {
+        "es": "Añade a entrega el informe de versión (version.txt) y el de volumen (volumen.txt).",
+        "eu": "Gehitu entrega karpetan bertsioaren txostena (version.txt) eta bolumenarena (volumen.txt)."
+      },
+      "pistas": {
+        "es": [
+          "Lee la ayuda del comando y revisa la carpeta actual.",
+          "VER > entrega\\version.txt\nVOL %SystemDrive% > entrega\\volumen.txt\nCOMPROBAR"
+        ],
+        "eu": [
+          "Irakurri komandoaren laguntza eta egiaztatu uneko karpeta.",
+          "VER > entrega\\version.txt\nVOL %SystemDrive% > entrega\\volumen.txt\nCOMPROBAR"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "salida",
+          "consulta": "version",
+          "ruta": "entrega/version.txt"
+        },
+        {
+          "tipo": "salida",
+          "consulta": "volumen",
+          "ruta": "entrega/volumen.txt"
+        }
+      ],
+      "solucion_docente": "VER > entrega\\version.txt\nVOL %SystemDrive% > entrega\\volumen.txt\nCOMPROBAR"
+    },
+    {
+      "texto": {
+        "es": "Personaliza el prompt a [TURNO] seguido de ruta y >. Después comprueba la entrega.",
+        "eu": "Pertsonalizatu prompta: [TURNO], bidea eta >. Ondoren egiaztatu entrega."
+      },
+      "pistas": {
+        "es": [
+          "Lee la ayuda del comando y revisa la carpeta actual.",
+          "PROMPT [TURNO] $P$G\nCOMPROBAR"
+        ],
+        "eu": [
+          "Irakurri komandoaren laguntza eta egiaztatu uneko karpeta.",
+          "PROMPT [TURNO] $P$G\nCOMPROBAR"
+        ]
+      },
+      "pruebas": [
+        {
+          "tipo": "entorno",
+          "nombre": "PROMPT",
+          "valor": "[TURNO] $P$G"
+        },
+        {
+          "tipo": "contenido",
+          "ruta": "entrega/instrucciones.txt",
+          "origen": "Documentos del turno/nota.txt"
+        }
+      ],
+      "solucion_docente": "PROMPT [TURNO] $P$G\nCOMPROBAR"
+    }
+  ],
+  "final": {
+    "es": "Actividad completada. MENU para elegir otra o REINICIAR para repetir.",
+    "eu": "Jarduera osatuta. MENU beste bat aukeratzeko edo REINICIAR errepikatzeko."
+  }
+}
